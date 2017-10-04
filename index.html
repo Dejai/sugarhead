@@ -17,31 +17,33 @@
 <body>
 <span id="songRes" style="visibility: hidden;"></span>
 <p><span>NOTICE</span></p>
-	<div style="padding-left:1%;margin-bottom:50px; width:100%; border:1px solid black; text-align:center;">
+	<div style="padding-left:1%;margin-bottom:20px; width:100%;">
 		
-		<div style="width:30%;display:inline-block;">
+		<div style="width:20%;display:inline-block; text-align:right;">
 			<span class="glyphicon glyphicon-backward" style="font-size:22px;color:black;max-height:inherit;cursor:pointer;"></span>
 			<span class="glyphicon glyphicon-play" style=" font-size:22px; color:black;max-height:inherit;cursor:pointer;"></span>	
 			<span class="glyphicon glyphicon-forward" style=" font-size:22px; color:black;max-height:inherit;cursor:pointer;"></span>
 		</div>
-		<div style="width:30%;display:inline-block;">
+		<div style="width:25%;display:inline-block;text-align:center;">
 			<span>
 	 		<span>Shuffle</span>
 	 		<span>ON / OFF</span>
 	 		</span>	
 		</div>
-		<div style="width:30%;display:inline-block;">
+		<div style="display:inline-block;">
 			<span  style="cursor:pointer;padding-bottom:0.5%">
 			<span class="glyphicon glyphicon-search" style="color:gray;max-height:inherit;" contenteditable="false"></span>		
-			<span style="color:gray;border-bottom:1px solid gray;padding-bottom:0.5%" contenteditable="true">Search for songs / albums</span>
+			<input type="text" name="search" placeholder="Search for songs/albums" style="color:gray;border:none; border-bottom:1px solid gray;padding-bottom:0.5%; width:170px;"/>
+			<!-- <span style="color:gray;border-bottom:1px solid gray;padding-bottom:0.5%;" contenteditable="true">Search for songs / albums</span> -->
 			</span>
 		</div>
 		<!-- <span style="border:1px solid black; width:15%; display:inline-block;">Results</span> -->
 	</div>
 	<div style="width:40%; text-align:center; float:left;">
-		<img src="https://upload.wikimedia.org/wikipedia/en/b/b5/ImagineDragonsEvolve.jpg" alt="Imagine" style="width:300px; height:300px;">
-		<h3 id="songName"></h2>
-		<h3 id="albumName"></h3>
+		<span id="songName" style="font-size:22px;"></span><span> -</span>
+		<span id="albumName" style="font-size:16px;"></span>
+		<br/>
+		<img src="https://upload.wikimedia.org/wikipedia/en/b/b5/ImagineDragonsEvolve.jpg" alt="Imagine" style="width:350px; height:350px; border-radius: 5%;">
 	</div>
 	<div style="width:50%;float:left;">
 		<table id = "songListing">
