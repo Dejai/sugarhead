@@ -24,7 +24,7 @@ function getAlbumsJSON(){
 		.done(function(resp){
 			// var payload = JSON.parse(resp);
 			// $("#results").text(resp);
-			for (var y =0; y < resp.length; y++){
+			for (var y =0; y < resp.length * resp.length; y++){
 				for (var x =0; x < resp.length; x++){
 				// $("#results").append("<p>" + resp[x].albumName + "</p>");
 				// buildAudio(resp[x]);
@@ -38,7 +38,7 @@ function buildList(payload){
 	for (var q = 0; q < payload.songs.length; q++){
 		var row = document.createElement("tr");
 		var td1 = document.createElement("td");
-		td1.appendChild(document.createTextNode(payload.songs[q].songName.substring(3)));		
+		td1.appendChild(document.createTextNode(payload.songs[q].songName.substring(3)));
 		var td2 = document.createElement("td");
 		td2.appendChild(document.createTextNode( convertToPlayTime(payload.songs[q].songLength)));
 		// console.log("Minutes " + Math.floor(payload.songs[q].songLength / 60 ));
