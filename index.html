@@ -21,42 +21,45 @@
 		#songListing tbody tr { border-bottom: 1px dashed black; display:block; width:100%;}
 		#songListing tbody tr td{ font-size:16px; display:inline-block; width:24%; }
 
-		/*#songListing tr { display:inline-block; width:100%; }*/
-		/*#songListing * tr { width:100%; }*/
-		/*#songsList { height:400px; display:inline-block; width:500px; }*/
-		/*#songListing * {  width:100%; }
-		style="height:400px;width:100%;"
-
-		#songListing thead * { border:1px solid black; }
-		#songListing thead tr { width:100%; border:1px solid black; }
-		style="display:block; width:100%; position:relative;"
-
-		#songListing tbody tr { width:100%; display:inline-block; width:100%; }
-		#songListing thead tr th { width:24%; display:inline-block; }
-		#songListing tbody tr td { width:24%; display:inline-block; }*/
-		/*.firstColumn { width:25%; }*/
-
-		/*#songsList * { border:1px solid black; padding:1%; width:100%; }*/
-		/*style="display:inline-block; overflow:auto; height:400px;"*/
-
 		/*Got advice from - https://codepen.io/tjvantoll/pen/JEKIu - for styling a scrolling table */
+
+		.selectedRow { background-color:lightblue; }
+
+
+		/*https://stackoverflow.com/questions/9620122/stop-html-text-being-highlighted*/
+		/*This site suggested the following to prevent text from being highlighted*/
+		#songListing *, #topSection {
+			-webkit-touch-callout: none;
+			-webkit-user-select: none;
+			-khtml-user-select: none;
+			-moz-user-select: none;
+			-ms-user-select: none;
+			-o-user-select: none;
+			user-select: none;
+		}
+		button:focus { outline: none; }
 	</style>
 
 </head>
 <body>
-<span id="songRes" style="visibility: hidden;"></span>
-<p><span>NOTICE</span></p>
-	<div style="padding-left:1%;margin-bottom:20px; width:100%;">
+	<div id="topSection" style="padding-left:1%;margin-bottom:20px; width:100%;">
 		
 		<div style="width:20%;display:inline-block; text-align:right;">
-			<span class="glyphicon glyphicon-backward" style="font-size:22px;color:black;max-height:inherit;cursor:pointer;"></span>
-			<span class="glyphicon glyphicon-play" style=" font-size:22px; color:black;max-height:inherit;cursor:pointer;"></span>	
-			<span class="glyphicon glyphicon-forward" style=" font-size:22px; color:black;max-height:inherit;cursor:pointer;"></span>
+			<span id="prevSongButton" class="glyphicon glyphicon-backward" style="font-size:22px;color:black;max-height:inherit;cursor:pointer;"></span>
+			<span id="playButton" class="glyphicon glyphicon-play" style=" font-size:22px; color:black;max-height:inherit;cursor:pointer;"></span>	
+			<span id="pauseButton" class="glyphicon glyphicon-pause" style="display:none; font-size:22px; color:black;max-height:inherit;cursor:pointer;"></span>	
+			<span id="nextSongButton" class="glyphicon glyphicon-forward" style=" font-size:22px; color:black;max-height:inherit;cursor:pointer;"></span>
+			<br/>
+			<div style="border:1px solid black; height:10px; background-color:white;cursor:pointer;">
+				<p id="songScroll" style="background-color:blue;width:0%; height:inherit; padding:0px; margin:0px;"></p>
+				<span id="currentTime" style="float:left;">0:00</span>
+				<span id="durationTime" style="float:right;">0:00</span>
+			</div>
 		</div>
 		<div style="width:25%;display:inline-block;text-align:center;">
 			<span>
-	 		<span>Shuffle</span>
-	 		<span>ON / OFF</span>
+	 		<span>Shuffle</span><br/>
+	 		<button id="shuffleButton" style="color:gray;">OFF</button>
 	 		</span>	
 		</div>
 		<div style="display:inline-block;">
@@ -69,10 +72,14 @@
 		<!-- <span style="border:1px solid black; width:15%; display:inline-block;">Results</span> -->
 	</div>
 	<div style="width:40%; text-align:center; float:left;">
-		<span id="songName" style="font-size:22px;"></span><span> -</span>
-		<span id="albumName" style="font-size:16px;"></span>
-		<br/>
+		<!-- <span id="songName" style="font-size:22px;"> -->
+		<h4 id="songName"></h4>
+		<!-- <br/> -->
 		<img src="https://upload.wikimedia.org/wikipedia/en/b/b5/ImagineDragonsEvolve.jpg" alt="Imagine" style="width:350px; height:350px; border-radius: 5%;">
+		<h4 id="albumName"></h4>
+		<!-- <br/> -->
+		<span  style="font-size:16px;"></span>
+
 	</div>
 	<div style="width:50%;float:left;">
 	<!-- height:500px; overflow:scroll; -->
@@ -88,8 +95,13 @@
 	 		<tbody id="songsList"></tbody>
 	 	</table>
 	</div>
+
+<br style="clear:both;"/>
 	
- 	
+<p><span>NOTICE</span></p>
+<div id="songRes"><audio id="currentAudio" autoplay><source id="currentSong" type="audio/mpeg"></audio></div>
+
+	
  	<script type="text/javascript" src="/projects/sugarhead/Scripts/js/sugarHead.js"></script>
 </body>
 </html>
