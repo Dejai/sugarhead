@@ -161,7 +161,8 @@ function playSong(row){
 	$("#albumName").empty().text(albumName);
 	var src = path + "music/" + albumName + "/" + songName;
 	currentSong.src = decodeURIComponent(src);
-
+	console.log(src);
+	console.log(decodURIComponent(src));
 	currentAudio.load();
 
 	currentAudio.onloadeddata = function(){
