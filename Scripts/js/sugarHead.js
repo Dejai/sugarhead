@@ -159,10 +159,10 @@ function playSong(row){
 	var albumName = row.dataset.albumName;
 	$("#songName").empty().text(songName.substring(3));	
 	$("#albumName").empty().text(albumName);
-	var src = path + "music/" + albumName + "/" + songName;
-	currentSong.src = decodeURIComponent(src);
+	var src = path + "music/" + albumName + "/" + songName + ".mp3";
+	src = decodeURIComponent(src);
+	currentSong.src = src;
 	console.log(src);
-	console.log(decodeURIComponent(src+".mp3"));
 	currentAudio.load();
 
 	currentAudio.onloadeddata = function(){
