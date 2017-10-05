@@ -162,7 +162,7 @@ function playSong(row){
 	var src = path + "music/" + albumName + "/" + songName;
 	currentSong.src = decodeURIComponent(src);
 	console.log(src);
-	console.log(decodURIComponent(src));
+	console.log(decodeURIComponent(src));
 	currentAudio.load();
 
 	currentAudio.onloadeddata = function(){
