@@ -93,7 +93,7 @@ function buildList(payload){
 		row.appendChild(td2);
 		row.appendChild(td3);
 		row.appendChild(td4);
-		row.setAttribute("data-song", "/projects/sugarhead/music/"+payload.albumName+"/"+payload.songs[q].songName);
+		// row.setAttribute("data-song", "/projects/sugarhead/music/"+payload.albumName+"/"+payload.songs[q].songName);
 		row.setAttribute("data-song-name", payload.songs[q].songName);
 		row.setAttribute("data-album-name", payload.albumName);
 		row.setAttribute("class", "clickSong");
@@ -160,7 +160,8 @@ function playSong(row){
 	$("#songName").empty().text(songName.substring(3));	
 	$("#albumName").empty().text(albumName);
 	var src = path + "music/" + albumName + "/" + songName;
-	currentSong.src = src;
+	currentSong.src = decodeURIComponent(src);
+
 	currentAudio.load();
 
 	currentAudio.onloadeddata = function(){
