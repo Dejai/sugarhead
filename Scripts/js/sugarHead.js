@@ -7,7 +7,7 @@
 //This would just be a list of the song objects from each album; 
 var fullListOfSongs = [];
 
-var path; 
+var path = "/sugarhead/"; 
 var currentSong = document.getElementById("currentSong");
 var currentAudio = document.getElementById("currentAudio");
 var songSelected = false; 
@@ -16,12 +16,12 @@ var nextSong, prevSong, playingSong;
 var paused;
 
 $(document).ready(function(){
-	var loc = location.host;
-	if (loc.includes("dancinglion") || loc.includes("localhost")){
-		path = "/projects/sugarhead/";
-	} else {
-		path = "/";
-	}
+	// var loc = location.host;
+	// if (loc.includes("dancinglion") || loc.includes("localhost")){
+	// 	path = "/projects/sugarhead/";
+	// } else {
+	// 	path = "/";
+	// }
 	var shuffleButton = document.getElementById("shuffleButton");
 	shuffleButton.addEventListener("click", function(){
 		this.blur();
