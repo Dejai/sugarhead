@@ -4,19 +4,9 @@
 // This was helpful in determining why my clicks were firing multiple times
 // https://stackoverflow.com/questions/22180953/why-is-jquery-click-event-firing-multiple-times
  
- //This would just be a list of the song objects from each album; 
-	var fullListOfSongs = [];
+//This would just be a list of the song objects from each album; 
+var fullListOfSongs = [];
 
-/* 
-	NEEDS:
-		1. A controller for the current song. In order to play the next song. Consider both in order as well as shuffle. 
-			* Essentially, eac song would require a value of 'next' song. 
-		2. The table view of songs. It should be the same for the most part between the 2 views.
-			* Album view (maybe just remove the album column)
-			* list view ... show a column for the album
-		3. 
-	
-*/
 var path; 
 var currentSong = document.getElementById("currentSong");
 var currentAudio = document.getElementById("currentAudio");
