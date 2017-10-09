@@ -39,28 +39,61 @@
 		}
 		button:focus { outline: none; }
 	</style>
+	<link rel="stylesheet" type="text/css" href="/sugarhead/Scripts/css/federicoGhedina.css">
 
 </head>
 <body>
 	<div id="topSection" style="padding-left:1%;margin-bottom:20px; width:100%;">
-		<div style="width:20%;display:inline-block; text-align:right;">
+		
+		
+		
+	</div>
+	<div style="width:40%; text-align:center; float:left; background-color;">
+		<div id="playControlOptions" style="text-align:center;">
+			<span>
+	 			<!-- <span>Repeat</span> -->
+	 			<span class="glyphicon glyphicon-repeat" style="cursor:pointer;color:gray;font-size:22px;"></span>
+
+	 			<!-- <button id="repeatButton" style="color:gray;">OFF</button> -->
+	 		</span>	
 			<span id="prevSongButton" class="glyphicon glyphicon-backward" style="font-size:22px;color:black;max-height:inherit;cursor:pointer;"></span>
 			<span id="playButton" class="glyphicon glyphicon-play" style=" font-size:22px; color:black;max-height:inherit;cursor:pointer;"></span>	
 			<span id="pauseButton" class="glyphicon glyphicon-pause" style="display:none; font-size:22px; color:black;max-height:inherit;cursor:pointer;"></span>	
 			<span id="nextSongButton" class="glyphicon glyphicon-forward" style=" font-size:22px; color:black;max-height:inherit;cursor:pointer;"></span>
-			<br/>
-			<div style="border:1px solid black; height:10px; background-color:white;cursor:pointer;">
-				<p id="songScroll" style="background-color:blue;width:0%; height:inherit; padding:0px; margin:0px;"></p>
-				<span id="currentTime" style="float:left;">0:00</span>
-				<span id="durationTime" style="float:right;">0:00</span>
+			<!-- <div style="float:right;"> -->
+			<!-- <span> -->
+	 			<!-- <span>Shuffle</span> -->
+	 			<span id="shuffleButton" class="glyphicon glyphicon-random" style="cursor:pointer;color:gray;font-size:22px;" data-shuffle-status="OFF"></span>
+
+	 			<!-- <button id="shuffleButton" style="color:gray;">OFF</button> -->
+	 		<!-- </span>	 -->
+			<!-- </div> -->
+		</div>
+
+		<div style="width:55%;display:inline-block; text-align:right;">
+			<!-- <div id="songScrollContainer" style="border:1px solid black; height:10px; background-color:white;cursor:pointer;"> -->
+			<div id="songScrollContainer" >
+				<!-- <p id="songScroll" style="background-color:blue;width:0%; height:inherit; padding:0px; margin:0px;"></p> -->
+		 		<div id="barCnt" class="barCnt" style="margin-bottom:10px;">
+			 		<input type="range" min=0 max=100 step=0.001 value=0 id="range2">
+		 			<p id="preBar" class="preBar"></p>
+		 		</div>
+				<span id="currentTime" style="float:left;"></span>
+				<span id="durationTime" style="float:right;"></span>
 			</div>
 		</div>
-		<div style="width:25%;display:inline-block;text-align:center;">
-			<span>
-	 		<span>Shuffle</span><br/>
-	 		<button id="shuffleButton" style="color:gray;">OFF</button>
-	 		</span>	
-		</div>
+		<h4 id="songName"></h4>
+		<!-- <br/> -->
+		<img src="https://upload.wikimedia.org/wikipedia/en/b/b5/ImagineDragonsEvolve.jpg" alt="Imagine" style="width:350px; height:350px; border-radius: 5%;">
+		<!-- <h4 id="albumName"></h4> -->
+		<!-- <br/> -->
+		<span  style="font-size:16px;"></span>
+
+	</div>
+
+
+
+	<div style="width:50%;float:left;">
 		<div style="display:inline-block;">
 			<span  style="cursor:pointer;padding-bottom:0.5%">
 			<span class="glyphicon glyphicon-search" style="color:gray;max-height:inherit;" contenteditable="false"></span>		
@@ -69,18 +102,6 @@
 			</span>
 		</div>
 		<!-- <span style="border:1px solid black; width:15%; display:inline-block;">Results</span> -->
-	</div>
-	<div style="width:40%; text-align:center; float:left;">
-		<!-- <span id="songName" style="font-size:22px;"> -->
-		<h4 id="songName"></h4>
-		<!-- <br/> -->
-		<img src="https://upload.wikimedia.org/wikipedia/en/b/b5/ImagineDragonsEvolve.jpg" alt="Imagine" style="width:350px; height:350px; border-radius: 5%;">
-		<h4 id="albumName"></h4>
-		<!-- <br/> -->
-		<span  style="font-size:16px;"></span>
-
-	</div>
-	<div style="width:50%;float:left;">
 	<!-- height:500px; overflow:scroll; -->
 		<table id = "songListing" >
  			<thead>
@@ -98,8 +119,48 @@
 <br style="clear:both;"/>
 	
 <p><span>NOTICE</span></p>
-<div id="songRes"><audio id="currentAudio" autoplay><source id="currentSong" type="audio/mpeg"></audio></div>
+<div id="songRes" style="width:1px; height:1px;">
+	<audio id="currentAudio" style="width:1px; height:1px;" autoplay>
+	<source id="currentSong_mp3" type="audio/mpeg">
+	<source id="currentSong_mp4" type="audio/mp4">
+	</audio>
+</div>
+ 	<script type="text/javascript">
+ 		// function setupRange(input){
+
+ 		// }
+ 		function rangeColor(input) {
+		  var wrp = document.getElementById('barCnt'),
+		    preBar = document.getElementById('preBar'),
+		    min = parseInt(input.min, 10),
+		    max = parseInt(input.max, 10),
+		    range = max - min,
+		    getVal = function() {
+		      var w = parseInt(input.clientWidth, 10),
+		        t = ~~(w * (parseInt(input.value, 10) - min) / range);
+		      return t;
+		    };
+		  // wrp.className = 'barCnt';
+		  // preBar.className = 'preBar';
+
+		  input.className = input.className.length ? (input.className + ' colorized') : 'colorized';
+		  // input.parentNode.replaceChild(wrp, input);
+
+		  // wrp.appendChild(input);
+		  // wrp.appendChild(preBar);
+
+		  input.addEventListener('input', function() {
+
+		    preBar.style.width = getVal() + 'px';
+		  });
+
+		  preBar.style.width = getVal() + 'px';
+		}
+
+
+		rangeColor(document.getElementById('range2'));
+
+ 	</script>
  	<script type="text/javascript" src="/sugarhead/Scripts/js/sugarHead.js"></script>
-	
 </body>
 </html>

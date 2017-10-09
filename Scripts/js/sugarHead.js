@@ -3,35 +3,42 @@
 
 // This was helpful in determining why my clicks were firing multiple times
 // https://stackoverflow.com/questions/22180953/why-is-jquery-click-event-firing-multiple-times
+
+// Could be a life saver in finding a track option for the song
+//https://stackoverflow.com/questions/18389224/how-to-style-html5-range-input-to-have-different-color-before-and-after-slider
+//https://jsfiddle.net/fedeghe/smjje829/
  
 //This would just be a list of the song objects from each album; 
 var fullListOfSongs = [];
 
 var path = "/sugarhead/"; 
-var currentSong = document.getElementById("currentSong");
+var currentSong_mp3 = document.getElementById("currentSong_mp3");
+var currentSong_mp4 = document.getElementById("currentSong_mp4");
 var currentAudio = document.getElementById("currentAudio");
 var songSelected = false; 
 var shuffleSongs = false; 
 var nextSong, prevSong, playingSong; 
 var paused;
+var currentTimeInterval, currentScrollInterval;
 
 $(document).ready(function(){
-	// var loc = location.host;
-	// if (loc.includes("dancinglion") || loc.includes("localhost")){
-	// 	path = "/projects/sugarhead/";
-	// } else {
-	// 	path = "/";
-	// }
+
+	document.getElementById('range2').style.display = "none";
+
 	var shuffleButton = document.getElementById("shuffleButton");
 	shuffleButton.addEventListener("click", function(){
+		var shuffleStatus = this.dataset.shuffleStatus;
+		// alert(this.dataset.shuffleStatus);
 		this.blur();
-		if (this.innerHTML == "OFF"){
-			this.innerHTML = "ON";
-			this.style.color = "white";
-			this.style.backgroundColor = "limegreen";
+		if (shuffleStatus == "OFF"){
+			// this.innerHTML = "ON";
+			this.dataset.shuffleStatus = "ON";
+			this.style.color = "limegreen";
+			// this.style.backgroundColor = "limegreen";
 			shuffleSongs = true; 
 		} else{
-			this.innerHTML = "OFF";
+			// this.innerHTML = "OFF";
+			this.dataset.shuffleStatus = "OFF";
 			this.style.color = "gray";
 			this.style.backgroundColor = "initial";
 			shuffleSongs = false; 
@@ -40,22 +47,14 @@ $(document).ready(function(){
 			setNextAndPrevSongs(playingSong);
 		}
 	});
-	// $("#shuffleButton").click(function(){
-	// 	alert("clicked");
-	// 	if ($(this).innerHTML == "OFF"){
-	// 		$(this).text("ON");
-	// 		$(this).css("color", "white");
-	// 		$(this).css("background-color", "green");
-	// 	} else{
-	// 		$(this).text("OFF");
-	// 		$(this).css("color", "gray");
-	// 		$(this).css("background-color", "initial");
-	// 	}
-	// });
 
 	getAlbumsJSON();
 	musicControls();
 
+
+	$("div").click(function(){
+		alert($(this));
+	});
 
 
 
@@ -66,13 +65,13 @@ function getAlbumsJSON(){
 		.done(function(resp){
 			// var payload = JSON.parse(resp);
 			// $("#results").text(resp);
-			for (var y =0; y < resp.length * resp.length; y++){
+			// for (var y =0; y < resp.length * resp.length; y++){
 				for (var x =0; x < resp.length; x++){
 				// $("#results").append("<p>" + resp[x].albumName + "</p>");
 				// buildAudio(resp[x]);
 					buildList(resp[x]);
 				}
-			}
+			// }
 		});
 }
 
@@ -116,102 +115,79 @@ function convertToPlayTime(value){
 	return playTime;
 }
 
-// function clickSong(){
-// 	$(".clickSong").dblclick(function(){
-// 		$("#songRes").empty();
-// 		$("#songName").empty().text($(this).attr("data-song-name").substring(3));	
-// 		$("#albumName").empty().text($(this).attr("data-album-name"));	
-// 		// console.log($(this).attr("data-song-name"));
-// 		// $("#albumName").empty().text("iMusic");	
-
-// 		var songName = $(this).attr("data-song-name");
-// 		var albumName = $(this).attr("data-album-name");
-// 		var src = path + "music/" + albumName + "/" + songName;
-// 		// var src = $(this).attr("data-song");
-// 		var newAudio = document.createElement("audio");
-// 		newAudio.setAttribute("src", src);
-// 		newAudio.setAttribute("controls", "controls");
-// 		newAudio.setAttribute("autoplay", true);
-// 		document.getElementById("songRes").appendChild(newAudio);
-
-// 		$("#playButton").hide();
-// 		$("#pauseButton").show();
-// 		musicControls(newAudio);
-// 	});
-// }
-function clickSong(){
-	
-}
-
-// function playSong(albumName, songName){
-// 	$("#songName").empty().text(songName.substring(3));	
-// 	$("#albumName").empty().text(albumName);
-// 	var src = path + "music/" + albumName + "/" + songName;
-// 	currentSong.src = src;
-// 	currentAudio.load();
-// 	songSelected = true; 
-// 	$("#playButton").hide();
-// 	$("#pauseButton").show();
-// }
-
 function playSong(row){
+
+	calculatePercentage(0, 0);
+
+	$("#durationTime").text("");
+	$("#currentTime").text("");
+
+
 	var songName = row.dataset.songName;
 	var albumName = row.dataset.albumName;
 	$("#songName").empty().text(songName.substring(3));	
 	$("#albumName").empty().text(albumName);
 	var src = path + "music/" + albumName + "/" + songName + ".mp3";
+	var src2 = path + "music/" + albumName + "/" + songName + ".m4a";
 	src = decodeURIComponent(src);
-	currentSong.src = src;
-	console.log(src);
+	currentSong_mp3.src = src;
+	currentSong_mp4.src = src2;
+	// console.log(src);
 	currentAudio.load();
 
 	currentAudio.onloadeddata = function(){
+		document.getElementById('range2').style.display = "inline-block";
+		document.getElementById('range2').value = "0";
+		rangeColor(document.getElementById('range2'));
+
+		slideControls();
 		// console.log(currentAudio.duration);
 		var duration = convertToPlayTime(currentAudio.duration);
 		$("#durationTime").text(duration);
 		var currentTime = convertToPlayTime(currentAudio.currentTime);
 		$("#currentTime").text(currentTime);
-		setInterval(function(){
+		// currentScrollInterval = setInterval(function(){
+		// 	if(!currentAudio.paused){
+		// 		calculatePercentage(currentAudio.currentTime, currentAudio.duration);
+		// 	}
+		// }, 0001);
+		currentTimeInterval = setInterval(function(){
 			if(!currentAudio.paused){
 				var currentTime = convertToPlayTime(currentAudio.currentTime);
 				$("#currentTime").text(currentTime);
+				calculatePercentage(currentAudio.currentTime, currentAudio.duration);
 			}
-			calculatePercentage(currentAudio.currentTime, currentAudio.duration);
 		}, 1100);
-
+		
+		songSelected = true;
+		$("#playButton").hide();
+		$("#pauseButton").show();
 	}
 	currentAudio.addEventListener("ended", function(){
-		paused = true;
+		highlightCurrentSong(row);
 		playSong(nextSong);
 	});
-
-	
-
-	// currentAudio.addEventListener("playing", function(){
-	// 	console.log("Playing....");
-	// 	// }
-			
-	// });
-	// alert(currentAudio.duration);
-	
-
-	songSelected = true; 
-	$("#playButton").hide();
-	$("#pauseButton").show();
 	highlightCurrentSong(row);
 }
 
 function calculatePercentage(current, duration){
-	console.log(Math.round(current/duration * 100));
-	var perc = current/duration * 100;
+	if (current == 0 && duration == 0){
+		$("#songScroll").css("width", "0%");
+		// $("#range2").val(0);
+	} else {
+		var perc = current/duration * 100;
+		$("#songScroll").css("width", perc+"%");
+		// $("#range2").val(perc);
+		rangeColor(document.getElementById('range2'));
+	}
+	$("#range2").val(parseInt(perc,10));
+	rangeColor(document.getElementById('range2'));
 
-	$("#songScroll").css("width", perc+"%");
+	// console.log(document.getElementById("songScroll").offsetLeft);
+	// console.log(Math.round(current/duration * 100));
+
 }
 
-
-function pauseSong(){
-
-}
 
 function highlightCurrentSong(row, scroll){
 	$(".selectedRow").each(function(){
@@ -243,15 +219,27 @@ function setNextAndPrevSongs(row){
 	}
 }
 
+function slideControls(){
+
+	document.getElementById("range2").addEventListener("click", function(){
+		console.log(this.value);
+		var selectedTime = this.value; 
+		selectedTime = (selectedTime / 100) * currentAudio.duration;
+		currentAudio.currentTime = selectedTime;
+		calculatePercentage(currentAudio.currentTime, currentAudio.duration);
+		// calculatePercentage(selectedTime, currentAudio.duration);
+
+	});
+
+}
 function musicControls(){
 	$("*").unbind("click");
-	$(".clickSong").dblclick(function(){
+	$(".clickSong").dblclick(function(){		
 		var songName = $(this).attr("data-song-name");
 		var albumName = $(this).attr("data-album-name");
 		// playSong(albumName, songName);
 		playSong($(this)[0]);
 		// highlightCurrentSong($(this)[0]);
-
 	});
 
 	$("#playButton").click(function(){
