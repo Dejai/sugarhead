@@ -7,75 +7,28 @@
 	<!-- Latest compiled JavaScript -->
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-	<style type="text/css">
-		.viewSelection { padding:1%; border:1px solid gray; margin:0; cursor:pointer; border-radius:50%; }
-		
-		#songListing {border:1px solid black; width:100%; display:inline-block;}
-		/*Thead Section*/
-		#songListing thead { border-bottom: 2px solid black; display:block; width:100%; position:relative; }
-		#songListing thead tr { border-bottom: 2px solid black; display:block; width:100%; }
-		#songListing thead tr th{ font-size:16px; display:inline-block; width:24%; }
-
-		/*Tbody Section */
-		#songListing tbody { display:block; width:100%; height:450px; overflow:scroll; }
-		#songListing tbody tr { border-bottom: 1px dashed black; display:block; width:100%;}
-		#songListing tbody tr td{ font-size:16px; display:inline-block; width:24%; }
-
-		/*Got advice from - https://codepen.io/tjvantoll/pen/JEKIu - for styling a scrolling table */
-
-		.selectedRow { background-color:lightblue; }
-
-
-		/*https://stackoverflow.com/questions/9620122/stop-html-text-being-highlighted*/
-		/*This site suggested the following to prevent text from being highlighted*/
-		#songListing *, #topSection {
-			-webkit-touch-callout: none;
-			-webkit-user-select: none;
-			-khtml-user-select: none;
-			-moz-user-select: none;
-			-ms-user-select: none;
-			-o-user-select: none;
-			user-select: none;
-		}
-		button:focus { outline: none; }
-	</style>
 	<link rel="stylesheet" type="text/css" href="/sugarhead/Scripts/css/federicoGhedina.css">
+	<link rel="stylesheet" type="text/css" href="/sugarhead/Scripts/css/sugarHead.css">
 
 </head>
 <body>
-	<div id="topSection" style="padding-left:1%;margin-bottom:20px; width:100%;">
-		
-		
-		
-	</div>
+	<div id="topSection" style="padding-left:1%;margin-bottom:20px; width:100%;"></div>
 	<div style="width:40%; text-align:center; float:left; background-color;">
 		<div id="playControlOptions" style="text-align:center;">
-			<span>
-	 			<!-- <span>Repeat</span> -->
-	 			<span class="glyphicon glyphicon-repeat" style="cursor:pointer;color:gray;font-size:22px;"></span>
-
-	 			<!-- <button id="repeatButton" style="color:gray;">OFF</button> -->
+	 		<span id="repeatButton" class="glyphicon glyphicon-repeat audioController" style="cursor:pointer;color:gray;font-size:22px;" data-repeat-status="OFF" data-audio-action="repeat"></span>
 	 		</span>	
-			<span id="prevSongButton" class="glyphicon glyphicon-backward" style="font-size:22px;color:black;max-height:inherit;cursor:pointer;"></span>
-			<span id="playButton" class="glyphicon glyphicon-play" style=" font-size:22px; color:black;max-height:inherit;cursor:pointer;"></span>	
-			<span id="pauseButton" class="glyphicon glyphicon-pause" style="display:none; font-size:22px; color:black;max-height:inherit;cursor:pointer;"></span>	
-			<span id="nextSongButton" class="glyphicon glyphicon-forward" style=" font-size:22px; color:black;max-height:inherit;cursor:pointer;"></span>
-			<!-- <div style="float:right;"> -->
-			<!-- <span> -->
-	 			<!-- <span>Shuffle</span> -->
-	 			<span id="shuffleButton" class="glyphicon glyphicon-random" style="cursor:pointer;color:gray;font-size:22px;" data-shuffle-status="OFF"></span>
-
-	 			<!-- <button id="shuffleButton" style="color:gray;">OFF</button> -->
-	 		<!-- </span>	 -->
-			<!-- </div> -->
+			<span id="prevSongButton" class="glyphicon glyphicon-backward audioController" style="font-size:22px;color:black;max-height:inherit;cursor:pointer;" data-audio-action="prev"></span>
+			<span id="playButton" class="glyphicon glyphicon-play audioController" style=" font-size:22px; color:black;max-height:inherit;cursor:pointer;" data-audio-action="play"></span>	
+			<span id="pauseButton" class="glyphicon glyphicon-pause audioController" style="display:none; font-size:22px; color:black;max-height:inherit;cursor:pointer;" data-audio-action="pause"></span>	
+			<span id="nextSongButton" class="glyphicon glyphicon-forward audioController" style=" font-size:22px; color:black;max-height:inherit;cursor:pointer;"
+			data-audio-action="next"></span>
+	 		<span id="shuffleButton" class="glyphicon glyphicon-random audioController" style="cursor:pointer;color:gray;font-size:22px;" data-shuffle-status="OFF" data-audio-action="shuffle"></span>
 		</div>
 
 		<div style="width:55%;display:inline-block; text-align:right;">
-			<!-- <div id="songScrollContainer" style="border:1px solid black; height:10px; background-color:white;cursor:pointer;"> -->
-			<div id="songScrollContainer" >
-				<!-- <p id="songScroll" style="background-color:blue;width:0%; height:inherit; padding:0px; margin:0px;"></p> -->
+			<div id="songScrollContainer" style="display:none;" >
 		 		<div id="barCnt" class="barCnt" style="margin-bottom:10px;">
-			 		<input type="range" min=0 max=100 step=0.001 value=0 id="range2">
+			 		<input type="range" min=0 max=100 step=1 id="range2" class="colorized">
 		 			<p id="preBar" class="preBar"></p>
 		 		</div>
 				<span id="currentTime" style="float:left;"></span>
@@ -83,26 +36,40 @@
 			</div>
 		</div>
 		<h4 id="songName"></h4>
-		<!-- <br/> -->
 		<img src="https://upload.wikimedia.org/wikipedia/en/b/b5/ImagineDragonsEvolve.jpg" alt="Imagine" style="width:350px; height:350px; border-radius: 5%;">
-		<!-- <h4 id="albumName"></h4> -->
-		<!-- <br/> -->
-		<span  style="font-size:16px;"></span>
+		<!-- <span  style="font-size:16px;"></span> -->
 
 	</div>
 
 
 
-	<div style="width:50%;float:left;">
-		<div style="display:inline-block;">
-			<span  style="cursor:pointer;padding-bottom:0.5%">
+	<div style="width:50%;float:left;cursor:pointer;">
+		<div style="display:inline-block; ">
 			<span class="glyphicon glyphicon-search" style="color:gray;max-height:inherit;" contenteditable="false"></span>		
-			<input type="text" name="search" placeholder="Search for songs/albums" style="color:gray;border:none; border-bottom:1px solid gray;padding-bottom:0.5%; width:170px;"/>
-			<!-- <span style="color:gray;border-bottom:1px solid gray;padding-bottom:0.5%;" contenteditable="true">Search for songs / albums</span> -->
+			<span  style="cursor:pointer;padding-bottom:0.5%">
+				<input id="searchBox" type="text" name="search" placeholder="Search for songs/albums" style="color:gray;border:none; border-bottom:1px solid gray;padding-bottom:0.5%; width:170px;"/>
+				<br/>
+				<div id="resultBox" style="display:none; position:absolute; background-color:blue; color:red; z-index:10; border:2px solid white; width:50%;">
+					<table>
+						<thead>
+							<tr>
+								<th>Results</th>
+							</tr>
+						</thead>
+						<tbody id="songsResults">
+							<tr><td>Songs</td></tr>
+						</tbody>
+						<tbody id="albumsResults">
+							<tr>
+								<td>Albums</td>
+							</tr>
+						</tbody>
+						
+					</table>
+				</div>
 			</span>
-		</div>
-		<!-- <span style="border:1px solid black; width:15%; display:inline-block;">Results</span> -->
-	<!-- height:500px; overflow:scroll; -->
+		</div>	
+		<br/><br/>
 		<table id = "songListing" >
  			<thead>
 	 			<tr>
@@ -161,6 +128,7 @@
 		rangeColor(document.getElementById('range2'));
 
  	</script>
- 	<script type="text/javascript" src="/sugarhead/Scripts/js/sugarHead.js"></script>
+ 	<!-- <script type="text/javascript" src="/sugarhead/Scripts/js/sugarHead.js"></script> -->
+ 	<script type="text/javascript" src="/sugarhead/Scripts/js/love.js"></script>
 </body>
 </html>

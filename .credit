@@ -1,0 +1,9 @@
+Giving credit where credit is due. 
+
+This was helpful in determining why my clicks were firing multiple times
+https://stackoverflow.com/questions/22180953/why-is-jquery-click-event-firing-multiple-times
+
+
+I was inspired by Federico Ghedina: https://jsfiddle.net/fedeghe/smjje829/
+I essentially leveraged the width calculating portion of his function, along with most of the CSS (may rework later); 
+

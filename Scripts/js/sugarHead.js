@@ -1,12 +1,3 @@
-
-// Major variables / data structures
-
-// This was helpful in determining why my clicks were firing multiple times
-// https://stackoverflow.com/questions/22180953/why-is-jquery-click-event-firing-multiple-times
-
-// Could be a life saver in finding a track option for the song
-//https://stackoverflow.com/questions/18389224/how-to-style-html5-range-input-to-have-different-color-before-and-after-slider
-//https://jsfiddle.net/fedeghe/smjje829/
  
 //This would just be a list of the song objects from each album; 
 var fullListOfSongs = [];
@@ -17,6 +8,7 @@ var currentSong_mp4 = document.getElementById("currentSong_mp4");
 var currentAudio = document.getElementById("currentAudio");
 var songSelected = false; 
 var shuffleSongs = false; 
+var repeatSong = false; 
 var nextSong, prevSong, playingSong; 
 var paused;
 var currentTimeInterval, currentScrollInterval;
@@ -25,6 +17,19 @@ $(document).ready(function(){
 
 	document.getElementById('range2').style.display = "none";
 
+	setShuffleListener();
+	setRepeatListener();
+
+	getAlbumsJSON();
+	musicControls();
+
+});
+
+
+setShuffleListener
+setRepeatListener
+
+function setShuffleListener(){
 	var shuffleButton = document.getElementById("shuffleButton");
 	shuffleButton.addEventListener("click", function(){
 		var shuffleStatus = this.dataset.shuffleStatus;
@@ -47,18 +52,37 @@ $(document).ready(function(){
 			setNextAndPrevSongs(playingSong);
 		}
 	});
+}
 
-	getAlbumsJSON();
-	musicControls();
-
-
-	$("div").click(function(){
-		alert($(this));
+function setRepeatListener(){
+	var repeatButton = document.getElementById("repeatButton");
+	repeatButton.addEventListener("click", function(){
+		var repeatStatus = this.dataset.repeatStatus;
+		// alert(this.dataset.shuffleStatus);
+		this.blur();
+		if (repeatStatus == "OFF"){
+			this.dataset.repeatStatus = "ON";
+			this.style.color = "limegreen";
+			repeatSong = true; 
+		} else{
+			this.dataset.repeatStatus = "OFF";
+			this.style.color = "gray";
+			this.style.backgroundColor = "initial";
+			repeatSong = false; 
+		}
+		if (playingSong){
+			setRepeat();		
+		}
 	});
+}
 
-
-
-});
+function setRepeat(){
+	if (repeatSong){
+		currentAudio.loop = true;
+	} else {
+		currentAudio.loop = false;
+	}
+}
 
 function getAlbumsJSON(){
 	$.get(path+"Scripts/js/albums.json")
@@ -151,6 +175,9 @@ function playSong(row){
 		// 		calculatePercentage(currentAudio.currentTime, currentAudio.duration);
 		// 	}
 		// }, 0001);
+
+		setRepeat(); 
+
 		currentTimeInterval = setInterval(function(){
 			if(!currentAudio.paused){
 				var currentTime = convertToPlayTime(currentAudio.currentTime);
@@ -185,7 +212,6 @@ function calculatePercentage(current, duration){
 
 	// console.log(document.getElementById("songScroll").offsetLeft);
 	// console.log(Math.round(current/duration * 100));
-
 }
 
 
@@ -219,6 +245,7 @@ function setNextAndPrevSongs(row){
 	}
 }
 
+
 function slideControls(){
 
 	document.getElementById("range2").addEventListener("click", function(){
@@ -232,6 +259,8 @@ function slideControls(){
 	});
 
 }
+
+
 function musicControls(){
 	$("*").unbind("click");
 	$(".clickSong").dblclick(function(){		
@@ -272,6 +301,9 @@ function musicControls(){
 		}
 	});
 }
+
+
+
 
 // function buildAudio(payload){
 // 	$("#results").append("<h3>" + payload.albumName + "</h3>");

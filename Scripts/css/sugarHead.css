@@ -1,0 +1,30 @@
+.viewSelection { padding:1%; border:1px solid gray; margin:0; cursor:pointer; border-radius:50%; }
+
+#songListing {border:1px solid black; width:100%; display:inline-block;}
+/*Thead Section*/
+#songListing thead { border-bottom: 2px solid black; display:block; width:100%; position:relative; }
+#songListing thead tr { border-bottom: 2px solid black; display:block; width:100%; }
+#songListing thead tr th{ font-size:16px; display:inline-block; width:24%; }
+
+/*Tbody Section */
+#songListing tbody { display:block; width:100%; height:450px; overflow:scroll; }
+#songListing tbody tr { border-bottom: 1px dashed black; display:block; width:100%;}
+#songListing tbody tr td{ font-size:16px; display:inline-block; width:24%; }
+
+/*Got advice from - https://codepen.io/tjvantoll/pen/JEKIu - for styling a scrolling table */
+
+.selectedRow { background-color:lightblue; }
+
+
+/*https://stackoverflow.com/questions/9620122/stop-html-text-being-highlighted*/
+/*This site suggested the following to prevent text from being highlighted*/
+#songListing *, #topSection {
+-webkit-touch-callout: none;
+-webkit-user-select: none;
+-khtml-user-select: none;
+-moz-user-select: none;
+-ms-user-select: none;
+-o-user-select: none;
+user-select: none;
+}
+button:focus { outline: none; }
