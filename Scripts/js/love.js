@@ -20,19 +20,25 @@ $(document).ready(function(){
 /*-------GET MUSIC-------*/
 
 	function getAlbumsJSON(){
-		$.get(path+"Scripts/js/albums.json")
+		// $.get(path+"Scripts/js/albums.json")
+		$.get(path+"Scripts/js/newALbums.json")
 			.done(function(resp){
 				// for (var y =0; y < resp.length * resp.length; y++){
-					for (var x =0; x < resp.length; x++){
-						buildList(resp[x]);
+					// for (var x =0; x < resp.length; x++){
+					for (var obj in resp){
+						// buildList(resp[x]);
+						buildList(resp[obj], obj);
+						
+
 					}
 				// }
 			});
 	}
 
-	function buildList(payload){
+	function buildList(payload, albumName){
 		for (var q = 0; q < payload.songs.length; q++){
 			var row = document.createElement("tr");
+
 			var td1 = document.createElement("td");
 			td1.appendChild(document.createTextNode(payload.songs[q].songName.substring(3)));
 			var td2 = document.createElement("td");
@@ -40,18 +46,21 @@ $(document).ready(function(){
 			// console.log("Minutes " + Math.floor(payload.songs[q].songLength / 60 ));
 			// console.log(":" + payload.songs[q].songLength % 60 );
 			var td3 = document.createElement("td");
-			td3.appendChild(document.createTextNode(payload.albumName));
+			// td3.appendChild(document.createTextNode(payload.albumName));
+			td3.appendChild(document.createTextNode(albumName));
 			var td4 = document.createElement("td");
-			td4.appendChild(document.createTextNode(payload.yearReleased));
+			td4.appendChild(document.createTextNode(payload.releaseYear));
 			row.appendChild(td1);
 			row.appendChild(td2);
 			row.appendChild(td3);
 			row.appendChild(td4);
 			// row.setAttribute("data-song", "/projects/sugarhead/music/"+payload.albumName+"/"+payload.songs[q].songName);
 			row.setAttribute("data-song-name", payload.songs[q].songName);
-			row.setAttribute("data-album-name", payload.albumName);
+			row.setAttribute("data-album-name", albumName);
 			row.setAttribute("class", "clickSong");
 			row.style.cursor = "pointer";
+
+
 			$("#songsList").append(row);
 		}
 		// musicControls();
@@ -283,8 +292,9 @@ $(document).ready(function(){
 		});
 		row.classList.add("selectedRow");
 		playingSong = row; 
-		// row.scrollIntoView();
 		setNextAndPrevSongs(row);
+		row.scrollIntoView({behavior:"smooth"});
+
 	}
 
 	function setCurrentTime(){
