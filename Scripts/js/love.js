@@ -21,7 +21,7 @@ $(document).ready(function(){
 
 	function getAlbumsJSON(){
 		// $.get(path+"Scripts/js/albums.json")
-		$.get(path+"Scripts/js/newALbums.json")
+		$.get(path+"Scripts/js/newAlbums.json")
 			.done(function(resp){
 				// for (var y =0; y < resp.length * resp.length; y++){
 					// for (var x =0; x < resp.length; x++){
