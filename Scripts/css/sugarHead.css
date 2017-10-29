@@ -4,16 +4,18 @@
 /*Thead Section*/
 #songListing thead { border-bottom: 2px solid black; display:block; width:100%; position:relative; }
 #songListing thead tr { border-bottom: 2px solid black; display:block; width:100%; }
-#songListing thead tr th{ font-size:16px; display:inline-block; width:24%; }
+#songListing thead tr th{ font-size:16px; display:inline-block; width:19%; }
 
 /*Tbody Section */
 #songListing tbody { display:block; width:100%; height:450px; overflow:scroll; }
 #songListing tbody tr { border-bottom: 1px dashed black; display:block; width:100%;}
-#songListing tbody tr td{ font-size:16px; display:inline-block; width:24%; }
+#songListing tbody tr td{ font-size:16px; display:inline-block; width:19%; }
 
 /*Got advice from - https://codepen.io/tjvantoll/pen/JEKIu - for styling a scrolling table */
 
 .selectedRow { background-color:lightblue; }
+
+.searchResult { cursor:pointer; }
 
 
 /*https://stackoverflow.com/questions/9620122/stop-html-text-being-highlighted*/

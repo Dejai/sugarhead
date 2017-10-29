@@ -71,7 +71,6 @@ $(document).ready(function(){
 /*-------CONTROLLERS & LISTENERS------*/
 
 	function loadAndPlaySong(row){
-
 		var songName = row.dataset.songName;
 		var albumName = row.dataset.albumName;
 		$("#songName").empty().text(songName.substring(3));	
@@ -93,7 +92,8 @@ $(document).ready(function(){
 			document.getElementById('range2').style.display = "inline-block";
 			document.getElementById('range2').value = "0";
 			document.getElementById('range2').max = parseInt(currentAudio.duration, 10);
-			rangeColor(document.getElementById('range2'));
+			
+			// rangeColor(document.getElementById('range2'));
 
 			var duration = convertToPlayTime(currentAudio.duration);
 			$("#durationTime").text(duration);
@@ -211,12 +211,16 @@ $(document).ready(function(){
 			audioControls(action);
 		});
 
+		document.getElementById("range2").addEventListener("mousedown", function(){
+			audioControls("pause");
+		});
 		document.getElementById("range2").addEventListener("click", function(){
-			console.log(this.value);
 			var selectedTime = this.value; 
 			currentAudio.currentTime = selectedTime;
 			setScrollLength();
 			setCurrentTime();
+			audioControls("play");
+
 		});
 
 		$(document).unbind("keydown");
@@ -257,18 +261,19 @@ $(document).ready(function(){
 	   	$("#searchBox").keypress(function(event){
 	        var searchText = $(this).val();
 	        if (event.which == 13){
+	        	// $("#resultBox").show();
 	        	if (searchText < 1){
-	        		alert("At least one char");
+	        		// alert("At least one char");
 	        		// $("#searchError").show();
 	        	} else {
+	        		// $("#resultBox").append("<p>"+searchText+"</p>");
 	        		musicSearch(searchText);
-	        		// alert(searchText);
-	        		// getAccountDetails(searchText);
-	        		$(this).blur();
+	        	// 	// alert(searchText);
+	        	// 	// getAccountDetails(searchText);
+	        	// 	$(this).blur();
 	        	}
 	        }
 	   	 });
-
 	}
 
 
@@ -286,7 +291,7 @@ $(document).ready(function(){
 		return playTime;
 	}
 
-	function highlightCurrentSong(row, scroll){
+	function highlightCurrentSong(row){
 		$(".selectedRow").each(function(){
 			$(this).removeClass("selectedRow");
 		});
@@ -345,18 +350,27 @@ $(document).ready(function(){
 
 	function musicSearch(value){
 	    $("#resultBox").show();
+	    $("#songsResults").empty().append("<tr><td>Songs</td></tr>");
+	    $("#albumsResults").empty().append("<tr><td>Albums</td></tr>");
 
 		var songz = document.getElementById("songsList").children;
 
+		var albumsResults = [];
+
 		for (var x = 0; x < songz.length; x++){
-			var songName = songz[x].dataset.songName;
+			var songName = songz[x].dataset.songName.substring(2);
 			var albumName = songz[x].dataset.albumName;
 
 			var includesName = songName.toLowerCase().includes(value.toLowerCase());
 			var includesAlbum = albumName.toLowerCase().includes(value.toLowerCase());
 
-			if (includesName || includesAlbum){
-				console.log(songz[x]);
+			if (includesName){
+			    $("#songsResults").append("<tr><td class='searchResult'>" + songName + "</td></tr>");
+			}
+
+			if (includesAlbum && albumsResults.indexOf(albumName) < 0){
+				albumsResults.push(albumName);
+			    $("#albumsResults").append("<tr><td class='searchResult'>" + albumName + "</td></tr>");
 			}
 		}
 	}
