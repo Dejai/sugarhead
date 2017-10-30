@@ -4,12 +4,23 @@
 /*Thead Section*/
 #songListing thead { border-bottom: 2px solid black; display:block; width:100%; position:relative; }
 #songListing thead tr { border-bottom: 2px solid black; display:block; width:100%; }
-#songListing thead tr th{ font-size:16px; display:inline-block; width:19%; }
+/*#songListing thead tr th{ font-size:16px; display:inline-block; width:19%; }*/
+.songColumns {  width:19%; }
+.inlineHeader { font-size:16px; display:inline-block; }
+.firstColumn {  width:5%; text-align:center; }
 
 /*Tbody Section */
 #songListing tbody { display:block; width:100%; height:450px; overflow:scroll; }
 #songListing tbody tr { border-bottom: 1px dashed black; display:block; width:100%;}
-#songListing tbody tr td{ font-size:16px; display:inline-block; width:19%; }
+#songListing tbody tr td.songColumns{ font-size:16px; display:inline-block; width:19%; }
+
+tr:hover { background-color: lightgray; }
+
+[data-song-selected="true"] { background-color: lightblue;  }
+
+#songListing-z { 
+	transition: opacity ease-in 0.3s;
+ }
 
 /*Got advice from - https://codepen.io/tjvantoll/pen/JEKIu - for styling a scrolling table */
 

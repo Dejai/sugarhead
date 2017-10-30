@@ -7,3 +7,6 @@ https://stackoverflow.com/questions/22180953/why-is-jquery-click-event-firing-mu
 I was inspired by Federico Ghedina: https://jsfiddle.net/fedeghe/smjje829/
 I essentially leveraged the width calculating portion of his function, along with most of the CSS (may rework later); 
 
+
+This one helped me figure out how to determine when the last row has been loaded. I added the function to check for the last element in the songRow directive
+https://stackoverflow.com/questions/13471129/ng-repeat-finish-event

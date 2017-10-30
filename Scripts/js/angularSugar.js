@@ -12,174 +12,193 @@ var highlightSong = '';
 
 /* AngularJS App & Controller */
 
-var app = angular.module("sugarApp", []);
+var app = angular.module("sugarApp", ["ngAnimate"]);
 
 app.controller("sugarCtrl", function($scope, $http, $interval, musicPlayer){
-$http.get("/sugarhead/Scripts/js/newAlbums.json")
-		.then(function(response){
-			$scope.albums = response.data;
-			$scope.getTheSongs();
-		});
+	// $http.get("/sugarhead/Scripts/js/newAlbums.json")
 
-$scope.theSongs = [];
-// This function converts the object of albums into individual objects for each song
-// Ideally, the data would come packaged this way --- I'll consider working on that. 
-$scope.getTheSongs = function(){
-	var obj = {};
-	for (var album in $scope.albums){
-		for (var y in $scope.albums[album].songs){
-			var obj = {};
-			obj["trackName"] = $scope.albums[album].songs[y].songName;
-			obj["songName"] = $scope.albums[album].songs[y].songName.substring(2);
-			obj["songLength"] = $scope.albums[album].songs[y].songLength;
-			obj["songOrder"] = $scope.albums[album].songs[y].order;
-			obj["songAlbum"] = album;
-			obj["songReleaseYear"] = $scope.albums[album].releaseYear;
-			obj["highlighted"] = false;
-			$scope.theSongs.push(obj);
-		}
-	}
-}
+	$scope.theSongs = [];
 
-$scope.initialLimit = 100;
-$scope.filterBy = '';
-// A custom filter that determines whether a row matches the given search values
-// Compares the song name as well as the song album and determins what to show
-	
-$scope.filterFunc = function(song){
-	var highlite = song.songAlbum+"-"+song.trackName;
-	if (highlite == highlightSong){
-		// console.log(highlite + " == " + highlightSong + " ? " + (highlite == highlightSong));
-		song.highlighted = true;
-		musicPlayer.viewSelected();
-	} else {
-		song.highlighted = false;
-	}
+	$http.get("/sugarhead/Scripts/js/newestAlbum.json")
+			.then(function(response){
+				// $scope.albums = response.data;
+				// $scope.getTheSongs();
+				$scope.theSongs = response.data;
+			});
 
-	if (!$scope.filterBy){ 
-		$scope.checkAlbums();
-		return true;
-	} else if (	song.songName.toLowerCase().includes($scope.filterBy.toLowerCase()) 
-				|| 	song.songAlbum.toLowerCase().includes($scope.filterBy.toLowerCase())
-				|| song.songReleaseYear.toLowerCase().includes($scope.filterBy.toLowerCase()))
-	{	
-		$scope.checkAlbums();
-		return true;
-	} else {
-		return false;
-	}
-}
-
-$scope.sortValue = 'songAlbum';	$scope.sortReverse = false;
-// This function determines which column to sort the data by. 
-// It also takes into consideration whether or not to sort it in reverse
-$scope.setSort = function(x){
-	$scope.sortReverse = ($scope.sortValue == x && !$scope.sortReverse) ? true : false;
-	$scope.sortValue = x;
-};
-
-$scope.rowClick = function(event){
-	// console.log(event.srcElement.parentNode.dataset.albumName + " - " + event.srcElement.parentNode.dataset.trackName);
-	var row = event.srcElement.parentNode;
-	var albumName = event.srcElement.parentNode.dataset.albumName;
-	var trackName = event.srcElement.parentNode.dataset.trackName;
-	musicPlayer.loadAndPlaySong(row);
-}
-
-$scope.allOneAlbum = false;
-// This function is a supplementary checking function to the filter;
-// It confirms whether or not the current list of songs are all from one album
-// And if they are , then set the boolean for this case to true; This controls the visibility of the column of album orders
-$scope.checkAlbums = function(){
-	var children = document.getElementById("songsList").children
-	if (children.length > 0){
-		var firstAlbum = document.getElementById("songsList").children[0].dataset.albumName;
-		var count = 0;
-		for (var x = 0; x < children.length; x++){
-			if (children[x].dataset.albumName != firstAlbum){
-				$scope.allOneAlbum = false;
-				break;
-			} else {
-				count++;
+	// This function converts the object of albums into individual objects for each song
+	// Ideally, the data would come packaged this way --- I'll consider working on that. 
+	$scope.getTheSongs = function(){
+		var obj = {};
+		for (var album in $scope.albums){
+			for (var y in $scope.albums[album].songs){
+				var obj = {};
+				obj["trackName"] = $scope.albums[album].songs[y].songName;
+				obj["songName"] = $scope.albums[album].songs[y].songName.substring(2);
+				obj["songLength"] = $scope.albums[album].songs[y].songLength;
+				obj["songOrder"] = $scope.albums[album].songs[y].order;
+				obj["songAlbum"] = album;
+				obj["songReleaseYear"] = $scope.albums[album].releaseYear;
+				obj["highlighted"] = false;
+				$scope.theSongs.push(obj);
 			}
 		}
-		if (count == children.length){
-			$scope.allOneAlbum = true;
-		}
-	} else {
-		$scope.allOneAlbum = false;
 	}
-	
-}
+
+	$scope.initialLimit = 100;
+	$scope.filterBy = '';
+	// A custom filter that determines whether a row matches the given search values
+	// Compares the song name as well as the song album and determins what to show
+	$scope.filterFunc = function(song){
+		var highlite = song.songAlbum+"-"+song.trackName;
+		if (highlite == highlightSong){
+			song.highlighted = true;
+			// musicPlayer.viewSelected();
+		} else {
+			song.highlighted = false;
+		}
+
+		if (!$scope.filterBy){ 
+			$scope.checkAlbums();
+			return true;
+		} else if (	song.songName.toLowerCase().includes($scope.filterBy.toLowerCase()) 
+					|| 	song.songAlbum.toLowerCase().includes($scope.filterBy.toLowerCase())
+					|| song.songReleaseYear.toLowerCase().includes($scope.filterBy.toLowerCase()))
+		{	
+			$scope.checkAlbums();
+			return true;
+		} else {
+			$scope.checkAlbums();
+			return false;
+		}
+	}
+
+	$scope.sortValue = 'songAlbum';	$scope.sortReverse = false;
+	// This function determines which column to sort the data by. 
+	// It also takes into consideration whether or not to sort it in reverse
+	$scope.setSort = function(x){
+		$scope.sortReverse = ($scope.sortValue == x && !$scope.sortReverse) ? true : false;
+		$scope.sortValue = x;
+	}
+
+	$scope.rowClick = function(event){
+		// console.log(event.srcElement.parentNode.dataset.albumName + " - " + event.srcElement.parentNode.dataset.trackName);
+		var row = event.srcElement.parentNode;
+		var albumName = event.srcElement.parentNode.dataset.albumName;
+		var trackName = event.srcElement.parentNode.dataset.trackName;
+		musicPlayer.loadAndPlaySong(row);
+	}
+
+	$scope.allOneAlbum = false;
+	// This function is a supplementary checking function to the filter;
+	// It confirms whether or not the current list of songs are all from one album
+	// And if they are , then set the boolean for this case to true; This controls the visibility of the column of album orders
+	$scope.checkAlbums = function(){
+		var children = document.getElementById("songsList").children
+		// var children2 = document.getElementsByClassName("aSong")
+		$scope.results = children.length;
+
+		if (children.length > 0){
+			var firstAlbum = children[0].dataset.albumName;
+			var count = 0;
+			for (var x = 0; x < children.length; x++){
+				if (children[x].dataset.albumName != firstAlbum){
+					$scope.allOneAlbum = false;
+					break;
+				} else {
+					count++;
+				}
+			}
+			if (count >= children.length-1){
+				$scope.allOneAlbum = true;
+			}
+		} else {
+			$scope.allOneAlbum = false;
+		}
+	}
 
 
-$scope.audioControl = function(event){
-	switch(event){
-		case "play":
-			musicPlayer.playSong();
-			break;
-		case "pause":
-			musicPlayer.pauseSong();
-			break;
-		case "next":
+	$scope.audioControl = function(event){
+		switch(event){
+			case "play":
+				musicPlayer.playSong();
+				break;
+			case "pause":
+				musicPlayer.pauseSong();
+				break;
+			case "next":
+				musicPlayer.changeSong("next");
+				break;
+			case "prev":
+				musicPlayer.changeSong("prev");
+				break;
+			case "shuffle":
+				musicPlayer.shuffle();
+				break;
+			case "repeat":
+				musicPlayer.repeat();
+				break;
+			case "preScroll":
+				psuedoPaused = true;
+				break;
+			case "scroll":
+				$scope.currentTime = document.getElementById("range2").value;
+				var valu = parseInt((document.getElementById("range2").value), 10);
+				musicPlayer.setScrollLength(valu);
+				break;
+			case "postScroll":
+				currentAudio.currentTime = document.getElementById("range2").value;
+				psuedoPaused = false;
+				break;
+			default:
+				musicPlayer.pauseSong();
+		}
+	}
+
+	$scope.setDuration = function(){
+		$scope.duration = currentAudio.duration;
+		// Just after setting the duration, I hadd a listener for when the song ends, so it knows to change to the next song.
+		currentAudio.addEventListener("ended", function(){
 			musicPlayer.changeSong("next");
-			break;
-		case "prev":
-			musicPlayer.changeSong("prev");
-			break;
-		case "shuffle":
-			musicPlayer.shuffle();
-			break;
-		case "repeat":
-			musicPlayer.repeat();
-			break;
-		case "preScroll":
-			psuedoPaused = true;
-			break;
-		case "scroll":
-			$scope.currentTime = document.getElementById("range2").value;
-			var valu = parseInt((document.getElementById("range2").value), 10);
-			musicPlayer.setScrollLength(valu);
-			break;
-		case "postScroll":
-			currentAudio.currentTime = document.getElementById("range2").value;
-			psuedoPaused = false;
-			break;
-		default:
-			musicPlayer.pauseSong();
+		});
 	}
-}
+	$scope.setCurrentTime = function(){
+		$scope.currentTime = 0;
+		musicPlayer.setScrollLength(0);
+		$interval(function(){
+			// I added a pseudoPaused variable here that stops this loop from adjusting the scroll bar if a user is currently changing it
+			// This allows a user to smoothly scroll that bar without hindering the song, or without being annoyed by the fact that the scroll would re-adjust itself
+			if(!currentAudio.paused && !psuedoPaused){
+				$scope.currentTime = currentAudio.currentTime;
+				var valu = parseInt((currentAudio.currentTime+1), 10);
+				musicPlayer.setScrollLength(valu);
+			}
+		}, 1000);
+	}
 
-$scope.setDuration = function(){
-	$scope.duration = currentAudio.duration;
-	// Just after setting the duration, I hadd a listener for when the song ends, so it knows to change to the next song.
-	currentAudio.addEventListener("ended", function(){
-		musicPlayer.changeSong("next");
-	});
-}
-$scope.setCurrentTime = function(){
-	$scope.currentTime = 0;
-	musicPlayer.setScrollLength(0);
-	$interval(function(){
-		// I added a pseudoPaused variable here that stops this loop from adjusting the scroll bar if a user is currently changing it
-		// This allows a user to smoothly scroll that bar without hindering the song, or without being annoyed by the fact that the scroll would re-adjust itself
-		if(!currentAudio.paused && !psuedoPaused){
-			$scope.currentTime = currentAudio.currentTime;
-			var valu = parseInt((currentAudio.currentTime+1), 10);
-			musicPlayer.setScrollLength(valu);
-		}
-	}, 1000);
-}
-
-});
+} );
 
 
 app.directive("songRow", function(){
 	return {
 		restrict: "EAC",
+		link : function(scope, element, attr){
+			if(scope.$last){
+				document.getElementById("songListing-z").style.visibility = "visible";
+				document.getElementById("songListing-z").style.opacity =  1;
+			}
+		},
 		templateUrl: "/sugarhead/Views/songsListing.html"
 	};
 });
+
+// app.directive("lastElement", function(){
+// 	return function(scope, element, attrs){
+// 		if (scope.$last){
+// 			window.alert("Last has been loaded");
+// 		}
+// 	};
+// });
 
 app.service("musicPlayer", function(){
 	// This is the KEY function that determines what song to load (which has an autoplay associated with it)
@@ -199,7 +218,8 @@ app.service("musicPlayer", function(){
 			playVsPause("play");
 			songSelected = true;
 			setTimes();
-			showSongAndScroll(trackName.substring(2).trim());
+			showSongAndScroll(trackName.substring(2).trim());	
+			viewSelected();	
 		}			
 	}
 
@@ -283,12 +303,7 @@ app.service("musicPlayer", function(){
 		repeatButton.style.color = repeatSong ? "initial" : "limegreen";
 		repeatSong = !repeatSong;
 	}
-	// This controls the scrolling of the song into view if it is not
-	this.viewSelected = function(){
-		if (document.querySelectorAll("[data-song-selected='true']").length > 0 ){
-			document.querySelectorAll("[data-song-selected='true']")[0].scrollIntoView({behavior:"smooth"});
-		}
-	}
+	
 	// This dynamically sets the scroll position and the related "fill-in" of where the song is
 	this.setScrollLength = function(value){
 		var input = document.getElementById('range2');
@@ -303,6 +318,14 @@ app.service("musicPlayer", function(){
 
 
 	/*STATIC METHODS */
+
+	// This controls the scrolling of the song into view if it is not
+	var viewSelected = function(){
+		if (document.querySelectorAll("[data-song-selected='true']").length > 0 ){
+			document.querySelectorAll("[data-song-selected='true']")[0].scrollIntoView({behavior:"smooth"});
+		}
+	}
+	
 	// This triggers the $scope based functions to set the song duration and the start the song interval call
 	var setTimes = function(){
 		document.getElementById("durationTime").click();
@@ -340,23 +363,23 @@ app.service("musicPlayer", function(){
 		// setNextAndPrevSongs(row);
 		row.scrollIntoView({behavior:"smooth"});
 	}
-})
+});
 
 
 
 app.filter("songTime", function(){
-return function(value){
-	var min, secs, playTime; 
-	min = Math.floor(value / 60);
-	secs = Math.round(value % 60);
-	if (secs < 10){
-		secs = "0" + secs;
+	return function(value){
+		var min, secs, playTime; 
+		min = Math.floor(value / 60);
+		secs = Math.round(value % 60);
+		if (secs < 10){
+			secs = "0" + secs;
+		}
+		playTime = min + ":" + secs;
+		if (playTime.includes("NaN")){
+			return "0:00";
+		} else {	
+			return playTime
+		}
 	}
-	playTime = min + ":" + secs;
-	if (playTime.includes("NaN")){
-		return "0:00";
-	} else {	
-		return playTime
-	}
-}
 });
