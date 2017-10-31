@@ -117,6 +117,10 @@ app.controller("sugarCtrl", function($scope, $http, $interval, musicPlayer){
 		}
 	}
 
+	$scope.findCurrentSong = function(){
+		musicPlayer.findCurrentSong();
+	}
+
 
 	$scope.audioControl = function(event){
 		switch(event){
@@ -314,6 +318,10 @@ app.service("musicPlayer", function(){
 		var w = parseInt(input.clientWidth, 10);
 		var t = ~~(w * (parseInt(input.value, 10) - min) / range);
 		document.getElementById("preBar").style.width = t + "px";
+	}
+
+	this.findCurrentSong = function(){
+		viewSelected();
 	}
 
 

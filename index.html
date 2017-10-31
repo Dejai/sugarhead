@@ -1,5 +1,7 @@
 <!DOCTYPE html>
 <head>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<!-- Latest compiled and minified CSS -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 	<!-- jQuery library -->
@@ -30,7 +32,7 @@
 	 		<span id="shuffleButton" class="glyphicon glyphicon-random audioController" style="cursor:pointer;color:gray;font-size:22px;" data-shuffle-status="OFF" data-audio-action="shuffle" ng-click="audioControl('shuffle')"></span>
 		</div>
 		<div style="width:35%;display:inline-block; text-align:center;">
-			<h4 id="songName"></h4>
+			<h4 id="songName" ng-click="findCurrentSong()" style="cursor:pointer;"></h4>
 			<div id="songScrollContainer" style="display:none;" >
 		 		<div id="barCnt" class="barCnt" style="margin-bottom:10px;">
 			 		<input ng-model="currentScrollPosition" type="range" min=0 max=100 value=0 step=1 id="range2" class="colorized" ng-click="audioControl('scroll')" ng-mousedown="audioControl('preScroll')" ng-change="audioControl('scroll')" ng-mouseup="audioControl('postScroll')"/>
