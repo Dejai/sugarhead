@@ -19,7 +19,8 @@ app.controller("sugarCtrl", function($scope, $http, $interval, musicPlayer){
 
 	$scope.theSongs = [];
 
-	$http.get("/sugarhead/Scripts/js/newestAlbum.json")
+	// $http.get("/sugarhead/scripts/js/newestAlbum.json")
+	$http.get("/sugarhead/scripts/js/songsJSON.json")
 			.then(function(response){
 				// $scope.albums = response.data;
 				// $scope.getTheSongs();
@@ -28,22 +29,22 @@ app.controller("sugarCtrl", function($scope, $http, $interval, musicPlayer){
 
 	// This function converts the object of albums into individual objects for each song
 	// Ideally, the data would come packaged this way --- I'll consider working on that. 
-	$scope.getTheSongs = function(){
-		var obj = {};
-		for (var album in $scope.albums){
-			for (var y in $scope.albums[album].songs){
-				var obj = {};
-				obj["trackName"] = $scope.albums[album].songs[y].songName;
-				obj["songName"] = $scope.albums[album].songs[y].songName.substring(2);
-				obj["songLength"] = $scope.albums[album].songs[y].songLength;
-				obj["songOrder"] = $scope.albums[album].songs[y].order;
-				obj["songAlbum"] = album;
-				obj["songReleaseYear"] = $scope.albums[album].releaseYear;
-				obj["highlighted"] = false;
-				$scope.theSongs.push(obj);
-			}
-		}
-	}
+	// $scope.getTheSongs = function(){
+	// 	var obj = {};
+	// 	for (var album in $scope.albums){
+	// 		for (var y in $scope.albums[album].songs){
+	// 			var obj = {};
+	// 			obj["trackName"] = $scope.albums[album].songs[y].songName;
+	// 			obj["songName"] = $scope.albums[album].songs[y].songName.substring(2);
+	// 			obj["songLength"] = $scope.albums[album].songs[y].songLength;
+	// 			obj["songOrder"] = $scope.albums[album].songs[y].order;
+	// 			obj["songAlbum"] = album;
+	// 			obj["songReleaseYear"] = $scope.albums[album].releaseYear;
+	// 			obj["highlighted"] = false;
+	// 			$scope.theSongs.push(obj);
+	// 		}
+	// 	}
+	// }
 
 	$scope.initialLimit = 100;
 	$scope.filterBy = '';
@@ -188,21 +189,15 @@ app.directive("songRow", function(){
 		restrict: "EAC",
 		link : function(scope, element, attr){
 			if(scope.$last){
-				document.getElementById("songListing-z").style.visibility = "visible";
-				document.getElementById("songListing-z").style.opacity =  1;
+				document.getElementById("ngApp").style.visibility = "visible";
+				document.getElementById("ngApp").style.opacity =  1;
 			}
 		},
-		templateUrl: "/sugarhead/Views/songsListing.html"
+		templateUrl: "/sugarhead/views/songsListing.html"
 	};
 });
 
-// app.directive("lastElement", function(){
-// 	return function(scope, element, attrs){
-// 		if (scope.$last){
-// 			window.alert("Last has been loaded");
-// 		}
-// 	};
-// });
+
 
 app.service("musicPlayer", function(){
 	// This is the KEY function that determines what song to load (which has an autoplay associated with it)
@@ -211,18 +206,18 @@ app.service("musicPlayer", function(){
 		var albumName = row.dataset.albumName;
 		var trackName = row.dataset.trackName;
 		highlightSong = albumName+"-"+trackName;
-		var src = path + "music/" + albumName + "/" + trackName + ".mp3";
-		var src2 = path + "music/" + albumName + "/" + trackName + ".m4a";
+		var src = path + "music/" + albumName + "/" + trackName;
+		// var src2 = path + "music/" + albumName + "/" + trackName;
 		src = decodeURIComponent(src);
-		src2 = decodeURIComponent(src2);
+		// src2 = decodeURIComponent(src2);
 		currentSong_mp3.src = src;
-		currentSong_mp4.src = src2;
+		currentSong_mp4.src = src;
 		currentAudio.load();
 		currentAudio.onloadeddata = function(){
 			playVsPause("play");
 			songSelected = true;
 			setTimes();
-			showSongAndScroll(trackName.substring(2).trim());	
+			showSongAndScroll(trackName.substring(2).replace(/.mp3/g, '').replace(/.m4a/g, '').trim());	
 			viewSelected();	
 		}			
 	}
@@ -351,7 +346,11 @@ app.service("musicPlayer", function(){
 	var playVsPause = function(status){
 		if (status == "play"){
 			document.getElementById("playButton").style.display = "none";
-			document.getElementById("pauseButton").style.display = "inline";
+			var pauseButton = document.getElementById("pauseButton");
+			if (pauseButton.classList.contains("hidden")){
+				pauseButton.classList.remove("hidden");
+			}
+			pauseButton.style.display = "inline";
 		} else {
 			document.getElementById("playButton").style.display = "inline";
 			document.getElementById("pauseButton").style.display = "none";

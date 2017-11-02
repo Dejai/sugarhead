@@ -17,67 +17,76 @@
 	<link rel="stylesheet" type="text/css" href="/sugarhead/Scripts/css/sugarHead.css">
 
 </head>
-<body ng-app="sugarApp" ng-controller="sugarCtrl" id="songListing-z" style="visibility:hidden;opacity:0;">
-	<div id="topSection" style="padding-left:1%;margin-bottom:20px; width:100%;"></div>
-	<!-- <div style="width:30%; text-align:center; float:left; background-color;"> -->
-	<div style="width:100%; text-align:left; background-color; padding-left:2%; padding-top:1%;">
-		<div id="playControlOptions" style="text-align:center;width:25%;display:inline-block;">
-	 		<span id="repeatButton" class="glyphicon glyphicon-repeat audioController" style="cursor:pointer;color:gray;font-size:22px;" data-repeat-status="OFF" data-audio-action="repeat" ng-click="audioControl('repeat')"></span>
-	 		</span>	
-			<span id="prevSongButton" class="glyphicon glyphicon-backward audioController" style="font-size:22px;color:black;max-height:inherit;cursor:pointer;" data-audio-action="prev" ng-click="audioControl('prev')"></span>
-			<span id="playButton" class="glyphicon glyphicon-play audioController" style=" font-size:22px; color:black;max-height:inherit;cursor:pointer;" data-audio-action="play" ng-click="audioControl('play')"></span>	
-			<span id="pauseButton" class="glyphicon glyphicon-pause audioController" style="display:none; font-size:22px; color:black;max-height:inherit;cursor:pointer;" data-audio-action="pause" ng-click="audioControl('pause')"></span>	
-			<span id="nextSongButton" class="glyphicon glyphicon-forward audioController" style=" font-size:22px; color:black;max-height:inherit;cursor:pointer;"
-			data-audio-action="next" ng-click="audioControl('next') "></span>
-	 		<span id="shuffleButton" class="glyphicon glyphicon-random audioController" style="cursor:pointer;color:gray;font-size:22px;" data-shuffle-status="OFF" data-audio-action="shuffle" ng-click="audioControl('shuffle')"></span>
+<body ng-app="sugarApp" ng-controller="sugarCtrl" id="ngApp" style="visibility:hidden;opacity:0;">
+	
+	<div id="topSection">
+		<div class="topSubSection middleCenter">
+	 		<span id="repeatButton" class="glyphicon glyphicon-repeat audioController songOrderControllers" ng-click="audioControl('repeat')">
+	 		</span>
+
+			<span id="prevSongButton" class="glyphicon glyphicon-backward audioController songPlayingController" ng-click="audioControl('prev')">
+			</span>
+
+			<span id="playButton" class="glyphicon glyphicon-play audioController songPlayingController" ng-click="audioControl('play')">
+			</span>
+
+			<span id="pauseButton" class="glyphicon glyphicon-pause audioController songPlayingController hidden" ng-click="audioControl('pause')">
+			</span>	
+			
+			<span id="nextSongButton" class="glyphicon glyphicon-forward audioController songPlayingController" ng-click="audioControl('next') ">
+			</span>
+	 		
+	 		<span id="shuffleButton" class="glyphicon glyphicon-random audioController songOrderControllers" ng-click="audioControl('shuffle')">
+	 		</span>
 		</div>
-		<div style="width:35%;display:inline-block; text-align:center;">
-			<h4 id="songName" ng-click="findCurrentSong()" style="cursor:pointer;"></h4>
-			<div id="songScrollContainer" style="display:none;" >
-		 		<div id="barCnt" class="barCnt" style="margin-bottom:10px;">
-			 		<input ng-model="currentScrollPosition" type="range" min=0 max=100 value=0 step=1 id="range2" class="colorized" ng-click="audioControl('scroll')" ng-mousedown="audioControl('preScroll')" ng-change="audioControl('scroll')" ng-mouseup="audioControl('postScroll')"/>
-		 			<p id="preBar" class="preBar"></p>
-		 		</div>
-				<span id="currentTime" style="float:left;" ng-click="setCurrentTime()">{{currentTime | songTime }}</span>
-				<span id="durationTime" style="float:right;" ng-click="setDuration()">{{duration | songTime }}</span>
-			</div>
+		<div class="topSubSection middleCenter">
+			<div style="width:100%;">
+				<h4 id="songName" ng-click="findCurrentSong()"></h4>
+				<div id="songScrollContainer" style="display:none;" >
+			 		<div id="barCnt" class="barCnt" style="margin-bottom:10px;">
+				 		<input ng-model="currentScrollPosition" type="range" min=0 max=100 value=0 step=1 id="range2" class="colorized" ng-click="audioControl('scroll')" ng-mousedown="audioControl('preScroll')" ng-change="audioControl('scroll')" ng-mouseup="audioControl('postScroll')"/>
+			 			<p id="preBar" class="preBar"></p>
+			 		</div>
+					<span id="currentTime" ng-click="setCurrentTime()">{{currentTime | songTime }}</span>
+					<span id="durationTime" ng-click="setDuration()">{{duration | songTime }}</span>
+				</div>
+				</div>
 		</div>
-		<div style="display:inline-block;text-align:center;padding-left:5%;">
-			<span class="glyphicon glyphicon-search" style="color:gray;max-height:inherit;" contenteditable="false"></span>		
-			<!-- <span  style="cursor:pointer;padding-bottom:0.5%"></span> -->
-				<input id="searchBox" type="text" name="search" placeholder="Search for song, album or year" style="color:gray;border:none; border-bottom:1px solid gray;padding-bottom:0.5%; width:200px;" ng-model="filterBy"/>	
-			<!-- </span> -->
-			<span class="glyphicon glyphicon-remove" style="cursor:pointer;" ng-show="filterBy" ng-click="filterBy = ''"></span>
-		</div>		
+		<div class="topSubSection middleCenter">
+			<span class="glyphicon glyphicon-search searchIcon" contenteditable="false"></span>		
+			<input id="searchBox" type="text" name="search" placeholder="Search for song, album or year" style="" ng-model="filterBy"/>	
+			<span id="resetSearch" class="glyphicon glyphicon-remove searchIcon" ng-show="filterBy" ng-click="filterBy = '' "></span>
+		</div>	
 	</div>
-	<div style="width:90%;float:left;cursor:pointer; padding-left:2%;padding-top:1%;">
+
+	<div id="songSection">
 		<table id="songListing">
  			<thead>
 	 			<tr>
-	 				<th class="firstColumn inlineHeader" data-ng-click="setSort('songOrder')" >
+	 				<th data-ng-click="setSort('songOrder')" > 
+	 					&nbsp;
 	 					<span ng-show="allOneAlbum" class="ng-hide">
-	 						&nbsp;
 	 						<span class="glyphicon glyphicon-triangle-top" ng-show=" sortValue == 'songOrder' && !sortReverse "></span>
 	 						<span class="glyphicon glyphicon-triangle-bottom" ng-show=" sortValue == 'songOrder' && sortReverse "></span>
 	 					</span>
 	 					
 	 				</th>
-	 				<th class="songColumns inlineHeader" data-ng-click="setSort('songName')">
+	 				<th data-ng-click="setSort('songName')">
 	 					Title
 	 					<span class="glyphicon glyphicon-triangle-top" ng-show=" sortValue == 'songName' && !sortReverse "></span>
 	 					<span class="glyphicon glyphicon-triangle-bottom" ng-show=" sortValue == 'songName' && sortReverse "></span>
 	 				</th>
-	 				<th class="songColumns inlineHeader" data-ng-click="setSort('songLength')">
+	 				<th data-ng-click="setSort('songLength')">
 	 					Length
 						<span class="glyphicon glyphicon-triangle-top" ng-show=" sortValue == 'songLength' && !sortReverse "></span>
 	 					<span class="glyphicon glyphicon-triangle-bottom" ng-show=" sortValue == 'songLength' && sortReverse "></span>
 	 				</th>
-	 				<th class="songColumns inlineHeader" data-ng-click="setSort('songAlbum')">
+	 				<th data-ng-click="setSort('songAlbum')">
 	 					Album
 		 				<span class="glyphicon glyphicon-triangle-top" ng-show=" sortValue == 'songAlbum' && !sortReverse "></span>
 	 					<span class="glyphicon glyphicon-triangle-bottom" ng-show=" sortValue == 'songAlbum' && sortReverse "></span>
 	 				</th>
-	 				<th class="songColumns inlineHeader" data-ng-click="setSort('songReleaseYear')">
+	 				<th data-ng-click="setSort('songReleaseYear')">
 	 					Year
 	 					<span class="glyphicon glyphicon-triangle-top" ng-show=" sortValue == 'songReleaseYear' && !sortReverse "></span>
 	 					<span class="glyphicon glyphicon-triangle-bottom" ng-show=" sortValue == 'songReleaseYear' && sortReverse "></span>
@@ -87,19 +96,14 @@
 	 		<tbody id="songsList">
 	 			<tr class="aSong show-delay animate-repeat" ng-repeat="song in theSongs | filter: filterFunc | orderBy:sortValue:sortReverse" ng-dblclick="rowClick($event)" data-track-name="{{song.trackName}}" data-album-name="{{song.songAlbum}}" data-song-selected="{{song.highlighted}}" song-row>
 	 			</tr>
-	 			<tr ng-show="results == 1" class="ng-hide">
-	 				<td colspan='4'>
-	 					<h3>No Results Found</h3>
+	 			<tr ng-show="results == 1" class="ng-hide" style="text-align:center;">
+	 				<td colspan='4' style="text-align:center; width:100%; padding:1%">
+	 					<h4>No Results Found</h4>
 	 				</td>
 	 			</tr>
 	 		</tbody>
 	 	</table>
 	</div>
-<br style="clear:both;"/>
-<div id="json">
-	
-</div>
-
 <div id="songRes" style="width:1px; height:1px;">
 	<audio id="currentAudio" style="width:1px; height:1px;" autoplay>
 	<source id="currentSong_mp3" type="audio/mpeg">
@@ -107,10 +111,7 @@
 	</audio>
 </div>
 
-	<script type="text/javascript" src="/sugarhead/Scripts/js/angularSugar.js"></script>
+<script type="text/javascript" src="/sugarhead/Scripts/js/angularSugar.js"></script>
 
- 	<!-- <script type="text/javascript" src="/sugarhead/Scripts/js/sugarHead.js"></script> -->
- 	<!-- <script type="text/javascript" src="/sugarhead/Scripts/js/love.js"></script> -->
- 	<!-- <script type="text/javascript" src="/sugarhead/Scripts/js/angularSugar.js"></script> -->
 </body>
 </html>

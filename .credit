@@ -10,3 +10,11 @@ I essentially leveraged the width calculating portion of his function, along wit
 
 This one helped me figure out how to determine when the last row has been loaded. I added the function to check for the last element in the songRow directive
 https://stackoverflow.com/questions/13471129/ng-repeat-finish-event
+
+
+Got help from this when it comes to styling a table: 
+https://codepen.io/tjvantoll/pen/JEKIu - for styling a scrolling table
+
+
+/*https://stackoverflow.com/questions/9620122/stop-html-text-being-highlighted*/
+/*This site suggested the following to prevent text from being highlighted*/
