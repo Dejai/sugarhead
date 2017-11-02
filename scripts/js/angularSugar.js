@@ -212,13 +212,14 @@ app.service("musicPlayer", function(){
 		// src2 = decodeURIComponent(src2);
 		currentSong_mp3.src = src;
 		currentSong_mp4.src = src;
+		document.getElementById("songName").innerHTML = trackName.substring(2).replace(/.mp3/g, '').replace(/.m4a/g, '').trim();
 		currentAudio.load();
 		currentAudio.onloadeddata = function(){
 			playVsPause("play");
 			songSelected = true;
-			setTimes();
 			showSongAndScroll(trackName.substring(2).replace(/.mp3/g, '').replace(/.m4a/g, '').trim());	
-			viewSelected();	
+			viewSelected();
+			setTimes();
 		}			
 	}
 
@@ -336,7 +337,6 @@ app.service("musicPlayer", function(){
 	}
 	// This initializes the values for the range input that will correlate with the length of the song
 	var showSongAndScroll = function(song){
-		document.getElementById("songName").innerHTML = song;
 		document.getElementById('songScrollContainer').style.display = "block";
 		document.getElementById('range2').style.display = "inline-block";
 		document.getElementById('range2').value = 0;
