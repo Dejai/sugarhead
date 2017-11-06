@@ -203,6 +203,7 @@ app.service("musicPlayer", function(){
 	// This is the KEY function that determines what song to load (which has an autoplay associated with it)
 	// It accounts for the two major file types & once loaded, runs the static functions related to the playing of a song
 	this.loadAndPlaySong = function(row){
+
 		var albumName = row.dataset.albumName;
 		var trackName = row.dataset.trackName;
 		highlightSong = albumName+"-"+trackName;
@@ -246,8 +247,9 @@ app.service("musicPlayer", function(){
 	this.changeSong = function(direction){
 		var highlighted = document.querySelectorAll("[data-song-selected='true']");
 		var currentListedSongs = document.getElementById("songsList").children;
-		
-		if (highlighted.length == 1 && currentListedSongs.length == 1){
+		if (currentAudio.currentTime > 4 && direction != "next"){
+			this.restartSong();
+		} else if (highlighted.length == 1 && currentListedSongs.length == 1){
 			this.restartSong();
 		} else if (currentListedSongs.length == 1){  // Then check if there is only one song to view anyway
 			this.loadAndPlaySong(currentListedSongs[0]);
@@ -337,6 +339,9 @@ app.service("musicPlayer", function(){
 	}
 	// This initializes the values for the range input that will correlate with the length of the song
 	var showSongAndScroll = function(song){
+		document.getElementById("sugarBandNameSection").style.display = "none";
+		document.getElementById("currentSongSubSection").style.display = "block";
+		document.getElementById("fixedSugarHeadSection").style.display = "block";
 		document.getElementById('songScrollContainer').style.display = "block";
 		document.getElementById('range2').style.display = "inline-block";
 		document.getElementById('range2').value = 0;
@@ -346,13 +351,9 @@ app.service("musicPlayer", function(){
 	var playVsPause = function(status){
 		if (status == "play"){
 			document.getElementById("playButton").style.display = "none";
-			var pauseButton = document.getElementById("pauseButton");
-			if (pauseButton.classList.contains("hidden")){
-				pauseButton.classList.remove("hidden");
-			}
-			pauseButton.style.display = "inline";
+			document.getElementById("pauseButton").style.display = "inline-block";
 		} else {
-			document.getElementById("playButton").style.display = "inline";
+			document.getElementById("playButton").style.display = "inline-block";
 			document.getElementById("pauseButton").style.display = "none";
 		}
 	}

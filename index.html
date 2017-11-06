@@ -18,29 +18,15 @@
 
 </head>
 <body ng-app="sugarApp" ng-controller="sugarCtrl" id="ngApp" style="visibility:hidden;opacity:0;">
-	
+	<div id="fixedSugarHeadSection" style="">
+		<a class="sugarLink" href="https://www.facebook.com/NuVybes/" target="_blank">#SugarHead</a>
+	</div>
 	<div id="topSection">
-		<div class="topSubSection middleCenter">
-	 		<span id="repeatButton" class="glyphicon glyphicon-repeat audioController songOrderControllers" ng-click="audioControl('repeat')">
-	 		</span>
-
-			<span id="prevSongButton" class="glyphicon glyphicon-backward audioController songPlayingController" ng-click="audioControl('prev')">
-			</span>
-
-			<span id="playButton" class="glyphicon glyphicon-play audioController songPlayingController" ng-click="audioControl('play')">
-			</span>
-
-			<span id="pauseButton" class="glyphicon glyphicon-pause audioController songPlayingController hidden" ng-click="audioControl('pause')">
-			</span>	
-			
-			<span id="nextSongButton" class="glyphicon glyphicon-forward audioController songPlayingController" ng-click="audioControl('next') ">
-			</span>
-	 		
-	 		<span id="shuffleButton" class="glyphicon glyphicon-random audioController songOrderControllers" ng-click="audioControl('shuffle')">
-	 		</span>
-		</div>
-		<div class="topSubSection middleCenter">
-			<div style="width:100%;">
+		<div id="currentSongSection" class="topSubSection middleCenter">
+			<div id="sugarBandNameSection">
+				<p>Music from <br/> <a class="sugarLink" href="https://www.facebook.com/NuVybes/" target="_blank">Nu Vybes Band aka De Sugar Band</a> </p>
+			</div>
+			<div id="currentSongSubSection" style="display:none;">
 				<h4 id="songName" ng-click="findCurrentSong()"></h4>
 				<div id="songScrollContainer" style="display:none;" >
 			 		<div id="barCnt" class="barCnt" style="margin-bottom:10px;">
@@ -50,11 +36,31 @@
 					<span id="currentTime" ng-click="setCurrentTime()">{{currentTime | songTime }}</span>
 					<span id="durationTime" ng-click="setDuration()">{{duration | songTime }}</span>
 				</div>
-				</div>
+			</div>
 		</div>
-		<div class="topSubSection middleCenter">
+		<div id="controlsSection" class="topSubSection middleCenter">
+	 		<span id="repeatButton" class="glyphicon glyphicon-repeat audioController songOrderControllers" ng-click="audioControl('repeat')">
+	 		</span>
+
+			<span id="prevSongButton" class="glyphicon glyphicon-backward audioController songPlayingController" ng-click="audioControl('prev')">
+			</span>
+
+			<span id="playButton" class="glyphicon glyphicon-play audioController songPlayingController" ng-click="audioControl('play')">
+			</span>
+
+			<span id="pauseButton" class="glyphicon glyphicon-pause audioController songPlayingController" style="display:none;" ng-click="audioControl('pause')">
+			</span>	
+			
+			<span id="nextSongButton" class="glyphicon glyphicon-forward audioController songPlayingController" ng-click="audioControl('next') ">
+			</span>
+	 		
+	 		<span id="shuffleButton" class="glyphicon glyphicon-random audioController songOrderControllers" ng-click="audioControl('shuffle')">
+	 		</span>
+		</div>
+		
+		<div id="searchSection" class="topSubSection middleCenter">
 			<span class="glyphicon glyphicon-search searchIcon" contenteditable="false"></span>		
-			<input id="searchBox" type="text" name="search" placeholder="Search for song, album or year" style="" ng-model="filterBy"/>	
+			<input id="searchBox" type="text" name="search" placeholder="Search by song/album/year" style="" ng-model="filterBy"/>	
 			<span id="resetSearch" class="glyphicon glyphicon-remove searchIcon" ng-show="filterBy" ng-click="filterBy = '' "></span>
 		</div>	
 	</div>
