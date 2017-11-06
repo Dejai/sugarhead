@@ -104,7 +104,6 @@
 					clearInterval(getDurationLoop);
 					document.getElementById("resultsObj").innerHTML = JSON.stringify(songsJSON);
 					writeObject();
-					alert("I'm officially done!");
 				}
 			}, 500);
 
@@ -121,6 +120,13 @@
 			xhttp.open("POST", "writeJSON.php", true);
 		  	xhttp.setRequestHeader("Content-type", "application/json");
 		  	var data = JSON.stringify(songsJSON);
+		  	xhttp.onreadystatechange = function() {
+		        if (this.readyState == 4 && this.status == 200 && !this.responseText.includes("ERROR!")) {
+		        	alert("I'm officially done! Content written to file!");
+		       } else if ( this.readyState == 4 && this.status == 200 && this.responseText.includes("ERROR!")) {
+		       		alert("ERROR!\nSorry, something went wrong!\n" + this.responseText);
+		       }
+		    };
 			xhttp.send(data);
 		}
 	</script>
