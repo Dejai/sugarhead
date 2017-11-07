@@ -15,7 +15,6 @@
 
 	<link rel="stylesheet" type="text/css" href="/sugarhead/scripts/css/federicoGhedina.css">
 	<link rel="stylesheet" type="text/css" href="/sugarhead/scripts/css/sugarHead.css">
-
 </head>
 <body ng-app="sugarApp" ng-controller="sugarCtrl" id="ngApp" style="visibility:hidden;opacity:0;">
 	<div id="fixedSugarHeadSection" style="">
@@ -110,10 +109,21 @@
 	 		</tbody>
 	 	</table>
 	</div>
+	<div id="modal" style="display:none; position:fixed; top:0; left:0; z-index:1; height:100%; width:100%;background-color: rgba(0,0,0,0.4); ">
+		<div style="padding:3%; text-align:center; width:30%; border:1px solid black; background-color:white; color:black; margin:auto; margin-top:20%;">
+			<h4>Pick up where you left off?</h4>
+			<p id="leftOffSong">Song Name</p>
+			<button ng-click="playLeftOffSong()">Yes!</button>
+			<button id="closeModalButton">No thanks.</button>
+		</div>
+	</div>
+
+<div id="testAns"></div>
+
 <div id="songRes" style="width:1px; height:1px;">
 	<audio id="currentAudio" style="width:1px; height:1px;" autoplay>
-	<source id="currentSong_mp3" type="audio/mpeg">
-	<source id="currentSong_mp4" type="audio/mp4">
+		<source id="currentSong_mp3" type="audio/mpeg">
+		<source id="currentSong_mp4" type="audio/mp4">
 	</audio>
 </div>
 

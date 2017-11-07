@@ -8,6 +8,25 @@ var psuedoPaused = false;
 var shuffleSongs = false; 
 var repeatSong = false;
 var highlightSong = '';
+var storageAvailable; 
+
+
+
+window.addEventListener("beforeunload", function(event){
+	src1 = document.getElementById("currentSong_mp3").src; 
+	src2 = document.getElementById("currentSong_mp4").src;
+	if (storageAvailable && (src1 || src2)){
+		localStorage.leftOff = true;
+		localStorage.timeStamp = new Date();
+		localStorage.lastSong = document.getElementById("songName").innerHTML;
+	} else {
+		localStorage.lastSong = "";
+		localStorage.timeStamp = "";
+		localStorage.leftOff = false;
+	}
+
+}, true);
+
 
 
 /* AngularJS App & Controller */
@@ -17,34 +36,55 @@ var app = angular.module("sugarApp", ["ngAnimate"]);
 app.controller("sugarCtrl", function($scope, $http, $interval, musicPlayer){
 	// $http.get("/sugarhead/Scripts/js/newAlbums.json")
 
+	$scope.checkForLeftOff = function(){
+		if (typeof(Storage) !== "undefined"){			
+			storageAvailable = true;
+			if (localStorage.leftOff.toLowerCase() == "true"){
+				// var now = new Date();
+				// if (now > localStorage.timeStamp){
+				// 	console.log("No longer relevant");
+				// }
+				document.getElementById("leftOffSong").innerHTML = localStorage.lastSong;
+				document.getElementById("modal").style.display = "block";
+			}
+		} else {
+			storageAvailable = false;
+			console.log("No storage");
+		}
+
+		var modal = document.getElementById("modal");
+		window.onclick = function(event){
+			if (event.target == modal){
+				modal.style.display = "none";
+			}
+		}
+		document.getElementById("closeModalButton").addEventListener("click", closeModal, true);
+		function closeModal(){
+			modal.style.display = "none";
+		}
+	}
+	$scope.checkForLeftOff();
+
+	$scope.playLeftOffSong = function(){
+		var songName = localStorage.lastSong;
+		var children = document.getElementById("songsList").children
+		for (var x = 0; x < children.length-1; x++){
+			var rowSong = children[x].dataset.trackName.substring(2).replace(/.mp3/g, '').replace(/.m4a/g, '').trim();
+			if (songName == rowSong) {
+				document.getElementById("modal").style.display = "none";
+				musicPlayer.loadAndPlaySong(children[x]);
+				break;				
+			}
+		}
+
+	}
+
 	$scope.theSongs = [];
 
-	// $http.get("/sugarhead/scripts/js/newestAlbum.json")
 	$http.get("/sugarhead/scripts/js/songsJSON.json")
 			.then(function(response){
-				// $scope.albums = response.data;
-				// $scope.getTheSongs();
 				$scope.theSongs = response.data;
 			});
-
-	// This function converts the object of albums into individual objects for each song
-	// Ideally, the data would come packaged this way --- I'll consider working on that. 
-	// $scope.getTheSongs = function(){
-	// 	var obj = {};
-	// 	for (var album in $scope.albums){
-	// 		for (var y in $scope.albums[album].songs){
-	// 			var obj = {};
-	// 			obj["trackName"] = $scope.albums[album].songs[y].songName;
-	// 			obj["songName"] = $scope.albums[album].songs[y].songName.substring(2);
-	// 			obj["songLength"] = $scope.albums[album].songs[y].songLength;
-	// 			obj["songOrder"] = $scope.albums[album].songs[y].order;
-	// 			obj["songAlbum"] = album;
-	// 			obj["songReleaseYear"] = $scope.albums[album].releaseYear;
-	// 			obj["highlighted"] = false;
-	// 			$scope.theSongs.push(obj);
-	// 		}
-	// 	}
-	// }
 
 	$scope.initialLimit = 100;
 	$scope.filterBy = '';
