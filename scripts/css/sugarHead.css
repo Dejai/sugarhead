@@ -24,7 +24,16 @@
 	[data-song-selected="true"] { background-color: lightblue;  }
 
 /* The TOP Section*/
-	#fixedSugarHeadSection { position:fixed; top:2px; left:2px; padding:1%; display:none;}
+	#modal { display:none; position:fixed; top:0; left:0; z-index:1; height:100%; width:100%;background-color: rgba(0,0,0,0.4);  }
+	#modalContent { position:relative; padding:3%; text-align:center; width:90%; border:1px solid black; background-color:white; color:black; opacity:0; margin:auto; margin-top:0%;
+					transition: margin-top ease-in 0.5s, opacity linear 0.3s;
+				}
+	#closeModalX { position:absolute; top:1%; right:3%; color:red; font-size:25px; cursor:pointer; }
+	.leftOffActionButton { border-radius:20%; width:50px; font-size:22px; color:white; }
+	#playLeftOffButton { background-color: limegreen; margin-right:5%; }
+	#closeModalButton { background-color: red;  margin-right:5%; }
+
+	#fixedSugarHeadSection { position:fixed; top:2px; left:2px; padding-top:1%; display:none;}
 
 	#topSection { width:100%; height:200px; padding-top:5%; }
 	.topSubSection { width:80%; text-align:center; margin:auto; }
@@ -32,10 +41,6 @@
 	#sugarBandNameSection { width:100%; font-size:14px; }
 	.sugarLink { color:blue; text-decoration:none; }
 	.sugarLink:hover {font-style:italic; text-decoration: underline; color:blue;  }
-
-	/*#sugarBandNameSection a { color:blue; }
-	#sugarBandNameSection a {text-decoration: none; color:blue; }
-	#sugarBandNameSection a:hover {font-style:italic; text-decoration: underline;  }*/
 
 	#controlsSection, #searchSection { height:50px; }
 	#currentSongSection { height:70px; }
@@ -114,6 +119,8 @@
 	/*#ngApp { background-color: lightblue; }*/
 
 	/* TOP SECTION */
+
+	#modalContent { width:50%; }
 	#fixedSugarHeadSection { top:2%; left:1%;  }
 
 	#topSection { width:75%; height:100px;  padding:0%; margin:auto;
@@ -139,6 +146,8 @@
 }
 
 @media screen and (min-width:1024px){
+	#modalContent { width:30%; }
+
 	#searchBox { font-size:16px; width:55%; }
 	#searchBox:focus { font-size:larger; width:60%; }
 

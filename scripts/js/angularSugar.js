@@ -12,20 +12,23 @@ var storageAvailable;
 
 
 
-window.addEventListener("beforeunload", function(event){
-	src1 = document.getElementById("currentSong_mp3").src; 
-	src2 = document.getElementById("currentSong_mp4").src;
-	if (storageAvailable && (src1 || src2)){
-		localStorage.leftOff = true;
-		localStorage.timeStamp = new Date();
-		localStorage.lastSong = document.getElementById("songName").innerHTML;
-	} else {
-		localStorage.lastSong = "";
-		localStorage.timeStamp = "";
-		localStorage.leftOff = false;
-	}
+/*
 
-}, true);
+	New Approach
+	> Get the trackName & albumName from the currently highlighted.
+		> This could be tricky if it is not highlighted / visible at the moment.
+		> Figure out if there is a way to get the albumName
+			> I could search the original songs object that is pulled from the JSON file.
+	> Then store the full URL path for the song. Makes it simpler to load. 
+	> Also store the current time of the song when closing. 
+	> On loading ...
+		> Load the song. 
+		> Don't let it play automatically. 
+		> Set the current time to the saved time
+		> Let it play!
+*/
+
+
 
 
 
@@ -33,19 +36,41 @@ window.addEventListener("beforeunload", function(event){
 
 var app = angular.module("sugarApp", ["ngAnimate"]);
 
-app.controller("sugarCtrl", function($scope, $http, $interval, musicPlayer){
+app.controller("sugarCtrl", function($scope, $http, $interval, $timeout, musicPlayer){
 	// $http.get("/sugarhead/Scripts/js/newAlbums.json")
 
 	$scope.checkForLeftOff = function(){
 		if (typeof(Storage) !== "undefined"){			
 			storageAvailable = true;
-			if (localStorage.leftOff.toLowerCase() == "true"){
+
+			localStorage.removeItem("favorite_tables");
+			localStorage.removeItem("timeStamp");
+			localStorage.removeItem("test");
+				console.log(localStorage);
+			
+			if (localStorage.leftOff.toLowerCase() == "true" 
+				&& new Date().getMonth()+1 == localStorage.lastMonth 
+				&& new Date().getDate() == localStorage.lastDay  ){
+				// console.log("Month: " + ((new Date().getMonth()+1) == localStorage.lastMonth) );
+				// console.log("Day: " + (new Date().getDate() == localStorage.lastDay));
+				// var x = decodeURIComponent(localStorage.songSource.substring(localStorage.songSource.indexOf("music/")+6, localStorage.songSource.lastIndexOf("/")));
+				// console.log(localStorage.timeStamp);
+				// console.log(new Date(localStorage.timeStamp));
+				// console.log(new Date());
+				// console.log(new Date(localStorage.timeStamp) > new Date());
+
 				// var now = new Date();
 				// if (now > localStorage.timeStamp){
 				// 	console.log("No longer relevant");
 				// }
-				document.getElementById("leftOffSong").innerHTML = localStorage.lastSong;
-				document.getElementById("modal").style.display = "block";
+				// document.getElementById("leftOffSong").innerHTML = localStorage.lastSong;
+				$timeout(function(){
+					document.getElementById("modal").style.display = "block";
+					$timeout(function(){
+						document.getElementById("modalContent").style.marginTop = "10%";
+						document.getElementById("modalContent").style.opacity = "1";
+					}, 200);
+				}, 500);
 			}
 		} else {
 			storageAvailable = false;
@@ -55,28 +80,63 @@ app.controller("sugarCtrl", function($scope, $http, $interval, musicPlayer){
 		var modal = document.getElementById("modal");
 		window.onclick = function(event){
 			if (event.target == modal){
-				modal.style.display = "none";
+				$scope.closeModal();
+				// modal.style.display = "none";
 			}
 		}
-		document.getElementById("closeModalButton").addEventListener("click", closeModal, true);
-		function closeModal(){
-			modal.style.display = "none";
-		}
+		// document.getElementById("closeModalButton").addEventListener("click", closeModal, true);
+		// function closeModal(){
+		// }
 	}
 	$scope.checkForLeftOff();
 
-	$scope.playLeftOffSong = function(){
-		var songName = localStorage.lastSong;
-		var children = document.getElementById("songsList").children
-		for (var x = 0; x < children.length-1; x++){
-			var rowSong = children[x].dataset.trackName.substring(2).replace(/.mp3/g, '').replace(/.m4a/g, '').trim();
-			if (songName == rowSong) {
-				document.getElementById("modal").style.display = "none";
-				musicPlayer.loadAndPlaySong(children[x]);
-				break;				
-			}
-		}
+	$scope.closeModal = function(){
+		modal.style.display = "none";
+	}
 
+	$scope.beforeYouGo = function(){
+		window.addEventListener("beforeunload", function(event){
+			var src1 = document.getElementById("currentSong_mp3").src; 
+			var src2 = document.getElementById("currentSong_mp4").src;
+			if (storageAvailable && (src1 || src2)){
+				var trueSource = src1 ? src1 : src2;
+				localStorage.leftOff = true;
+				localStorage.lastMonth = new Date().getMonth()+1;
+				localStorage.lastDay = new Date().getDate();
+				localStorage.lastTrack = decodeURIComponent(trueSource.substring(trueSource.lastIndexOf("/")+1));
+				localStorage.lastTime = $scope.currentTime-2;
+			} else {
+				localStorage.leftOff = false;
+			}
+
+		}, true);
+	}
+	$scope.beforeYouGo();
+
+	$scope.playLeftOffSong = function(){
+		var directSongRow = document.getElementById("songsList").querySelectorAll(" [data-track-name='"+localStorage.lastTrack+"']");
+		if (directSongRow.length > 0){
+			document.getElementById("modal").style.display = "none";
+			musicPlayer.loadAndPlaySong(directSongRow[0]);
+			currentAudio.currentTime = localStorage.lastTime;
+		} else {
+			alert("Song could not be found");
+			document.getElementById("modal").style.display = "none";
+
+			// console.log("Using backup search");
+			// var children = document.getElementById("songsList").children;
+			// var songName = localStorage.lastSong;
+			// for (var x = 0; x < children.length-1; x++){
+			// 	var rowSong = children[x].dataset.trackName.substring(2).replace(/.mp3/g, '').replace(/.m4a/g, '').trim();
+			// 	var rowAlbum = children[x].dataset.albumName.trim(); 
+			// 	if (songName == rowSong) {
+			// 		document.getElementById("modal").style.display = "none";
+			// 		musicPlayer.loadAndPlaySong(children[x]);
+			// 		currentAudio.currentTime = localStorage.lastTime;
+			// 		break;				
+			// 	}
+			// }
+		}
 	}
 
 	$scope.theSongs = [];
@@ -84,7 +144,14 @@ app.controller("sugarCtrl", function($scope, $http, $interval, musicPlayer){
 	$http.get("/sugarhead/scripts/js/songsJSON.json")
 			.then(function(response){
 				$scope.theSongs = response.data;
+				
 			});
+
+	// $scope.quickTest = function(){
+	// 	var x = document.getElementById("songsList").querySelectorAll("[data-track-name]");
+	// 	console.log(x);
+	// }
+	
 
 	$scope.initialLimit = 100;
 	$scope.filterBy = '';
