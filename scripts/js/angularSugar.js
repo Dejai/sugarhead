@@ -114,29 +114,37 @@ app.controller("sugarCtrl", function($scope, $http, $interval, $timeout, musicPl
 	$scope.beforeYouGo();
 
 	$scope.playLeftOffSong = function(){
-		var directSongRow = document.getElementById("songsList").querySelectorAll(" [data-track-name='"+localStorage.lastTrack+"']");
-		if (directSongRow.length > 0){
-			document.getElementById("modal").style.display = "none";
-			musicPlayer.loadAndPlaySong(directSongRow[0]);
-			currentAudio.currentTime = localStorage.lastTime;
-		} else {
-			alert("Song could not be found");
-			document.getElementById("modal").style.display = "none";
+		try{
+			var directSongRow = document.getElementById("songsList").querySelectorAll(" [data-track-name='"+localStorage.lastTrack+"']");
+			if (directSongRow.length > 0){
+				document.getElementById("modal").style.display = "none";
+				musicPlayer.loadAndPlaySong(directSongRow[0]);
+				currentAudio.currentTime = localStorage.lastTime;
+			} else {
+				alert("Song could not be found");
+				document.getElementById("modal").style.display = "none";
 
-			// console.log("Using backup search");
-			// var children = document.getElementById("songsList").children;
-			// var songName = localStorage.lastSong;
-			// for (var x = 0; x < children.length-1; x++){
-			// 	var rowSong = children[x].dataset.trackName.substring(2).replace(/.mp3/g, '').replace(/.m4a/g, '').trim();
-			// 	var rowAlbum = children[x].dataset.albumName.trim(); 
-			// 	if (songName == rowSong) {
-			// 		document.getElementById("modal").style.display = "none";
-			// 		musicPlayer.loadAndPlaySong(children[x]);
-			// 		currentAudio.currentTime = localStorage.lastTime;
-			// 		break;				
-			// 	}
-			// }
+				// console.log("Using backup search");
+				// var children = document.getElementById("songsList").children;
+				// var songName = localStorage.lastSong;
+				// for (var x = 0; x < children.length-1; x++){
+				// 	var rowSong = children[x].dataset.trackName.substring(2).replace(/.mp3/g, '').replace(/.m4a/g, '').trim();
+				// 	var rowAlbum = children[x].dataset.albumName.trim(); 
+				// 	if (songName == rowSong) {
+				// 		document.getElementById("modal").style.display = "none";
+				// 		musicPlayer.loadAndPlaySong(children[x]);
+				// 		currentAudio.currentTime = localStorage.lastTime;
+				// 		break;				
+				// 	}
+				// }
+			}
+		} catch (err){
+			alert("Sorry! I couldn't play your song for some reason.");
+			console.log(err);
+		} finally {
+			document.getElementById("modal").style.display = "none";
 		}
+		
 	}
 
 	$scope.theSongs = [];
