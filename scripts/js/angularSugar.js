@@ -115,7 +115,7 @@ app.controller("sugarCtrl", function($scope, $http, $interval, $timeout, musicPl
 
 	$scope.playLeftOffSong = function(){
 		try{
-			var directSongRow = document.getElementById("songsList").querySelectorAll(" [data-track-name='"+localStorage.lastTrack+"']");
+			var directSongRow = document.getElementById("songsList").querySelectorAll(" [data-track-name=\""+localStorage.lastTrack+"\"]");
 			if (directSongRow.length > 0){
 				document.getElementById("modal").style.display = "none";
 				musicPlayer.loadAndPlaySong(directSongRow[0]);
