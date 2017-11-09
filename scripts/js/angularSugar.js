@@ -229,6 +229,7 @@ app.controller("sugarCtrl", function($scope, $http, $interval, $timeout, musicPl
 		musicPlayer.findCurrentSong();
 	}
 
+	
 
 	$scope.audioControl = function(event){
 		switch(event){
@@ -266,6 +267,33 @@ app.controller("sugarCtrl", function($scope, $http, $interval, $timeout, musicPl
 				musicPlayer.pauseSong();
 		}
 	}
+	$scope.keyboardListener = function(){
+		window.onkeyup = function(event){
+			if (!(document.getElementById("searchBox") === document.activeElement) ){
+				switch (event.which){
+					case 37:   //left arrow
+						$scope.audioControl("prev");
+						break;
+					case 39:   // right arrow
+						$scope.audioControl("next");
+						break;
+					case 32:   // space bar
+						if(currentAudio.paused){
+							$scope.audioControl("play");
+						} else {
+							$scope.audioControl("pause");
+						}					
+						break;
+					case 38:  // up arrow
+					case 40:  // down arrow
+						event.preventDefault();
+						break;
+					default:
+				}
+			}
+	    }
+	}
+	$scope.keyboardListener();
 
 	$scope.setDuration = function(){
 		$scope.duration = currentAudio.duration;
