@@ -40,7 +40,7 @@ app.controller("sugarCtrl", function($scope, $http, $interval, $timeout, musicPl
 	// $http.get("/sugarhead/Scripts/js/newAlbums.json")
 
 	$scope.checkForLeftOff = function(){
-		if (typeof(Storage) !== "undefined"){			
+		if (typeof(Storage) !== "undefined" && localStorage.leftOff){			
 			storageAvailable = true;
 
 			localStorage.removeItem("favorite_tables");
