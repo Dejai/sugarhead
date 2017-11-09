@@ -79,13 +79,13 @@
 	#songListing thead { border-bottom: 2px solid black;  }
 	#songListing thead { border-bottom: 2px solid black; border-top: 2px solid black;  }
 	#songListing tbody { height:300px; overflow:scroll; }
-	tbody tr { border-bottom: 1px solid lightgray; padding-top:0.2%; padding-bottom:0.2%; }
+	tbody tr { border-bottom: 1px solid lightgray; padding-top:3%; padding-bottom:3%; }
 	tbody tr:hover { background-color: lightgray; }
 
 	#songListing th { font-size:16px; }
 	#songListing tbody td:first-child { font-size:16px; display:inline-block; }
 
-	#songListing tr { cursor:pointer; display:block; width:100%;}
+	#songListing tr { cursor:pointer; display:block; width:100%; }
 	#songListing th, #songListing td { cursor:pointer; display:inline-block; }
 	
 	/* Styling the Column Widths */
@@ -93,7 +93,6 @@
 	#songListing tr th:nth-child(2), #songListing tr td:nth-child(2) { width:35%; padding-left: 2% }
 	#songListing tr th:nth-child(3), #songListing tr td:nth-child(3) { width:15%; padding-left: 2% }
 	#songListing tr th:nth-child(4), #songListing tr td:nth-child(4) { width:35%; padding-left: 2% }
-	/*#songListing tr th:nth-child(1n+3), #songListing tr td:nth-child(1n+3) { width:25%;  }*/
 	#songListing tr th:nth-child(5), #songListing tr td:nth-child(5) { display:none; }
 
 
@@ -136,6 +135,8 @@
 	/* The Table Of Songs */
 	#songListing { border:none; width:80%; }
 	#songListing tbody { height:450px; }
+	tbody tr { padding-top:0.5%; padding-bottom:0.5%; }
+
 	
 	/* Styling the Column Widths */
 	#songListing tr th:first-child, #songListing tr td:first-child { width:10%; text-align:right; }
