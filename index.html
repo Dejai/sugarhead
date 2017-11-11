@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <head>
 
-	<title>De Sugar Head Site</title>
+	<title>Sugar Head Central</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<!-- Latest compiled and minified CSS -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+
 	<!-- jQuery library -->
 	<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script> -->
 	<!-- Latest compiled JavaScript -->
@@ -12,14 +14,60 @@
 
 
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
-	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-animate.js"></script>
+	<!-- <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-animate.js"></script> -->
 
 	<link rel="stylesheet" type="text/css" href="/sugarhead/scripts/css/federicoGhedina.css">
 	<link rel="stylesheet" type="text/css" href="/sugarhead/scripts/css/sugarHead.css">
 </head>
 <body ng-app="sugarApp" ng-controller="sugarCtrl" id="ngApp" style="visibility:hidden;opacity:0;">
-	<div id="fixedSugarHeadSection" style="">
+	<div id="modal">
+		<div id="leftOffContent">
+			<span id="closeModalX" ng-click="closeModal()">x</span>
+			<h4>Pick up where you left off?</h4>
+			<!-- <p id="leftOffSong">Song Name</p> -->
+			<button id="playLeftOffButton" class="leftOffActionButton" ng-click="playLeftOffSong()">Yes</button>
+			<button id="closeModalButton" class="leftOffActionButton" ng-click="closeModal()">No</button>
+		</div>
+		<div id="welcomeContent">
+			<h2>Sugar Head Central</h2>
+			<p class="welcomeSentence">This site is dedicated to music from Nu Vybes Band Intl. aka "De Sugar Band"</p>
+			<p class="welcomeSentence">It includes all of their official album songs from <strong>1996 to {{currentYear}}</strong></p>
+			<p class="welcomeSentence">Listen and enjoy hours of sweet music!</p>
+			<p class="welcomeSentence">Soon, you too will be a <a id="defineSugarHead" ng-click="defineSugarHead()">Sugar Head!</a></p>
+			<hr class="hideOnMobile"/>
+			<h3 class="hideOnMobile">Keyboard Shortcuts</h3>
+			<div class="keyboardButtonSection">
+				<p class="keyboardButton">spacebar</p> 
+				<p>Play / Pause</p>
+			</div>
+			<div class="keyboardButtonSection">
+				<p class="keyboardButton">right arrow</p>
+				<p>Next Song</p>
+			</div>
+			<div class="keyboardButtonSection">
+				<p class="keyboardButton">left arrow</p>
+				<p>Previous Song</p>
+			</div>
+			<br/><br/>
+			<div class="keyboardButtonSection">
+				<p class="keyboardButton">S</p>
+				<p>Toggle Shuffle</p>
+			</div>
+			<div class="keyboardButtonSection">
+				<p class="keyboardButton">R</p>
+				<p>Toggle Repeat</p>
+			</div>
+			<div class="keyboardButtonSection">
+				<p class="keyboardButton">C</p>
+				<p>Scroll To Current Song</p>
+			</div>
+		</div>
+	</div>
+	<div id="fixedSugarHeadSection" class="fixedAtTop">
 		<a class="sugarLink" href="https://www.facebook.com/NuVybes/" target="_blank">#NuVybesBand</a>
+	</div>
+	<div id="fixedHelpSection" class="fixedAtTop">
+		<span ng-click="showHelp()" class="glyphicon glyphicon-question-sign" style="color:blue;"></span>
 	</div>
 	<div id="topSection">
 		<div id="currentSongSection" class="topSubSection middleCenter">
@@ -30,11 +78,11 @@
 				<h4 id="songName" ng-click="findCurrentSong()"></h4>
 				<div id="songScrollContainer" style="display:none;" >
 			 		<div id="barCnt" class="barCnt" style="margin-bottom:10px;">
-				 		<input ng-model="currentScrollPosition" type="range" min=0 max=100 value=0 step=1 id="range2" class="colorized" ng-click="audioControl('scroll')" ng-mousedown="audioControl('preScroll')" ng-change="audioControl('scroll')" ng-mouseup="audioControl('postScroll')"/>
+				 		<input ng-model="currentScrollPosition" type="range" value="0" step=1 id="range2" class="colorized" ng-click="audioControl('scroll')" ng-mousedown="audioControl('preScroll')" ng-change="audioControl('scroll')" ng-mouseup="audioControl('postScroll')"/>
 			 			<p id="preBar" class="preBar"></p>
 			 		</div>
-					<span id="currentTime" ng-click="setCurrentTime()">{{currentTime | songTime }}</span>
-					<span id="durationTime" ng-click="setDuration()">{{duration | songTime }}</span>
+					<span id="currentTime"></span>
+					<span id="durationTime"></span>
 				</div>
 			</div>
 		</div>
@@ -64,10 +112,11 @@
 			<span id="resetSearch" class="glyphicon glyphicon-remove searchIcon" ng-show="filterBy" ng-click="filterBy = '' "></span>
 		</div>	
 	</div>
-
+	<div>
+		{{testz}}
+		{{rah}}
+	</div>
 	<div id="songSection">
-	 	<!-- <button ng-click="quickTest()">Quick Test</button> -->
-
 		<table id="songListing">
  			<thead>
 	 			<tr>
@@ -112,15 +161,7 @@
 	 		</tbody>
 	 	</table>
 	</div>
-	<div id="modal">
-		<div id="modalContent">
-			<span id="closeModalX" ng-click="closeModal()">x</span>
-			<h4>Pick up where you left off?</h4>
-			<!-- <p id="leftOffSong">Song Name</p> -->
-			<button id="playLeftOffButton" class="leftOffActionButton" ng-click="playLeftOffSong()">Yes</button>
-			<button id="closeModalButton" class="leftOffActionButton" ng-click="closeModal()">No</button>
-		</div>
-	</div>
+	
 
 <div id="testAns"></div>
 
@@ -131,7 +172,10 @@
 	</audio>
 </div>
 
-<script type="text/javascript" src="/sugarhead/scripts/js/angularSugar.js"></script>
+<script type="text/javascript" src="/sugarhead/scripts/js/app.js"></script>
+<script type="text/javascript" src="/sugarhead/scripts/js/services/modalContent.js"></script>
+<script type="text/javascript" src="/sugarhead/scripts/js/services/musicPlayer.js"></script>
+<script type="text/javascript" src="/sugarhead/scripts/js/services/listeners.js"></script>
 
 </body>
 </html>

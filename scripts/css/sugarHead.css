@@ -1,5 +1,6 @@
 /* GENERAL */
 
+	* { font-family: "Roboto", sans-serif; }
 	.hidden { display:none;  }
 	.glyphicon { cursor:pointer;  }
 	.glyphicon-triangle-top { color:limegreen; }
@@ -24,16 +25,35 @@
 	[data-song-selected="true"] { background-color: lightblue;  }
 
 /* The TOP Section*/
-	#modal { display:none; position:fixed; top:0; left:0; z-index:1; height:100%; width:100%;background-color: rgba(0,0,0,0.4);  }
-	#modalContent { position:relative; padding:3%; text-align:center; width:90%; border:1px solid black; background-color:white; color:black; opacity:0; margin:auto; margin-top:0%;
+	
+
+	#modal { opacity:0; position:fixed; top:0; left:0; height:100%; width:100%; background-color: rgba(0,0,0,0.4);
+			transition: opacity ease-in 0.2s;  z-index:-1;}
+	#closeModalX { position:absolute; top:1%; right:3%; color:red; font-size:25px; cursor:pointer; }
+
+	#leftOffContent { height:0px; position:relative; padding:3%; text-align:center; width:90%; border:1px solid black; background-color:white; color:black; 
+					opacity:0; margin:auto; margin-top:0%;
 					transition: margin-top ease-in 0.5s, opacity linear 0.3s;
 				}
-	#closeModalX { position:absolute; top:1%; right:3%; color:red; font-size:25px; cursor:pointer; }
+	
 	.leftOffActionButton { border-radius:20%; width:50px; font-size:22px; color:white; }
 	#playLeftOffButton { background-color: limegreen; margin-right:5%; }
 	#closeModalButton { background-color: red;  margin-right:5%; }
 
-	#fixedSugarHeadSection { position:fixed; top:2px; left:2px; padding-top:1%; display:none;}
+	#welcomeContent { opacity:0; padding:1%; border-radius: 5%; width:80%; background-color:white; margin:auto; text-align:center; 
+						transition:opacity linear 0.3s; }
+	#defineSugarHead { cursor:pointer; color:blue; font-style: italic; font-size: larger; }
+	/*.welcomeSentence { font-family: sans-serif; }*/
+	.hideOnMobile { display:none; }
+	.keyboardButtonSection { width:30%; display:none;  }
+	.keyboardButton { font: bold 14px arial; text-align:center; display:inline-block;padding:15px 10px; background-color:#EFF0F2; color:#5E5E5E;
+						border-radius: 4px;  cursor:default;
+						box-shadow: inset 0 0 25px #E8E8E8, 0 1px 0 #C3C3C3, 0 2px 0 #C9C9C9, 0 2px 3px #333; }
+	
+
+	.fixedAtTop { position:fixed; top:2px; }
+	#fixedSugarHeadSection { left:2px; padding-top:1%; display:none; }
+	#fixedHelpSection { font-size:20px; right:2px; }
 
 	#topSection { width:100%; height:200px; padding-top:5%; }
 	.topSubSection { width:80%; text-align:center; margin:auto; }
@@ -119,8 +139,15 @@
 
 	/* TOP SECTION */
 
-	#modalContent { width:50%; }
-	#fixedSugarHeadSection { top:2%; left:1%;  }
+	#leftOffContent { width:50%; }
+	#welcomeContent { width:70%; }
+	.hideOnMobile { display:block; }
+	.keyboardButtonSection { display:inline-block; }
+
+	.fixedAtTop { top:2%; }
+	#fixedSugarHeadSection { left:1%;  }
+	#fixedHelpSection { font-size:25px; right:2%;  }
+
 
 	#topSection { width:75%; height:100px;  padding:0%; margin:auto;
 				display:flex; align-items: center; justify-content: center; }
@@ -147,7 +174,9 @@
 }
 
 @media screen and (min-width:1024px){
-	#modalContent { width:30%; }
+	#leftOffContent { width:30%; }
+	#welcomeContent { width:60%; }
+
 
 	#searchBox { font-size:16px; width:55%; }
 	#searchBox:focus { font-size:larger; width:60%; }

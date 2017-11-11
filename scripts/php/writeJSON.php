@@ -10,7 +10,7 @@
 	if (!$data){
 		echo "ERROR: Data is not valid!";
 	} else {
-		$file = fopen("../js/songsJSON.json", "w") or die("ERROR! Unable to open file!");
+		$file = fopen("../js/data/songsJSON.json", "w") or die("ERROR! Unable to open file!");
 		fwrite($file, $data);
 	}
 
