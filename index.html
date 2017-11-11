@@ -7,62 +7,13 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 
-	<!-- jQuery library -->
-	<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script> -->
-	<!-- Latest compiled JavaScript -->
-	<!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> -->
-
-
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
-	<!-- <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-animate.js"></script> -->
 
 	<link rel="stylesheet" type="text/css" href="/sugarhead/scripts/css/federicoGhedina.css">
 	<link rel="stylesheet" type="text/css" href="/sugarhead/scripts/css/sugarHead.css">
 </head>
 <body ng-app="sugarApp" ng-controller="sugarCtrl" id="ngApp" style="visibility:hidden;opacity:0;">
-	<div id="modal">
-		<div id="leftOffContent">
-			<span id="closeModalX" ng-click="closeModal()">x</span>
-			<h4>Pick up where you left off?</h4>
-			<!-- <p id="leftOffSong">Song Name</p> -->
-			<button id="playLeftOffButton" class="leftOffActionButton" ng-click="playLeftOffSong()">Yes</button>
-			<button id="closeModalButton" class="leftOffActionButton" ng-click="closeModal()">No</button>
-		</div>
-		<div id="welcomeContent">
-			<h2>Sugar Head Central</h2>
-			<p class="welcomeSentence">This site is dedicated to music from Nu Vybes Band Intl. aka "De Sugar Band"</p>
-			<p class="welcomeSentence">It includes all of their official album songs from <strong>1996 to {{currentYear}}</strong></p>
-			<p class="welcomeSentence">Listen and enjoy hours of sweet music!</p>
-			<p class="welcomeSentence">Soon, you too will be a <a id="defineSugarHead" ng-click="defineSugarHead()">Sugar Head!</a></p>
-			<hr class="hideOnMobile"/>
-			<h3 class="hideOnMobile">Keyboard Shortcuts</h3>
-			<div class="keyboardButtonSection">
-				<p class="keyboardButton">spacebar</p> 
-				<p>Play / Pause</p>
-			</div>
-			<div class="keyboardButtonSection">
-				<p class="keyboardButton">right arrow</p>
-				<p>Next Song</p>
-			</div>
-			<div class="keyboardButtonSection">
-				<p class="keyboardButton">left arrow</p>
-				<p>Previous Song</p>
-			</div>
-			<br/><br/>
-			<div class="keyboardButtonSection">
-				<p class="keyboardButton">S</p>
-				<p>Toggle Shuffle</p>
-			</div>
-			<div class="keyboardButtonSection">
-				<p class="keyboardButton">R</p>
-				<p>Toggle Repeat</p>
-			</div>
-			<div class="keyboardButtonSection">
-				<p class="keyboardButton">C</p>
-				<p>Scroll To Current Song</p>
-			</div>
-		</div>
-	</div>
+	<div id="modal" modal></div>
 	<div id="fixedSugarHeadSection" class="fixedAtTop">
 		<a class="sugarLink" href="https://www.facebook.com/NuVybes/" target="_blank">#NuVybesBand</a>
 	</div>
@@ -72,7 +23,7 @@
 	<div id="topSection">
 		<div id="currentSongSection" class="topSubSection middleCenter">
 			<div id="sugarBandNameSection">
-				<p>Music from <br/> <a class="sugarLink" href="https://www.facebook.com/NuVybes/" target="_blank">Nu Vybes Band aka De Sugar Band</a> </p>
+				<p>Music from <br/> <a class="sugarLink" href="https://www.facebook.com/NuVybes/" target="_blank">Nu Vybes Band ("De Sugar Band")</a> </p>
 			</div>
 			<div id="currentSongSubSection" style="display:none;">
 				<h4 id="songName" ng-click="findCurrentSong()"></h4>
@@ -111,10 +62,6 @@
 			<input id="searchBox" type="text" name="search" placeholder="Search by song/album/year" style="" ng-model="filterBy"/>	
 			<span id="resetSearch" class="glyphicon glyphicon-remove searchIcon" ng-show="filterBy" ng-click="filterBy = '' "></span>
 		</div>	
-	</div>
-	<div>
-		{{testz}}
-		{{rah}}
 	</div>
 	<div id="songSection">
 		<table id="songListing">
@@ -161,9 +108,7 @@
 	 		</tbody>
 	 	</table>
 	</div>
-	
-
-<div id="testAns"></div>
+	<div id="copyRightSection" copyright></div>
 
 <div id="songRes" style="width:1px; height:1px;">
 	<audio id="currentAudio" style="width:1px; height:1px;" autoplay>

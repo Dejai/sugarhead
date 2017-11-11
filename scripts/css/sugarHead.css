@@ -42,6 +42,8 @@
 
 	#welcomeContent { opacity:0; padding:1%; border-radius: 5%; width:80%; background-color:white; margin:auto; text-align:center; 
 						transition:opacity linear 0.3s; }
+	#siteTitleCopyRight { vertical-align: top; font-size:16px; }
+
 	#defineSugarHead { cursor:pointer; color:blue; font-style: italic; font-size: larger; }
 	/*.welcomeSentence { font-family: sans-serif; }*/
 	.hideOnMobile { display:none; }
@@ -117,6 +119,10 @@
 
 
 
+	#copyRightSection { position:fixed; bottom:0px; width:100%; font-size:12px; border-top:1px solid gray; 
+						padding-left:1%; color:black;padding-top:0.5%;background-color: white; z-index:5; }
+
+	#copyRightDetailsAction { cursor:pointer; border-left:1px solid black; display:inline-block; padding-left:0.5%; }
 
 /* MEDIA QUERIES */
 
@@ -141,6 +147,8 @@
 
 	#leftOffContent { width:50%; }
 	#welcomeContent { width:70%; }
+	#siteTitleCopyRight { font-size:20px; }
+
 	.hideOnMobile { display:block; }
 	.keyboardButtonSection { display:inline-block; }
 

@@ -10,6 +10,7 @@ angular.module("sugarApp").service("modalContent", function($timeout){
 			if (localStorage.leftOff.toLowerCase() == "true" 
 				&& new Date().getMonth()+1 == localStorage.lastMonth 
 				&& new Date().getDate() == localStorage.lastDay  ){
+				
 				this.showLeftOffContent();
 			}
 		} else {
