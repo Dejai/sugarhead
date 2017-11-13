@@ -1,0 +1,19 @@
+The following is a list of resources that I referenced while working on this project. 
+
+
+1. https://codepen.io/tjvantoll/pen/JEKIu - for styling a scrolling table
+	* Used this to confirm my approach for styling a table that had a fixed head but a scrolling body. 
+
+2. https://stackoverflow.com/questions/22180953/why-is-jquery-click-event-firing-multiple-times
+	* This was helpful when I was trying to determine why my events were firing more than once. 
+
+3. https://jsfiddle.net/fedeghe/smjje829/
+	* I used this JS Fiddle to add a scrolling element for the current position of the song. 
+	* The styling of the scroll on my page came from this source.
+
+4. https://stackoverflow.com/questions/13471129/ng-repeat-finish-event
+	* Once I switched to AngularJS, I used this to determine when an ng-repeat was done loading. 
+	* This was important to me as I wanted to give the music time to load, without showing several lines in the table. 
+
+5. https://stackoverflow.com/questions/9620122/stop-html-text-being-highlighted
+	* I used this site to figure out how to prevent certain text/elements from being  highlighted when clicked. 
