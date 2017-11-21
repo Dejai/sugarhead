@@ -51,7 +51,18 @@
 		};		
 		var songsJSON = [];
 
-		document.addEventListener("DOMContentLoaded", createObjects, true);
+		// document.addEventListener("DOMContentLoaded", createObjects, true);
+
+		function startProcessing(){
+			document.getElementById("startProcessing").style.display = "none";
+			showStatus();
+			createObjects();
+		}
+
+		function showStatus(){
+			document.getElementById("processingBlock").style.display = "block"
+			document.getElementById("resultsObj").style.display = "block";
+		}
 
 		function createObjects(){
 			document.getElementById("songTotal").innerHTML = songsArray.length;
@@ -133,12 +144,15 @@
 </head>
 <body>
 <div>
+	<button id="startProcessing" onclick="startProcessing()" style="font-size:40px;margin-top:3%; margin-left:2%; cursor:pointer;">Start Processing</button>
+</div>
+<div id="processingBlock" style="display:none;">
 	<h1>Processing Songs</h1>
 	<br/>
 	<h3 id="currentProcess" style="display:inline-block; width:200px;"></h3>
 	<h3 style="display:inline-block;"><span id="currentCount">0</span> of <span id="songTotal"></span></h3>
 </div>
-<div id="resultsObj">
+<div id="resultsObj" style="display:none;">
 	<img src="https://media1.giphy.com/media/rEgkXRBD7RoB2/giphy.gif" style="height:300px; width:300px;">
 </div>
 <audio id="currentAudio" style="width:100px; height:100px;">
