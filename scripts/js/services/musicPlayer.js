@@ -15,6 +15,7 @@ angular.module("sugarApp").service("musicPlayer", function($interval){
 			currentAudio.load();
 			currentAudio.currentTime = 0;
 			// playVsPause("play");
+			setScrollLength(0);
 			currentAudio.onloadeddata = function(){
 				songSelected = true;
 				showCurrentSong(trackName);	
