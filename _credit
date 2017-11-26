@@ -16,4 +16,13 @@ The following is a list of resources that I referenced while working on this pro
 	* This was important to me as I wanted to give the music time to load, without showing several lines in the table. 
 
 5. https://stackoverflow.com/questions/9620122/stop-html-text-being-highlighted
-	* I used this site to figure out how to prevent certain text/elements from being  highlighted when clicked. 
+	* I used this site to figure out how to prevent certain text/elements from being  highlighted when clicked.
+
+6. https://css-tricks.com/centering-css-complete-guide/
+	* This one was useful for centering the elements in the top section (both horizontally and vertically)
+
+7. http://www.websitedimensions.com/
+	* This was a good reference for ensuring the site was responsive. 
+
+8. http://briantford.com/blog/huuuuuge-angular-apps
+	* Getting a perspective on how to build AngularJS apps. 

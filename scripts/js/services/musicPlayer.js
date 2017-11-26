@@ -9,21 +9,18 @@ angular.module("sugarApp").service("musicPlayer", function($interval){
 			var trackName = row.dataset.trackName;
 			highlightSong = albumName+"-"+trackName;
 			var src = path + "music/" + albumName + "/" + trackName;
-			// var src2 = path + "music/" + albumName + "/" + trackName;
 			src = decodeURIComponent(src);
-			// console.log(src.substring(src.length-4));
-			// src2 = decodeURIComponent(src2);
 			currentSong_mp3.src = src;
 			currentSong_mp4.src = src;
 			currentAudio.load();
-			// this.setScroll(0);
 			currentAudio.currentTime = 0;
-			playVsPause("play");
+			// playVsPause("play");
 			currentAudio.onloadeddata = function(){
 				songSelected = true;
 				showCurrentSong(trackName);	
 				setTimez();
 				viewSelected(row);
+				playVsPause("play");
 			}
 		} catch (err) {
 			console.log(err);
@@ -33,7 +30,7 @@ angular.module("sugarApp").service("musicPlayer", function($interval){
 					
 	}
 
-	/* INSTANCE FUNCTIONS*/
+/* INSTANCE FUNCTIONS*/
 
 	// This one controls playing a song (including randomization if none is selected)
 	this.playSong = function(){
