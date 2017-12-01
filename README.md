@@ -10,7 +10,7 @@ This site contains all the music I have from my favorite band in the world - Nu 
     * If you were playing a song when you leave the site, and you come back within the same day ...
     * ... you will have the option of picking up at the same spot where you left.
 
-### Copyright Notice
+#### Copyright Notice
 I do not own this music! Nu Vybes Band Intl. owns this music, and they reserve full rights to determine how it can be used.
 
 
