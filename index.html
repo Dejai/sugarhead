@@ -21,7 +21,7 @@
 	<link rel="stylesheet" type="text/css" href="/sugarhead/scripts/css/federicoGhedina.css">
 	<link rel="stylesheet" type="text/css" href="/sugarhead/scripts/css/sugarHead.css">
 </head>
-<body ng-app="sugarApp" ng-controller="sugarCtrl" id="ngApp" style="visibility:hidden;opacity:0;">
+<body ng-app="sugarApp" ng-controller="sugarCtrl" id="ngApp">
 	<div id="modal" modal></div>
 	<div id="fixedSugarHeadSection" class="fixedAtTop">
 		<a class="sugarLink" href="https://www.facebook.com/NuVybes/" target="_blank">#NuVybesBand</a>
@@ -72,7 +72,7 @@
 			<span id="resetSearch" class="glyphicon glyphicon-remove searchIcon" ng-show="filterBy" ng-click="filterBy = '' "></span>
 		</div>	
 	</div>
-	<div id="songSection">
+	<div id="songSection" >
 		<table id="songListing">
  			<thead>
 	 			<tr>
@@ -106,7 +106,7 @@
 	 				</th>
 	 			</tr>
 	 		</thead>
-	 		<tbody id="songsList">
+	 		<tbody id="songsList" style="height:{{dynamicHeight}}">
 	 			<tr class="aSong show-delay animate-repeat" ng-repeat="song in theSongs | filter: filterFunc | orderBy:sortValue:sortReverse" ng-dblclick="rowClick($event)" data-track-name="{{song.trackName}}" data-album-name="{{song.songAlbum}}" data-song-selected="{{song.highlighted}}" song-row>
 	 			</tr>
 	 			<tr ng-show="results == 1" class="ng-hide" style="text-align:center;">

@@ -17,6 +17,11 @@ var highlightSong = '';
 
 	app.controller("sugarCtrl", function($scope, $http, musicPlayer, modalContent, listeners){
 
+
+		var newHeight = window.innerWidth < 500 ? window.innerHeight / 2 : window.innerHeight - 180;
+		// var newHeight = window.innerHeight - 180;
+		$scope.dynamicHeight = newHeight+"px";
+
 		modalContent.checkLocalStorage();
 		listeners.startListening();
 		var d = new Date();

@@ -1,6 +1,7 @@
 /* GENERAL */
 
 	* { font-family: "Roboto", sans-serif; }
+	body { visibility:hidden;opacity:0; }
 	.hidden { display:none;  }
 	.glyphicon { cursor:pointer;  }
 	.glyphicon-triangle-top { color:limegreen; }
@@ -95,12 +96,12 @@
 					display:flex; align-items: center; justify-content: center; }*/
 
 	/* The Table Of Songs */
-	#songListing { width:100%; display:block; margin:auto;}
+	#songListing { width:100%; display:block; margin:auto; overflow:hidden;}
 	
 	#songListing thead, #songListing tbody { display:block; width:100%; }
 	#songListing thead { border-bottom: 2px solid black;  }
 	#songListing thead { border-bottom: 2px solid black; border-top: 2px solid black;  }
-	#songListing tbody { height:300px; overflow:scroll; }
+	#songListing tbody { border-bottom:1px solid gray; overflow:scroll; }
 	tbody tr { border-bottom: 1px solid lightgray; padding-top:3%; padding-bottom:3%; }
 	tbody tr:hover { background-color: lightgray; }
 
@@ -126,10 +127,10 @@
 
 /* MEDIA QUERIES */
 
-@media screen and (max-height:750px){#songListing tbody { height:460px; } }
+/*@media screen and (max-height:750px){#songListing tbody { height:460px; } }
 @media screen and (max-height:670px){ #songListing tbody { height:420px; } }
 @media screen and (max-height:650px){ #songListing tbody { height:350px; } }
-@media screen and (max-height:600px){ #songListing tbody { height:300px; } }
+@media screen and (max-height:600px){ #songListing tbody { height:300px; } }*/
 
 
 
@@ -169,7 +170,7 @@
 
 	/* The Table Of Songs */
 	#songListing { border:none; width:80%; }
-	#songListing tbody { height:450px; }
+	/*#songListing tbody { height:450px; }*/
 	tbody tr { padding-top:0.5%; padding-bottom:0.5%; }
 
 	
