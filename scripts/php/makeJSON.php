@@ -47,7 +47,8 @@
 				"Stage Pass" : "2013-14",
 				"The Formula" : "2014-15",
 				"Main Event" : "2015-16", 
-				"iMusic" : "2016-17"
+				"iMusic" : "2016-17", 
+				"Since 1987": "2017-18"
 		};		
 		var songsJSON = [];
 
