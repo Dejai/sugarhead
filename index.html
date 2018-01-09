@@ -65,7 +65,6 @@
 	 		<span id="shuffleButton" class="glyphicon glyphicon-random audioController songOrderControllers" ng-click="audioControl('shuffle')">
 	 		</span>
 		</div>
-		
 		<div id="searchSection" class="topSubSection middleCenter">
 			<span class="glyphicon glyphicon-search searchIcon" contenteditable="false"></span>		
 			<input id="searchBox" type="text" name="search" placeholder="Search by song/album/year" style="" ng-model="filterBy"/>	
@@ -87,27 +86,27 @@
 	 				<th data-ng-click="setSort('songName')">
 	 					Title
 	 					<span class="glyphicon glyphicon-triangle-top" ng-show=" sortValue == 'songName' && !sortReverse "></span>
-	 					<span class="glyphicon glyphicon-triangle-bottom" ng-show=" sortValue == 'songName' && sortReverse "></span>
+	 					<span class="glyphicon glyphicon-triangle-bottom" ng-show=" sortValue == '-songName' && sortReverse "></span>
 	 				</th>
 	 				<th data-ng-click="setSort('songLength')">
 	 					Length
 						<span class="glyphicon glyphicon-triangle-top" ng-show=" sortValue == 'songLength' && !sortReverse "></span>
-	 					<span class="glyphicon glyphicon-triangle-bottom" ng-show=" sortValue == 'songLength' && sortReverse "></span>
+	 					<span class="glyphicon glyphicon-triangle-bottom" ng-show=" sortValue == '-songLength' && sortReverse "></span>
 	 				</th>
 	 				<th data-ng-click="setSort('songAlbum')">
 	 					Album
 		 				<span class="glyphicon glyphicon-triangle-top" ng-show=" sortValue == 'songAlbum' && !sortReverse "></span>
-	 					<span class="glyphicon glyphicon-triangle-bottom" ng-show=" sortValue == 'songAlbum' && sortReverse "></span>
+	 					<span class="glyphicon glyphicon-triangle-bottom" ng-show=" sortValue == '-songAlbum' && sortReverse "></span>
 	 				</th>
 	 				<th data-ng-click="setSort('songReleaseYear')">
 	 					Year
 	 					<span class="glyphicon glyphicon-triangle-top" ng-show=" sortValue == 'songReleaseYear' && !sortReverse "></span>
-	 					<span class="glyphicon glyphicon-triangle-bottom" ng-show=" sortValue == 'songReleaseYear' && sortReverse "></span>
+	 					<span class="glyphicon glyphicon-triangle-bottom" ng-show=" sortValue == '-songReleaseYear' && sortReverse "></span>
 	 				</th>
 	 			</tr>
 	 		</thead>
 	 		<tbody id="songsList" style="height:{{dynamicHeight}}">
-	 			<tr class="aSong show-delay animate-repeat" ng-repeat="song in theSongs | filter: filterFunc | orderBy:sortValue:sortReverse" ng-dblclick="rowClick($event)" data-track-name="{{song.trackName}}" data-album-name="{{song.songAlbum}}" data-song-selected="{{song.highlighted}}" song-row>
+	 			<tr class="aSong show-delay animate-repeat" ng-repeat="song in theSongs | filter: filterFunc | orderBy:sortValue" ng-dblclick="rowClick($event)" data-track-name="{{song.trackName}}" data-album-name="{{song.songAlbum}}" data-song-selected="{{song.highlighted}}" song-row>
 	 			</tr>
 	 			<tr ng-show="results == 1" class="ng-hide" style="text-align:center;">
 	 				<td colspan='4' style="text-align:center; width:100%; padding:1%">

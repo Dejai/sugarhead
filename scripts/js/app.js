@@ -19,7 +19,6 @@ var highlightSong = '';
 
 
 		var newHeight = window.innerWidth < 500 ? window.innerHeight / 2 : window.innerHeight - 180;
-		// var newHeight = window.innerHeight - 180;
 		$scope.dynamicHeight = newHeight+"px";
 
 		modalContent.checkLocalStorage();
@@ -74,7 +73,6 @@ var highlightSong = '';
 		$http.get("/sugarhead/scripts/js/data/songsJSON.json")
 				.then(function(response){
 					$scope.theSongs = response.data;
-					
 				});
 
 
@@ -106,16 +104,17 @@ var highlightSong = '';
 			}
 		}
 
-		$scope.sortValue = 'songAlbum';	$scope.sortReverse = false;
+		// The orderBy filter uses an array of column names; The negative sign indicates reverse. 
+		$scope.sortValue = ["-songReleaseYear", "songOrder"];	$scope.sortReverse = true;
 		// This function determines which column to sort the data by. 
 		// It also takes into consideration whether or not to sort it in reverse
 		$scope.setSort = function(x){
 			$scope.sortReverse = ($scope.sortValue == x && !$scope.sortReverse) ? true : false;
-			$scope.sortValue = x;
+			$scope.sortValue = $scope.sortReverse ? ["-"+x] : [x];
+			console.log($scope.sortValue);
 		}
 
 		$scope.rowClick = function(event){
-			// console.log(event.srcElement.parentNode.dataset.albumName + " - " + event.srcElement.parentNode.dataset.trackName);
 			var row;
 			var elem = event.srcElement;
 			if (elem.tagName == "TR"){
