@@ -1,5 +1,4 @@
 # [Sugar Head Central](https://dejai.github.io/sugarhead/)
-## Version: 1.0.0
 
 This site contains all the music I have from my favorite band in the world - Nu Vybes Band a.k.a "De Sugar Band"!
 ### Basic Features
