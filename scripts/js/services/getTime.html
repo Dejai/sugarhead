@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Get HTML</title>
+	<script type="text/javascript">
+		document.addEventListener("DOMContentLoaded", function(){
+			var audio = document.getElementById("currentAudio");
+			var audioSource = document.getElementById("currentSong");
+			var songID = location.search.split("=")[1];
+			songID = decodeURIComponent(songID).replace(/&amp;/g, '&');
+			var sourceURL = "http://docs.google.com/uc?export=open&id=" + songID; 
+			audioSource.src = sourceURL;
+			audio.load();
+			audio.onloadeddata = function(){
+				document.write(Math.round(audio.duration));
+			}
+		});
+	</script>
+</head>
+<body>
+	<audio id="currentAudio" style="width:100px; height:100px;">
+		<source id="currentSong" type="audio/mpeg" >
+	</audio>
+</body>
+</html>
