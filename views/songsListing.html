@@ -1,9 +1,9 @@
 <td>
-	<span ng-show="allOneAlbum" class="ng-hide">
+	<!-- <span ng-show="allOneAlbum" class="ng-hide"> -->
 		{{song.songOrder}}
-	</span>
+	<!-- </span> -->
 </td> 
-<td>{{song.songName}}</td> 
+<td>{{song.songName | songName}}</td> 
 <td>{{song.songLength | songTime}}</td>
 <td>{{song.songAlbum}}</td>
 <td>{{song.songReleaseYear}}</td>

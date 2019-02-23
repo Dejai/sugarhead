@@ -1,0 +1,125 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<albums>
+	<album>
+		<albumName>iMusic</albumName>
+		<albumReleaseYear>2016-17</albumReleaseYear>
+		<tracksCount>8</tracksCount>
+		<tracks>
+			<track id='1FL1qYiBtq540pIPMK5Q1VyJJrvX_8o8Q'>
+				<songOrder>01</songOrder>
+				<songName>Amazing</songName>
+				<songLength>N/A</songLength>
+				<trackName>01 Amazing</trackName>
+			</track>
+			<track id='1OJDQQJzQ9qucTzcaI-eJ9VRixvTrpWRO'>
+				<songOrder>02</songOrder>
+				<songName>Inside We Mass</songName>
+				<songLength>N/A</songLength>
+				<trackName>02 Inside We Mass</trackName>
+			</track>
+			<track id='1aTYQZWypa7LYwNPmI_RWq2MbZQU41Ong'>
+				<songOrder>03</songOrder>
+				<songName>Seductive</songName>
+				<songLength>N/A</songLength>
+				<trackName>03 Seductive</trackName>
+			</track>
+			<track id='1ZKuC5INNxxm_yj4Jb5kMVKCeW4UUClmU'>
+				<songOrder>04</songOrder>
+				<songName>What's My Name</songName>
+				<songLength>N/A</songLength>
+				<trackName>04 What's My Name</trackName>
+			</track>
+			<track id='1xUrnVSjCfyp2YPl-gbXWG4bdU9ls0IxL'>
+				<songOrder>05</songOrder>
+				<songName>Up Dey</songName>
+				<songLength>N/A</songLength>
+				<trackName>05 Up Dey</trackName>
+			</track>
+			<track id='1bOCCD05X3pF90A3BlnqCO5Y2X1IQK3To'>
+				<songOrder>06</songOrder>
+				<songName>Bruck Back</songName>
+				<songLength>N/A</songLength>
+				<trackName>06 Bruck Back</trackName>
+			</track>
+			<track id='1hVE65tSraxjtSjn7CedNPvwJ7nNOukON'>
+				<songOrder>07</songOrder>
+				<songName>Overdose</songName>
+				<songLength>N/A</songLength>
+				<trackName>07 Overdose</trackName>
+			</track>
+			<track id='1reREmbfV9tV4qgguvC8mEiSpJDFOJFSB'>
+				<songOrder>08</songOrder>
+				<songName>Like A Slave</songName>
+				<songLength>N/A</songLength>
+				<trackName>08 Like A Slave</trackName>
+			</track>
+		</tracks>
+	</album>
+	<album>
+		<albumName>Since 1987</albumName>
+		<albumReleaseYear>2017-18</albumReleaseYear>
+		<tracksCount>10</tracksCount>
+		<tracks>
+			<track id='1Ep06z-rxOrbKPSJnzb814O7ZQUaN_x75'>
+				<songOrder>01</songOrder>
+				<songName>ROCK SOLID</songName>
+				<songLength>206</songLength>
+				<trackName>01 ROCK SOLID</trackName>
+			</track>
+			<track id='1N5mSCNj6REGKWDAAPXpCQZlY3Ho5_zJg'>
+				<songOrder>02</songOrder>
+				<songName>LIT</songName>
+				<songLength>194</songLength>
+				<trackName>02 LIT</trackName>
+			</track>
+			<track id='1_8nNwLZL3udmDanwmQu8FzIF2eko72vz'>
+				<songOrder>03</songOrder>
+				<songName>SOLO</songName>
+				<songLength>217</songLength>
+				<trackName>03 SOLO</trackName>
+			</track>
+			<track id='1MOCbYuTLxIwY9AFkGP844OxFyA8cfeJy'>
+				<songOrder>04</songOrder>
+				<songName>HOSEMAN</songName>
+				<songLength>217</songLength>
+				<trackName>04 HOSEMAN</trackName>
+			</track>
+			<track id='1-BCf3s0SNKwjLKq3JbWslIIlDqm5hvKU'>
+				<songOrder>05</songOrder>
+				<songName>DON'T PANIC</songName>
+				<songLength>185</songLength>
+				<trackName>05 DON'T PANIC</trackName>
+			</track>
+			<track id='1IFyrXpJl_JhU5oKBka7Y6Le1v1i_UlOW'>
+				<songOrder>06</songOrder>
+				<songName>ME ALONE</songName>
+				<songLength>186</songLength>
+				<trackName>06 ME ALONE</trackName>
+			</track>
+			<track id='1AmIsx-oaWXsbIN0U5uzUg-3zMcwT5I0A'>
+				<songOrder>07</songOrder>
+				<songName>BOSS LADY</songName>
+				<songLength>225</songLength>
+				<trackName>07 BOSS LADY</trackName>
+			</track>
+			<track id='1FdWyc0SkFX39ti52-wziZHhxq-DWn5q0'>
+				<songOrder>08</songOrder>
+				<songName>MY FANTASY</songName>
+				<songLength>177</songLength>
+				<trackName>08 MY FANTASY</trackName>
+			</track>
+			<track id='1dEWdpAH3wsI0ejjMkRyFJREmeC4B8M2S'>
+				<songOrder>09</songOrder>
+				<songName>PROTOCOL</songName>
+				<songLength>220</songLength>
+				<trackName>09 PROTOCOL</trackName>
+			</track>
+			<track id='1eIq9cY6vBZgg8eMvzQVHlfHkacs63OZ9'>
+				<songOrder>10</songOrder>
+				<songName>ROCK &amp; COME IN</songName>
+				<songLength>225</songLength>
+				<trackName>10 ROCK &amp; COME IN</trackName>
+			</track>
+		</tracks>
+	</album>
+</albums>
