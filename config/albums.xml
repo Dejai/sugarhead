@@ -1,6 +1,1558 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <albums>
 	<album>
+		<albumName>Main Event</albumName>
+		<albumReleaseYear>2015-16</albumReleaseYear>
+		<tracksCount>10</tracksCount>
+		<tracks>
+			<track id='1cp4IT4tV3vcK3qMWBboPmzUBfKfEgWJa'>
+				<songOrder>01</songOrder>
+				<songName>Powdering</songName>
+				<songLength>188</songLength>
+				<trackName>01 Powdering</trackName>
+			</track>
+			<track id='1dru64F0tNVYB6fze2rygamkbIaOiyYPK'>
+				<songOrder>02</songOrder>
+				<songName>Traffic Block</songName>
+				<songLength>217</songLength>
+				<trackName>02 Traffic Block</trackName>
+			</track>
+			<track id='1HBYggIi6Uoyv-UOXZmn_qHxRCezd2DGA'>
+				<songOrder>03</songOrder>
+				<songName>Carnival Toast</songName>
+				<songLength>206</songLength>
+				<trackName>03 Carnival Toast</trackName>
+			</track>
+			<track id='1kvYnttEnXgg50L95TJDKyuzPpa2tKl_3'>
+				<songOrder>04</songOrder>
+				<songName>All Out</songName>
+				<songLength>153</songLength>
+				<trackName>04 All Out</trackName>
+			</track>
+			<track id='10gUzo3YMrxsKV6B9Ba-kTNUFsa9idBwZ'>
+				<songOrder>05</songOrder>
+				<songName>Ridiculous</songName>
+				<songLength>172</songLength>
+				<trackName>05 Ridiculous</trackName>
+			</track>
+			<track id='1mwskbnRAEldLepM9J_o_agoroFeADZNM'>
+				<songOrder>06</songOrder>
+				<songName>Sexy Body</songName>
+				<songLength>192</songLength>
+				<trackName>06 Sexy Body</trackName>
+			</track>
+			<track id='1wDErazzleRHFQLkXKT7Q7WW6z4ZcLxmH'>
+				<songOrder>07</songOrder>
+				<songName>Sugar Band Love</songName>
+				<songLength>250</songLength>
+				<trackName>07 Sugar Band Love</trackName>
+			</track>
+			<track id='1UbJ1fFtk-Qf71jTCa9HZd7aYqa6_AOz6'>
+				<songOrder>08</songOrder>
+				<songName>What They Want</songName>
+				<songLength>222</songLength>
+				<trackName>08 What They Want</trackName>
+			</track>
+			<track id='1hrI0-Ddkg6NYUJ_wFsQnBCxV4OcunJwL'>
+				<songOrder>09</songOrder>
+				<songName>Juicy Fruit</songName>
+				<songLength>201</songLength>
+				<trackName>09 Juicy Fruit</trackName>
+			</track>
+			<track id='1umE93iV7kRzstaz0g-Vsy6wTx2-xCmSz'>
+				<songOrder>10</songOrder>
+				<songName>Sexy Body Remix</songName>
+				<songLength>193</songLength>
+				<trackName>10 Sexy Body Remix</trackName>
+			</track>
+		</tracks>
+	</album>
+	<album>
+		<albumName>The Formula</albumName>
+		<albumReleaseYear>2014-15</albumReleaseYear>
+		<tracksCount>10</tracksCount>
+		<tracks>
+			<track id='10o_qm8oBoM7NLJm13l3RCuGuiwpB707Q'>
+				<songOrder>01</songOrder>
+				<songName>The Explanation</songName>
+				<songLength>214</songLength>
+				<trackName>01 The Explanation</trackName>
+			</track>
+			<track id='1gQtszog4Nc771XaLUERqWFBrevXtlvme'>
+				<songOrder>02</songOrder>
+				<songName>Follow Me</songName>
+				<songLength>239</songLength>
+				<trackName>02 Follow Me</trackName>
+			</track>
+			<track id='1isfYZyNNB7dYrlWVGInShQqP7WPS9xtw'>
+				<songOrder>03</songOrder>
+				<songName>Wait For Me</songName>
+				<songLength>163</songLength>
+				<trackName>03 Wait For Me</trackName>
+			</track>
+			<track id='1QI9g5jLCCE6qv1Va2lIXDcZX3jppOALS'>
+				<songOrder>04</songOrder>
+				<songName>Power Up</songName>
+				<songLength>191</songLength>
+				<trackName>04 Power Up</trackName>
+			</track>
+			<track id='17Ya5HsAP7WvxwGyUMsRP3XEUVS7oGYmx'>
+				<songOrder>05</songOrder>
+				<songName>Girls</songName>
+				<songLength>209</songLength>
+				<trackName>05 Girls</trackName>
+			</track>
+			<track id='1UtDS2Mw8ya1Y_FnZjQsvGwRa922g7s9Q'>
+				<songOrder>06</songOrder>
+				<songName>To Easy</songName>
+				<songLength>267</songLength>
+				<trackName>06 To Easy</trackName>
+			</track>
+			<track id='1LM5dZBQV8kJUt6dd1-oFGzwGliBULuB8'>
+				<songOrder>07</songOrder>
+				<songName>Dancing</songName>
+				<songLength>181</songLength>
+				<trackName>07 Dancing</trackName>
+			</track>
+			<track id='1wtVWWXZpE5TwNqaLKGoUskhgk5GUUfWA'>
+				<songOrder>08</songOrder>
+				<songName>A-Game</songName>
+				<songLength>202</songLength>
+				<trackName>08 A-Game</trackName>
+			</track>
+			<track id='1rXlYtyzmeiV5gNdkdvDQ-KLmD0viDION'>
+				<songOrder>09</songOrder>
+				<songName>My Ride</songName>
+				<songLength>205</songLength>
+				<trackName>09 My Ride</trackName>
+			</track>
+			<track id='1zPXTZMOoua1-MrOEDpVzODEyUcFwnsCc'>
+				<songOrder>10</songOrder>
+				<songName>Live Free</songName>
+				<songLength>221</songLength>
+				<trackName>10 Live Free</trackName>
+			</track>
+		</tracks>
+	</album>
+	<album>
+		<albumName>Stage Pass</albumName>
+		<albumReleaseYear>2013-14</albumReleaseYear>
+		<tracksCount>10</tracksCount>
+		<tracks>
+			<track id='1DidKt7ZS1GNIB5c12sfrUM0OlnzmjqbJ'>
+				<songOrder>01</songOrder>
+				<songName>HOOK</songName>
+				<songLength>201</songLength>
+				<trackName>01 HOOK</trackName>
+			</track>
+			<track id='1JXR45GGkAlxuDDXuiMZHsCJvDzawjDRQ'>
+				<songOrder>02</songOrder>
+				<songName>Musical Journey</songName>
+				<songLength>204</songLength>
+				<trackName>02 Musical Journey</trackName>
+			</track>
+			<track id='1icmemiaEcp88b2Hl31amf0b_NIv-gMBZ'>
+				<songOrder>03</songOrder>
+				<songName>Better Way</songName>
+				<songLength>203</songLength>
+				<trackName>03 Better Way</trackName>
+			</track>
+			<track id='17NO9Dk5T52kKNanyJEqySWlEX22DD4km'>
+				<songOrder>04</songOrder>
+				<songName>Give It To Me</songName>
+				<songLength>192</songLength>
+				<trackName>04 Give It To Me</trackName>
+			</track>
+			<track id='1AtRh1ASvay2unp7gP50tfhX5VMpWk6zj'>
+				<songOrder>05</songOrder>
+				<songName>Control Yourself</songName>
+				<songLength>226</songLength>
+				<trackName>05 Control Yourself</trackName>
+			</track>
+			<track id='1eVkIF_ELurmlIO15AaoP0IAIToATBAzw'>
+				<songOrder>06</songOrder>
+				<songName>B.O.D.Y.</songName>
+				<songLength>226</songLength>
+				<trackName>06 B.O.D.Y.</trackName>
+			</track>
+			<track id='1M1UedZ0wbMFXGJUmuF_aofWPjs3g9BBp'>
+				<songOrder>07</songOrder>
+				<songName>To De Bone</songName>
+				<songLength>265</songLength>
+				<trackName>07 To De Bone</trackName>
+			</track>
+			<track id='1t-YrtS8s3SM4p7R4HHELJQ_wps0FP-bj'>
+				<songOrder>08</songOrder>
+				<songName>Socavivor</songName>
+				<songLength>193</songLength>
+				<trackName>08 Socavivor</trackName>
+			</track>
+			<track id='1xtyTdOOKMD5ttVeCO5GzORne98TFlwqv'>
+				<songOrder>09</songOrder>
+				<songName>Freaky Mas</songName>
+				<songLength>206</songLength>
+				<trackName>09 Freaky Mas</trackName>
+			</track>
+			<track id='1A1-22ejNtiX_xw9J3OJ9qjI_PrjwJF8u'>
+				<songOrder>10</songOrder>
+				<songName>So What</songName>
+				<songLength>181</songLength>
+				<trackName>10 So What</trackName>
+			</track>
+		</tracks>
+	</album>
+	<album>
+		<albumName>One Order</albumName>
+		<albumReleaseYear>2012-13</albumReleaseYear>
+		<tracksCount>10</tracksCount>
+		<tracks>
+			<track id='1pNfLgubqAtFoisogdtJbzbrLqftlU06i'>
+				<songOrder>01</songOrder>
+				<songName>INTRO</songName>
+				<songLength>87</songLength>
+				<trackName>01 INTRO</trackName>
+			</track>
+			<track id='1NOktELeKgUMjW-hAmFDjW7ubl6y3TwMN'>
+				<songOrder>02</songOrder>
+				<songName>One Order</songName>
+				<songLength>204</songLength>
+				<trackName>02 One Order</trackName>
+			</track>
+			<track id='11FhHjveCIwiQRwgG3E_Za-VMYyz8QrmD'>
+				<songOrder>03</songOrder>
+				<songName>Party Nice</songName>
+				<songLength>185</songLength>
+				<trackName>03 Party Nice</trackName>
+			</track>
+			<track id='1yftKl3yoHI3hbEbLXLCBO52fillb2-_0'>
+				<songOrder>04</songOrder>
+				<songName>Ma Dawgs At</songName>
+				<songLength>278</songLength>
+				<trackName>04 Ma Dawgs At</trackName>
+			</track>
+			<track id='1j_86CPNKj-df8ihtWAIPyNOweAvf5Cgx'>
+				<songOrder>05</songOrder>
+				<songName>Ah Forget Them</songName>
+				<songLength>214</songLength>
+				<trackName>05 Ah Forget Them</trackName>
+			</track>
+			<track id='1jPX0hQVrXNukge6U-CDMnxNdgkPp3G0E'>
+				<songOrder>06</songOrder>
+				<songName>Step Off</songName>
+				<songLength>228</songLength>
+				<trackName>06 Step Off</trackName>
+			</track>
+			<track id='1SuZUnsnciafhakc9-aCEPJLpf7Q4imu7'>
+				<songOrder>07</songOrder>
+				<songName>Sugar Head</songName>
+				<songLength>188</songLength>
+				<trackName>07 Sugar Head</trackName>
+			</track>
+			<track id='1i6wSTqvr3CN9S6l7vIn-DGYsqFywZxCo'>
+				<songOrder>08</songOrder>
+				<songName>Oxygen</songName>
+				<songLength>187</songLength>
+				<trackName>08 Oxygen</trackName>
+			</track>
+			<track id='1wTUZaRjt2r0v6OmohnWlnJPAXNQUO4fP'>
+				<songOrder>09</songOrder>
+				<songName>Guilty</songName>
+				<songLength>198</songLength>
+				<trackName>09 Guilty</trackName>
+			</track>
+			<track id='174YEIo3dH5rpj_RYjCoypqDVLl22Le_Q'>
+				<songOrder>10</songOrder>
+				<songName>Ma Dawgs Remix</songName>
+				<songLength>270</songLength>
+				<trackName>10 Ma Dawgs Remix</trackName>
+			</track>
+		</tracks>
+	</album>
+	<album>
+		<albumName>Everything Is Everything</albumName>
+		<albumReleaseYear>2011-12</albumReleaseYear>
+		<tracksCount>10</tracksCount>
+		<tracks>
+			<track id='1GWQvHslPXXKuHGXY8nykEAZRLig5CL-o'>
+				<songOrder>01</songOrder>
+				<songName>I - Rep</songName>
+				<songLength>297</songLength>
+				<trackName>01 I - Rep</trackName>
+			</track>
+			<track id='14mTE_xAMi8kAOq3-yTJmDaUhupvOdHNr'>
+				<songOrder>02</songOrder>
+				<songName>Wining Tournament</songName>
+				<songLength>250</songLength>
+				<trackName>02 Wining Tournament</trackName>
+			</track>
+			<track id='1SbvvTOW4DSBwb3Ro_C1HNANo2H3XYWPb'>
+				<songOrder>03</songOrder>
+				<songName>Love Boat</songName>
+				<songLength>220</songLength>
+				<trackName>03 Love Boat</trackName>
+			</track>
+			<track id='1tVvGyqqlalUSUvlhEQnVG_6IafC1Mzan'>
+				<songOrder>04</songOrder>
+				<songName>Bounce Cheque</songName>
+				<songLength>260</songLength>
+				<trackName>04 Bounce Cheque</trackName>
+			</track>
+			<track id='1s3WN2EFDpBKIGcxsU1gBvrmGCEp6ou4K'>
+				<songOrder>05</songOrder>
+				<songName>Wickedest Wine</songName>
+				<songLength>229</songLength>
+				<trackName>05 Wickedest Wine</trackName>
+			</track>
+			<track id='1DqODrQTt1U63KiQ092PaZz08MUowMKhO'>
+				<songOrder>06</songOrder>
+				<songName>Load It</songName>
+				<songLength>236</songLength>
+				<trackName>06 Load It</trackName>
+			</track>
+			<track id='1fVGSxb84uTpeHV5LKMoav8I_Unw4CXAL'>
+				<songOrder>07</songOrder>
+				<songName>Electric City</songName>
+				<songLength>200</songLength>
+				<trackName>07 Electric City</trackName>
+			</track>
+			<track id='1INJcTYRHkcVRoocLfdn-ox_0yZZ6e8aJ'>
+				<songOrder>08</songOrder>
+				<songName>Carnival Motorcade</songName>
+				<songLength>207</songLength>
+				<trackName>08 Carnival Motorcade</trackName>
+			</track>
+			<track id='1aSXYOKDbtnu6bdtEeXFg3bmfclSXUkQW'>
+				<songOrder>09</songOrder>
+				<songName>Wet Down</songName>
+				<songLength>237</songLength>
+				<trackName>09 Wet Down</trackName>
+			</track>
+			<track id='1rIZtTTs63INkPDd_b8ZoNEsdC1b33wT7'>
+				<songOrder>10</songOrder>
+				<songName>Encore</songName>
+				<songLength>175</songLength>
+				<trackName>10 Encore</trackName>
+			</track>
+		</tracks>
+	</album>
+	<album>
+		<albumName>Blood Sweat &amp; Tears</albumName>
+		<albumReleaseYear>2010-11</albumReleaseYear>
+		<tracksCount>12</tracksCount>
+		<tracks>
+			<track id='1dWa4RdiiSSZNf5VgGCTELSjo0V2bezH4'>
+				<songOrder>01</songOrder>
+				<songName>De Answer</songName>
+				<songLength>234</songLength>
+				<trackName>01 De Answer</trackName>
+			</track>
+			<track id='1T9-GIHwpRS6Fx29bU_3Z_e_NQtx0Dq8e'>
+				<songOrder>02</songOrder>
+				<songName>Flip Motion</songName>
+				<songLength>245</songLength>
+				<trackName>02 Flip Motion</trackName>
+			</track>
+			<track id='1W9sMo12CxC5P0PlbIHTJar1ps5kChkPC'>
+				<songOrder>03</songOrder>
+				<songName>Till Ah Morning</songName>
+				<songLength>208</songLength>
+				<trackName>03 Till Ah Morning</trackName>
+			</track>
+			<track id='1jafox8CXnTNND-f3PosgOQRwuWi2YFbW'>
+				<songOrder>04</songOrder>
+				<songName>So Good</songName>
+				<songLength>227</songLength>
+				<trackName>04 So Good</trackName>
+			</track>
+			<track id='1qFMLY842QXtfmIUcpFb-YCUKNLyycUEZ'>
+				<songOrder>05</songOrder>
+				<songName>My Sound</songName>
+				<songLength>205</songLength>
+				<trackName>05 My Sound</trackName>
+			</track>
+			<track id='1s46vAlgMgFLoLWb6nz_4I-b6XFf-H6du'>
+				<songOrder>06</songOrder>
+				<songName>Class Reunion</songName>
+				<songLength>202</songLength>
+				<trackName>06 Class Reunion</trackName>
+			</track>
+			<track id='1JbDCW6bl8jU0WpU14DuY6Npj85MaVtts'>
+				<songOrder>07</songOrder>
+				<songName>One Band</songName>
+				<songLength>286</songLength>
+				<trackName>07 One Band</trackName>
+			</track>
+			<track id='1qOh1pfN8cVDfcXTjyf4oCXEXyb_CghkZ'>
+				<songOrder>08</songOrder>
+				<songName>Sugar Mass</songName>
+				<songLength>271</songLength>
+				<trackName>08 Sugar Mass</trackName>
+			</track>
+			<track id='1NI9qtI0hMHHa-MtuUDXGzCHZ03F0pwq1'>
+				<songOrder>09</songOrder>
+				<songName>Born For It</songName>
+				<songLength>220</songLength>
+				<trackName>09 Born For It</trackName>
+			</track>
+			<track id='1ODAkm3OrGMOBxHuUMf9HPkDM5RvxEdEM'>
+				<songOrder>10</songOrder>
+				<songName>Criteria</songName>
+				<songLength>260</songLength>
+				<trackName>10 Criteria</trackName>
+			</track>
+			<track id='107LYzItxAWNu9ZNpgOlkhIUAssxH9NuL'>
+				<songOrder>11</songOrder>
+				<songName>Fourth Quarter</songName>
+				<songLength>184</songLength>
+				<trackName>11 Fourth Quarter</trackName>
+			</track>
+			<track id='16iQr46zjggyvfVQTRVXQSNw_OYZoJvh1'>
+				<songOrder>12</songOrder>
+				<songName>Apologize</songName>
+				<songLength>207</songLength>
+				<trackName>12 Apologize</trackName>
+			</track>
+		</tracks>
+	</album>
+	<album>
+		<albumName>Kross Roads</albumName>
+		<albumReleaseYear>2009-10</albumReleaseYear>
+		<tracksCount>10</tracksCount>
+		<tracks>
+			<track id='1aly4bBeXMKRRahPbfHclFvFZuOIxDdls'>
+				<songOrder>01</songOrder>
+				<songName>Can't Get We Out</songName>
+				<songLength>251</songLength>
+				<trackName>01 Can't Get We Out</trackName>
+			</track>
+			<track id='1wkc5VmsdHE9qx5AN1UgYSg2jUb3xKZAU'>
+				<songOrder>02</songOrder>
+				<songName>Apple Bottom Gyal</songName>
+				<songLength>256</songLength>
+				<trackName>02 Apple Bottom Gyal</trackName>
+			</track>
+			<track id='1YJ9a68IW3yqd-f7iZYNEggpJ0qgX2CVF'>
+				<songOrder>03</songOrder>
+				<songName>Let's Fly</songName>
+				<songLength>236</songLength>
+				<trackName>03 Let's Fly</trackName>
+			</track>
+			<track id='1AR50aL6VKsh4L2fbt51pscjzC6dEAZMV'>
+				<songOrder>04</songOrder>
+				<songName>Don't Dance</songName>
+				<songLength>264</songLength>
+				<trackName>04 Don't Dance</trackName>
+			</track>
+			<track id='1C7LoyfCppOnMXqqK5U5TZVq7_wEe5BJV'>
+				<songOrder>05</songOrder>
+				<songName>Rock It Up</songName>
+				<songLength>275</songLength>
+				<trackName>05 Rock It Up</trackName>
+			</track>
+			<track id='1Qm_DB6Ei6UuXRSRCmqtFHC3ZoDybF96i'>
+				<songOrder>06</songOrder>
+				<songName>Walkie Talkie</songName>
+				<songLength>231</songLength>
+				<trackName>06 Walkie Talkie</trackName>
+			</track>
+			<track id='1nijwnoPciflwvWr-5H3cr0eVgD9Z0ciQ'>
+				<songOrder>07</songOrder>
+				<songName>Booty Call</songName>
+				<songLength>254</songLength>
+				<trackName>07 Booty Call</trackName>
+			</track>
+			<track id='1SDJZKBhnZ9jYbdMyyZLiiJSNxu0WMr6w'>
+				<songOrder>08</songOrder>
+				<songName>Best Friend</songName>
+				<songLength>231</songLength>
+				<trackName>08 Best Friend</trackName>
+			</track>
+			<track id='1zvKRK34IxEPyJON41xgGQj7ylkupXQXt'>
+				<songOrder>09</songOrder>
+				<songName>SuperModel</songName>
+				<songLength>256</songLength>
+				<trackName>09 SuperModel</trackName>
+			</track>
+			<track id='1zRaVW4iFITpRN750lxw4XffD3TsgIKnh'>
+				<songOrder>10</songOrder>
+				<songName>Want It Bad</songName>
+				<songLength>264</songLength>
+				<trackName>10 Want It Bad</trackName>
+			</track>
+		</tracks>
+	</album>
+	<album>
+		<albumName>Breaking Out</albumName>
+		<albumReleaseYear>2008-09</albumReleaseYear>
+		<tracksCount>12</tracksCount>
+		<tracks>
+			<track id='1g9tTmqflETwyTY_kwKwozZXIwvNJvimj'>
+				<songOrder>01</songOrder>
+				<songName>In The Street</songName>
+				<songLength>266</songLength>
+				<trackName>01 In The Street</trackName>
+			</track>
+			<track id='1Puq-U2mLYB1fUiAJiPvYyGhMc4IlGmAn'>
+				<songOrder>02</songOrder>
+				<songName>Video Light</songName>
+				<songLength>267</songLength>
+				<trackName>02 Video Light</trackName>
+			</track>
+			<track id='1znEPjTSbuFWX0Zup7KP4yyOkDOUD6t15'>
+				<songOrder>03</songOrder>
+				<songName>Whole Lot Of Love</songName>
+				<songLength>260</songLength>
+				<trackName>03 Whole Lot Of Love</trackName>
+			</track>
+			<track id='1O26B-Sw9-DbW9YGyn5E_OQtXOqvScZfg'>
+				<songOrder>04</songOrder>
+				<songName>Nar Pull Up</songName>
+				<songLength>272</songLength>
+				<trackName>04 Nar Pull Up</trackName>
+			</track>
+			<track id='1Ytvc6kQJLMWRXIeqi-1UD0ofY9_b5bkd'>
+				<songOrder>05</songOrder>
+				<songName>Everybody Lose It</songName>
+				<songLength>270</songLength>
+				<trackName>05 Everybody Lose It</trackName>
+			</track>
+			<track id='1EGvD3wpWM06Tr7jTk1B3KqVtg1b5eY1q'>
+				<songOrder>06</songOrder>
+				<songName>She Is Mine</songName>
+				<songLength>212</songLength>
+				<trackName>06 She Is Mine</trackName>
+			</track>
+			<track id='1nQRwj-QHyndXkaiOsun3bOb5roMPDXsj'>
+				<songOrder>07</songOrder>
+				<songName>Ohinee</songName>
+				<songLength>265</songLength>
+				<trackName>07 Ohinee</trackName>
+			</track>
+			<track id='1BUIy6ydb0QCcJ9roU-lWRx6ik0AhIuPy'>
+				<songOrder>08</songOrder>
+				<songName>Mansion Bull</songName>
+				<songLength>257</songLength>
+				<trackName>08 Mansion Bull</trackName>
+			</track>
+			<track id='1P_PkLRXnfsuo3y52_JN1l9eXezcvoUfN'>
+				<songOrder>09</songOrder>
+				<songName>Some Gyal Something</songName>
+				<songLength>251</songLength>
+				<trackName>09 Some Gyal Something</trackName>
+			</track>
+			<track id='1PCDyT44S8JQuhJiX06gfvw0Jsu_vai-f'>
+				<songOrder>10</songOrder>
+				<songName>Under World</songName>
+				<songLength>302</songLength>
+				<trackName>10 Under World</trackName>
+			</track>
+			<track id='1Uvg8MD9Nf2JLjkPYhcr5Wr0PUErT3OP4'>
+				<songOrder>11</songOrder>
+				<songName>Tribute</songName>
+				<songLength>276</songLength>
+				<trackName>11 Tribute</trackName>
+			</track>
+			<track id='1O2p9Z0DfdmEBs0HfPVgtbCKBVbFp9xOl'>
+				<songOrder>12</songOrder>
+				<songName>Sugar Band Medley</songName>
+				<songLength>402</songLength>
+				<trackName>12 Sugar Band Medley</trackName>
+			</track>
+		</tracks>
+	</album>
+	<album>
+		<albumName>Band A Lion</albumName>
+		<albumReleaseYear>2007-08</albumReleaseYear>
+		<tracksCount>11</tracksCount>
+		<tracks>
+			<track id='1MUJpatPPeDHDUTZRACKceiXBFNxuxEbK'>
+				<songOrder>01</songOrder>
+				<songName>Strike Up De Band</songName>
+				<songLength>278</songLength>
+				<trackName>01 Strike Up De Band</trackName>
+			</track>
+			<track id='1XzhswNyunCNFOqbMz4J1Y_4RqSWhZZ68'>
+				<songOrder>02</songOrder>
+				<songName>Back Dat Thing Up</songName>
+				<songLength>264</songLength>
+				<trackName>02 Back Dat Thing Up</trackName>
+			</track>
+			<track id='1iUQQKQY8venqf568lhXIYhduAGxibTXg'>
+				<songOrder>03</songOrder>
+				<songName>Salute</songName>
+				<songLength>253</songLength>
+				<trackName>03 Salute</trackName>
+			</track>
+			<track id='1-e1X1_c2LecdmrMYbZ9xrmu_Vh21VAdk'>
+				<songOrder>04</songOrder>
+				<songName>Sell Off</songName>
+				<songLength>297</songLength>
+				<trackName>04 Sell Off</trackName>
+			</track>
+			<track id='19OwLccRAfyqRqwkdGbrxZS3Zj8kftH-H'>
+				<songOrder>05</songOrder>
+				<songName>King A De Hill</songName>
+				<songLength>256</songLength>
+				<trackName>05 King A De Hill</trackName>
+			</track>
+			<track id='1gNnJS1uInPuP1Dj6xkzf81rX4Nemmol6'>
+				<songOrder>06</songOrder>
+				<songName>De Soca</songName>
+				<songLength>220</songLength>
+				<trackName>06 De Soca</trackName>
+			</track>
+			<track id='1JfjCOiRnuZ6HMXToYYDErI6i2oGZfK3b'>
+				<songOrder>07</songOrder>
+				<songName>Lion Paw</songName>
+				<songLength>243</songLength>
+				<trackName>07 Lion Paw</trackName>
+			</track>
+			<track id='1Lgo-IMAMJe7Its6FmVq8bHAxz3N1S-cy'>
+				<songOrder>08</songOrder>
+				<songName>One A Dem</songName>
+				<songLength>265</songLength>
+				<trackName>08 One A Dem</trackName>
+			</track>
+			<track id='1T9TLGTNvxtmenl3Z24Gi8T9JWMsewfwz'>
+				<songOrder>09</songOrder>
+				<songName>Nuh Beg Friend</songName>
+				<songLength>267</songLength>
+				<trackName>09 Nuh Beg Friend</trackName>
+			</track>
+			<track id='16ZO616NhbYuC0p9pEWHCU2osldD20uLc'>
+				<songOrder>10</songOrder>
+				<songName>Sweet Love</songName>
+				<songLength>186</songLength>
+				<trackName>10 Sweet Love</trackName>
+			</track>
+			<track id='1eSiDuHX0S5ayZJLPLLHPds_J2v8LSGnb'>
+				<songOrder>11</songOrder>
+				<songName>Time So Hard</songName>
+				<songLength>233</songLength>
+				<trackName>11 Time So Hard</trackName>
+			</track>
+		</tracks>
+	</album>
+	<album>
+		<albumName>For The People</albumName>
+		<albumReleaseYear>2006-07</albumReleaseYear>
+		<tracksCount>10</tracksCount>
+		<tracks>
+			<track id='1bMZbbxj09zKjUQIwDd8FgRFeYAvLFozz'>
+				<songOrder>01</songOrder>
+				<songName>Big Drum</songName>
+				<songLength>283</songLength>
+				<trackName>01 Big Drum</trackName>
+			</track>
+			<track id='1GMrEWR-bH9E57n0OgCL_9Wi3hVEoKMEL'>
+				<songOrder>02</songOrder>
+				<songName>For The People</songName>
+				<songLength>211</songLength>
+				<trackName>02 For The People</trackName>
+			</track>
+			<track id='1BbZ1eLPjtM8S_HO-HsZ4LtpPbcBzYdv4'>
+				<songOrder>03</songOrder>
+				<songName>New Page</songName>
+				<songLength>223</songLength>
+				<trackName>03 New Page</trackName>
+			</track>
+			<track id='1R87LBQS1B2PE4PckOSUKYmF2TJxmtP_L'>
+				<songOrder>04</songOrder>
+				<songName>Baila</songName>
+				<songLength>235</songLength>
+				<trackName>04 Baila</trackName>
+			</track>
+			<track id='1rRnIt2lZ0scITiTjQopGfw7lbXQT63es'>
+				<songOrder>05</songOrder>
+				<songName>Stand Firm</songName>
+				<songLength>300</songLength>
+				<trackName>05 Stand Firm</trackName>
+			</track>
+			<track id='1sNemS46Uka0z7dzanVGbY-sFf0oLTf3a'>
+				<songOrder>06</songOrder>
+				<songName>Punish</songName>
+				<songLength>260</songLength>
+				<trackName>06 Punish</trackName>
+			</track>
+			<track id='1_WRZNJM_yeDj2bssFM0_H3jjNSSOimv9'>
+				<songOrder>07</songOrder>
+				<songName>Tun Up</songName>
+				<songLength>236</songLength>
+				<trackName>07 Tun Up</trackName>
+			</track>
+			<track id='1YDsAeYItxiomOrIzL41w0C5ImpaBHPVX'>
+				<songOrder>08</songOrder>
+				<songName>On Fire</songName>
+				<songLength>253</songLength>
+				<trackName>08 On Fire</trackName>
+			</track>
+			<track id='12leF4bUt-du-s_iVkO05lxE73luXLAZQ'>
+				<songOrder>09</songOrder>
+				<songName>Costume Bedroom</songName>
+				<songLength>238</songLength>
+				<trackName>09 Costume Bedroom</trackName>
+			</track>
+			<track id='1Xs1YaevynpO8TDwo3Mg-yPDy4NWM611P'>
+				<songOrder>10</songOrder>
+				<songName>Leather</songName>
+				<songLength>256</songLength>
+				<trackName>10 Leather</trackName>
+			</track>
+		</tracks>
+	</album>
+	<album>
+		<albumName>Rolling Deep</albumName>
+		<albumReleaseYear>2005-06</albumReleaseYear>
+		<tracksCount>10</tracksCount>
+		<tracks>
+			<track id='12owPbGKOO6MRrf6kJ7AE7ssBAjKGqu5S'>
+				<songOrder>01</songOrder>
+				<songName>Ting Lang</songName>
+				<songLength>267</songLength>
+				<trackName>01 Ting Lang</trackName>
+			</track>
+			<track id='1xj61dAT0tn9UmBQllGPBwleGkOQCpAas'>
+				<songOrder>02</songOrder>
+				<songName>Take It All</songName>
+				<songLength>233</songLength>
+				<trackName>02 Take It All</trackName>
+			</track>
+			<track id='1AQUqwpyqhBnR4z_wWNt1ju6lYrhXD4BF'>
+				<songOrder>03</songOrder>
+				<songName>Party Freak</songName>
+				<songLength>216</songLength>
+				<trackName>03 Party Freak</trackName>
+			</track>
+			<track id='1lS1CWDOyOcVPp4LsYWG6VsZvzgHRpx4p'>
+				<songOrder>04</songOrder>
+				<songName>Tempo</songName>
+				<songLength>255</songLength>
+				<trackName>04 Tempo</trackName>
+			</track>
+			<track id='19O_7ViTKFG3gTsN3dJnXFe1BvP56NH1t'>
+				<songOrder>05</songOrder>
+				<songName>Sneaking</songName>
+				<songLength>229</songLength>
+				<trackName>05 Sneaking</trackName>
+			</track>
+			<track id='1HOg4p0SRneOEHzUxGOzXc2UHqh3MIhA5'>
+				<songOrder>06</songOrder>
+				<songName>Rolling Deep</songName>
+				<songLength>278</songLength>
+				<trackName>06 Rolling Deep</trackName>
+			</track>
+			<track id='1_Ok4l-sbxZmIAR8a1Lsi7L1vEfn2eR2v'>
+				<songOrder>07</songOrder>
+				<songName>On De Band Stand</songName>
+				<songLength>227</songLength>
+				<trackName>07 On De Band Stand</trackName>
+			</track>
+			<track id='1tjK_a1G4Ynywch__-tlKjm6KkbYYEY34'>
+				<songOrder>08</songOrder>
+				<songName>De Pep</songName>
+				<songLength>311</songLength>
+				<trackName>08 De Pep</trackName>
+			</track>
+			<track id='1prGgnvaPyQSzwP2KHXS006XQ-ssZSmDP'>
+				<songOrder>09</songOrder>
+				<songName>Come Just So</songName>
+				<songLength>279</songLength>
+				<trackName>09 Come Just So</trackName>
+			</track>
+			<track id='1HVPXGBCXWwCdV1KtwL9CQuXiIxC9Ycgd'>
+				<songOrder>10</songOrder>
+				<songName>Riddim Again</songName>
+				<songLength>273</songLength>
+				<trackName>10 Riddim Again</trackName>
+			</track>
+		</tracks>
+	</album>
+	<album>
+		<albumName>Pour It On</albumName>
+		<albumReleaseYear>2004-05</albumReleaseYear>
+		<tracksCount>11</tracksCount>
+		<tracks>
+			<track id='16_JX5c-MwUrdkab1-Q4RVvLO-DjWLOo3'>
+				<songOrder>01</songOrder>
+				<songName>Pour It On</songName>
+				<songLength>318</songLength>
+				<trackName>01 Pour It On</trackName>
+			</track>
+			<track id='1Hlar9mU0fgYkIBmDqq7YYhtsoakqPddY'>
+				<songOrder>02</songOrder>
+				<songName>Rubber Band</songName>
+				<songLength>331</songLength>
+				<trackName>02 Rubber Band</trackName>
+			</track>
+			<track id='1KfjlMYD6K1LdzyX_u8JonG_4lgYg79Eq'>
+				<songOrder>03</songOrder>
+				<songName>Hold It Dung</songName>
+				<songLength>281</songLength>
+				<trackName>03 Hold It Dung</trackName>
+			</track>
+			<track id='1MPsGtHA99K2mLYcm6amZ3ggcp6PeyjZA'>
+				<songOrder>04</songOrder>
+				<songName>Come To Me</songName>
+				<songLength>265</songLength>
+				<trackName>04 Come To Me</trackName>
+			</track>
+			<track id='1Z1WZ8EhpY36ChJns8MEH-RZ5pdGSMjwO'>
+				<songOrder>05</songOrder>
+				<songName>Ghetto Bashment</songName>
+				<songLength>193</songLength>
+				<trackName>05 Ghetto Bashment</trackName>
+			</track>
+			<track id='19JUhxRimaVye3D2UVWrkuaNsm76Cihsw'>
+				<songOrder>06</songOrder>
+				<songName>Follow Me</songName>
+				<songLength>257</songLength>
+				<trackName>06 Follow Me</trackName>
+			</track>
+			<track id='1UpxDwaRNObVxK7ON5-pWzWPcfSuLIOym'>
+				<songOrder>07</songOrder>
+				<songName>My Radio</songName>
+				<songLength>310</songLength>
+				<trackName>07 My Radio</trackName>
+			</track>
+			<track id='1Jeb64jeZNaClacSrLNj1JcOz-a1SAtQx'>
+				<songOrder>08</songOrder>
+				<songName>Runkutung</songName>
+				<songLength>216</songLength>
+				<trackName>08 Runkutung</trackName>
+			</track>
+			<track id='1Xq1zxD4jEpq_nsChz5KH7ZpbfVoFcs7x'>
+				<songOrder>09</songOrder>
+				<songName>Put Up You Hands</songName>
+				<songLength>357</songLength>
+				<trackName>09 Put Up You Hands</trackName>
+			</track>
+			<track id='1Rfx6Jh4zbvvQP6Pij61-9qtSpq94vGz6'>
+				<songOrder>10</songOrder>
+				<songName>Be Ready</songName>
+				<songLength>325</songLength>
+				<trackName>10 Be Ready</trackName>
+			</track>
+			<track id='1flFBYbBRoKCdnsoKSjZpStnW5RMIk48w'>
+				<songOrder>11</songOrder>
+				<songName>Jamboree (Shoulder To Shoulder)</songName>
+				<songLength>329</songLength>
+				<trackName>11 Jamboree (Shoulder To Shoulder)</trackName>
+			</track>
+		</tracks>
+	</album>
+	<album>
+		<albumName>Reloaded</albumName>
+		<albumReleaseYear>2004-04</albumReleaseYear>
+		<tracksCount>13</tracksCount>
+		<tracks>
+			<track id='1AEb-yPl0-Vj_KFv3BIiXYDMnWW6f7KJy'>
+				<songOrder>01</songOrder>
+				<songName>Loading ....</songName>
+				<songLength>23</songLength>
+				<trackName>01 Loading ....</trackName>
+			</track>
+			<track id='1_uYHiiyv4LKDBFCXJiyRAlaOaDcVM_b6'>
+				<songOrder>02</songOrder>
+				<songName>Tall Up</songName>
+				<songLength>300</songLength>
+				<trackName>02 Tall Up</trackName>
+			</track>
+			<track id='17znOyiAym4Sr85R7QrCXCwswdUjLxTJb'>
+				<songOrder>03</songOrder>
+				<songName>Style</songName>
+				<songLength>294</songLength>
+				<trackName>03 Style</trackName>
+			</track>
+			<track id='1giuu1JDeDLJZ_EQixulvgzlsNS2Est33'>
+				<songOrder>04</songOrder>
+				<songName>Here We Come</songName>
+				<songLength>249</songLength>
+				<trackName>04 Here We Come</trackName>
+			</track>
+			<track id='1UujZP8xOTVWSM78lyk1_V-C9tbU4eOw2'>
+				<songOrder>05</songOrder>
+				<songName>Watching You</songName>
+				<songLength>241</songLength>
+				<trackName>05 Watching You</trackName>
+			</track>
+			<track id='1xivMIzD_lJA0X3x0hfHb6rwvUqc_GkR9'>
+				<songOrder>06</songOrder>
+				<songName>Music Teacher</songName>
+				<songLength>327</songLength>
+				<trackName>06 Music Teacher</trackName>
+			</track>
+			<track id='1a7O2CgCI3JJyg9_Dw0e5MN2or2xsEvUF'>
+				<songOrder>07</songOrder>
+				<songName>True Mass</songName>
+				<songLength>334</songLength>
+				<trackName>07 True Mass</trackName>
+			</track>
+			<track id='1KjtB0F1lKgWsCO12K64tiYdUW-DzeWKW'>
+				<songOrder>08</songOrder>
+				<songName>Dwivayez</songName>
+				<songLength>291</songLength>
+				<trackName>08 Dwivayez</trackName>
+			</track>
+			<track id='1ghmFJc8r2OYbewFdkGRJy9_F7cR9q696'>
+				<songOrder>09</songOrder>
+				<songName>Good To Go</songName>
+				<songLength>284</songLength>
+				<trackName>09 Good To Go</trackName>
+			</track>
+			<track id='1baFhKkamu3pebL90FWWv9ZWekbWmk_xn'>
+				<songOrder>10</songOrder>
+				<songName>One Hundred %</songName>
+				<songLength>314</songLength>
+				<trackName>10 One Hundred %</trackName>
+			</track>
+			<track id='17GkSrEeztr_dLhovyqfIWMWxbuAO0yjW'>
+				<songOrder>11</songOrder>
+				<songName>Vitamin S</songName>
+				<songLength>336</songLength>
+				<trackName>11 Vitamin S</trackName>
+			</track>
+			<track id='1eAVDKzHzp-syzWxBER9iGUY8_PreIabp'>
+				<songOrder>12</songOrder>
+				<songName>Bangalang</songName>
+				<songLength>282</songLength>
+				<trackName>12 Bangalang</trackName>
+			</track>
+			<track id='1fm2K-7dRVwPns5WXGptysBiFdhYOVJAJ'>
+				<songOrder>13</songOrder>
+				<songName>Restart ...</songName>
+				<songLength>22</songLength>
+				<trackName>13 Restart ...</trackName>
+			</track>
+		</tracks>
+	</album>
+	<album>
+		<albumName>De Real Ting</albumName>
+		<albumReleaseYear>1995-96</albumReleaseYear>
+		<tracksCount>8</tracksCount>
+		<tracks>
+			<track id='1zG8o-g5zR8rzPQsNgirn0TQIWjf0_4OY'>
+				<songOrder>01</songOrder>
+				<songName>Here We Go Again</songName>
+				<songLength>328</songLength>
+				<trackName>01 Here We Go Again</trackName>
+			</track>
+			<track id='119I9T1uQP5kDpfZwmgU8SWNam8xCzG-K'>
+				<songOrder>02</songOrder>
+				<songName>Moddoh Wuk</songName>
+				<songLength>386</songLength>
+				<trackName>02 Moddoh Wuk</trackName>
+			</track>
+			<track id='1-rNYsa2AF7TJunoaiSKKC0oM1PWDw3G3'>
+				<songOrder>05</songOrder>
+				<songName>Roadeo</songName>
+				<songLength>265</songLength>
+				<trackName>05 Roadeo</trackName>
+			</track>
+			<track id='1OejlZvwnaK7e3n4UUOstHItLvBBtoTgx'>
+				<songOrder>06</songOrder>
+				<songName>Indian Chant</songName>
+				<songLength>347</songLength>
+				<trackName>06 Indian Chant</trackName>
+			</track>
+			<track id='1O9emf628RLwrqqOEAAeTv7UhrkEA26-z'>
+				<songOrder>07</songOrder>
+				<songName>Vybes Train</songName>
+				<songLength>383</songLength>
+				<trackName>07 Vybes Train</trackName>
+			</track>
+			<track id='14_8WmxWIXjGupkYQf3_KHwAlhpDrh6PP'>
+				<songOrder>10</songOrder>
+				<songName>Pong Anything</songName>
+				<songLength>383</songLength>
+				<trackName>10 Pong Anything</trackName>
+			</track>
+			<track id='1TkRw280cp0Z7XeiDtiE4ZyjMZNp8EUqQ'>
+				<songOrder>11</songOrder>
+				<songName>Rush Hour</songName>
+				<songLength>391</songLength>
+				<trackName>11 Rush Hour</trackName>
+			</track>
+			<track id='1yqEwPPkJRpFcssXn_EWr2ndW3dgMlY09'>
+				<songOrder>12</songOrder>
+				<songName>Name Brand</songName>
+				<songLength>363</songLength>
+				<trackName>12 Name Brand</trackName>
+			</track>
+		</tracks>
+	</album>
+	<album>
+		<albumName>It's All Good</albumName>
+		<albumReleaseYear>1996-97</albumReleaseYear>
+		<tracksCount>13</tracksCount>
+		<tracks>
+			<track id='1PP5NDyhG1-uyLdCCK_-5mxonQmwsM7uA'>
+				<songOrder>01</songOrder>
+				<songName>Party All Night</songName>
+				<songLength>268</songLength>
+				<trackName>01 Party All Night</trackName>
+			</track>
+			<track id='16XH2V7_BfL5Lm-Zvo3NlkRRbiriyt9Rq'>
+				<songOrder>02</songOrder>
+				<songName>Can't Wait For Carnival</songName>
+				<songLength>266</songLength>
+				<trackName>02 Can't Wait For Carnival</trackName>
+			</track>
+			<track id='1UnbWTuW8dDQ-2Bd7bhBnqdK92Q3BzNHj'>
+				<songOrder>03</songOrder>
+				<songName>Mad About You</songName>
+				<songLength>414</songLength>
+				<trackName>03 Mad About You</trackName>
+			</track>
+			<track id='1pBfnIE-L8xi0Ot8p5AW-qzwVDuyYb3DF'>
+				<songOrder>04</songOrder>
+				<songName>Hand Signal</songName>
+				<songLength>427</songLength>
+				<trackName>04 Hand Signal</trackName>
+			</track>
+			<track id='1eETM2oAttvaDFM8Ptie9RwyvtKlU-Wvr'>
+				<songOrder>05</songOrder>
+				<songName>Musical Empire</songName>
+				<songLength>311</songLength>
+				<trackName>05 Musical Empire</trackName>
+			</track>
+			<track id='1ARAUxn81au1H3KCSrKHTMVCa77dHxPdL'>
+				<songOrder>06</songOrder>
+				<songName>Mama Don't Cry</songName>
+				<songLength>266</songLength>
+				<trackName>06 Mama Don't Cry</trackName>
+			</track>
+			<track id='1FrNxHOJF0GMRnjBPPCQzNao5B22N3wit'>
+				<songOrder>07</songOrder>
+				<songName>Bring De Corn</songName>
+				<songLength>264</songLength>
+				<trackName>07 Bring De Corn</trackName>
+			</track>
+			<track id='15lZx3ypwLdRoL0smTLctgSSQFkiIFZeW'>
+				<songOrder>08</songOrder>
+				<songName>Movements</songName>
+				<songLength>357</songLength>
+				<trackName>08 Movements</trackName>
+			</track>
+			<track id='1VxSdfRS66Kx0eS51YtjZHbTc3BRWdYSR'>
+				<songOrder>09</songOrder>
+				<songName>Party Nice</songName>
+				<songLength>299</songLength>
+				<trackName>09 Party Nice</trackName>
+			</track>
+			<track id='1UdN4lcHkZEZA_tDdp97k_udn2qLDcnfh'>
+				<songOrder>10</songOrder>
+				<songName>Back To My Roots</songName>
+				<songLength>275</songLength>
+				<trackName>10 Back To My Roots</trackName>
+			</track>
+			<track id='1uL-K9nPpK71JSBWwKSEa_jn_q3BlEZ2o'>
+				<songOrder>11</songOrder>
+				<songName>Rebel For Music</songName>
+				<songLength>431</songLength>
+				<trackName>11 Rebel For Music</trackName>
+			</track>
+			<track id='1h38BgtgawZKaeVWOS6wIhLPhuDNOyngV'>
+				<songOrder>12</songOrder>
+				<songName>Link Up</songName>
+				<songLength>359</songLength>
+				<trackName>12 Link Up</trackName>
+			</track>
+			<track id='1Vfo-IWtY_zUpbxAkwoNvY7SCm2oV4V6J'>
+				<songOrder>13</songOrder>
+				<songName>Just A Little</songName>
+				<songLength>413</songLength>
+				<trackName>13 Just A Little</trackName>
+			</track>
+		</tracks>
+	</album>
+	<album>
+		<albumName>Moving On</albumName>
+		<albumReleaseYear>1997-98</albumReleaseYear>
+		<tracksCount>8</tracksCount>
+		<tracks>
+			<track id='1l_IaydEwHR6hw7NMK5g9NtGdAtjwCjDS'>
+				<songOrder>01</songOrder>
+				<songName>Forward On</songName>
+				<songLength>268</songLength>
+				<trackName>01 Forward On</trackName>
+			</track>
+			<track id='1f95TnoehKp85ti4mXJP4rUDRXiFxAHZr'>
+				<songOrder>03</songOrder>
+				<songName>Watch You Timing</songName>
+				<songLength>279</songLength>
+				<trackName>03 Watch You Timing</trackName>
+			</track>
+			<track id='12xsPGvGo7SEUDJqh93oKAx6ilsY5gezX'>
+				<songOrder>05</songOrder>
+				<songName>Wuk Wid Me</songName>
+				<songLength>286</songLength>
+				<trackName>05 Wuk Wid Me</trackName>
+			</track>
+			<track id='1usrHCY7zSqgq6bAWNCVCHqdyGFAOrI5V'>
+				<songOrder>06</songOrder>
+				<songName>Stand Firm</songName>
+				<songLength>289</songLength>
+				<trackName>06 Stand Firm</trackName>
+			</track>
+			<track id='1agnZGIhVkZgsyyQKs7mAhJSRkXIdesx8'>
+				<songOrder>07</songOrder>
+				<songName>Heaven Or Hell</songName>
+				<songLength>301</songLength>
+				<trackName>07 Heaven Or Hell</trackName>
+			</track>
+			<track id='1iKqeL_kEewuQfn5-mZMORG8F3jE2Ssz_'>
+				<songOrder>08</songOrder>
+				<songName>Street Style</songName>
+				<songLength>352</songLength>
+				<trackName>08 Street Style</trackName>
+			</track>
+			<track id='13nZVhDE-Wk4ZP4NgWyWjI8HvhnTnWtuf'>
+				<songOrder>09</songOrder>
+				<songName>Wax On</songName>
+				<songLength>339</songLength>
+				<trackName>09 Wax On</trackName>
+			</track>
+			<track id='1syDd-CSMiHAkVvIaEwL8m7sj90uTvh5t'>
+				<songOrder>10</songOrder>
+				<songName>Keep On Moving</songName>
+				<songLength>321</songLength>
+				<trackName>10 Keep On Moving</trackName>
+			</track>
+		</tracks>
+	</album>
+	<album>
+		<albumName>Higher Ground</albumName>
+		<albumReleaseYear>1998-99</albumReleaseYear>
+		<tracksCount>10</tracksCount>
+		<tracks>
+			<track id='1GgmNUx8aCqhjoSr4SqoPiDBa6gMUEr-i'>
+				<songOrder>01</songOrder>
+				<songName>Higher Ground</songName>
+				<songLength>315</songLength>
+				<trackName>01 Higher Ground</trackName>
+			</track>
+			<track id='1ZVqp3RuphT3z2q3ahq5Lr5JSupR80iOj'>
+				<songOrder>02</songOrder>
+				<songName>Soca Swing</songName>
+				<songLength>341</songLength>
+				<trackName>02 Soca Swing</trackName>
+			</track>
+			<track id='1rZbPfBPSVycnl8zh16qFwsv8rOC-JgCi'>
+				<songOrder>03</songOrder>
+				<songName>Tempo Of My Life</songName>
+				<songLength>253</songLength>
+				<trackName>03 Tempo Of My Life</trackName>
+			</track>
+			<track id='1gSanuPm4L5DDMa9S2B_krwdJzGDkR0uw'>
+				<songOrder>04</songOrder>
+				<songName>Nut Grass</songName>
+				<songLength>382</songLength>
+				<trackName>04 Nut Grass</trackName>
+			</track>
+			<track id='17KvTYCqooeZePhXHuB9n0r6Gx1K672DN'>
+				<songOrder>05</songOrder>
+				<songName>Take Me</songName>
+				<songLength>360</songLength>
+				<trackName>05 Take Me</trackName>
+			</track>
+			<track id='1zHXD5GUp37KZyaI0rr1vDjSSlf3uMTvz'>
+				<songOrder>06</songOrder>
+				<songName>Swing Them High</songName>
+				<songLength>314</songLength>
+				<trackName>06 Swing Them High</trackName>
+			</track>
+			<track id='19vQ5hzjva9LFfUu2cukBBuflNlTKm-vP'>
+				<songOrder>07</songOrder>
+				<songName>X Files</songName>
+				<songLength>231</songLength>
+				<trackName>07 X Files</trackName>
+			</track>
+			<track id='1hZQcSAe6is-8b1nT3BriGSFRviicdRvn'>
+				<songOrder>08</songOrder>
+				<songName>Wham Bam</songName>
+				<songLength>231</songLength>
+				<trackName>08 Wham Bam</trackName>
+			</track>
+			<track id='1NJHCm6F9LcnBkoA6HJpvGoR-SYTf_33E'>
+				<songOrder>09</songOrder>
+				<songName>Represent Yourself</songName>
+				<songLength>332</songLength>
+				<trackName>09 Represent Yourself</trackName>
+			</track>
+			<track id='1ZLZNc9nvMy1AqNGuCBLX5of5aNegTSIw'>
+				<songOrder>10</songOrder>
+				<songName>Ghost of Music</songName>
+				<songLength>371</songLength>
+				<trackName>10 Ghost of Music</trackName>
+			</track>
+		</tracks>
+	</album>
+	<album>
+		<albumName>No Loose Ends</albumName>
+		<albumReleaseYear>1999-20</albumReleaseYear>
+		<tracksCount>12</tracksCount>
+		<tracks>
+			<track id='1tq-wcUXfvvQlfAOqoV3zDMUO1jnhSl7f'>
+				<songOrder>01</songOrder>
+				<songName>Rumble</songName>
+				<songLength>363</songLength>
+				<trackName>01 Rumble</trackName>
+			</track>
+			<track id='1egIudrf2NTTj1uQiqI91lz7Zn99H1JjU'>
+				<songOrder>02</songOrder>
+				<songName>Carnival</songName>
+				<songLength>342</songLength>
+				<trackName>02 Carnival</trackName>
+			</track>
+			<track id='1uSMpsqWurN4AYovg0-YgaszY51o0deJZ'>
+				<songOrder>03</songOrder>
+				<songName>Rhythm Is Me Culture</songName>
+				<songLength>227</songLength>
+				<trackName>03 Rhythm Is Me Culture</trackName>
+			</track>
+			<track id='10aDtm_eguf2s1vVewJySynT5teqTsVI9'>
+				<songOrder>04</songOrder>
+				<songName>Control</songName>
+				<songLength>333</songLength>
+				<trackName>04 Control</trackName>
+			</track>
+			<track id='1vec3bEYPVVqd_KV7h8UTVnOjCcy2taGN'>
+				<songOrder>05</songOrder>
+				<songName>No Applause</songName>
+				<songLength>195</songLength>
+				<trackName>05 No Applause</trackName>
+			</track>
+			<track id='1Cbw73xloFB2pF5uQIYdrgTlwHKcaFjij'>
+				<songOrder>06</songOrder>
+				<songName>Madness</songName>
+				<songLength>300</songLength>
+				<trackName>06 Madness</trackName>
+			</track>
+			<track id='1baQ5mw5j9kUPn-59KssqPxYRN9vp8wUK'>
+				<songOrder>07</songOrder>
+				<songName>Family</songName>
+				<songLength>359</songLength>
+				<trackName>07 Family</trackName>
+			</track>
+			<track id='1YKaoqlkoGGOaOwjt-h8awQTuWn9iGHZV'>
+				<songOrder>08</songOrder>
+				<songName>Slow &amp; Groovy</songName>
+				<songLength>294</songLength>
+				<trackName>08 Slow &amp; Groovy</trackName>
+			</track>
+			<track id='1HYC5Qfxm_lKd7S3vU3miIAKjkcPXd3TF'>
+				<songOrder>09</songOrder>
+				<songName>Believe</songName>
+				<songLength>256</songLength>
+				<trackName>09 Believe</trackName>
+			</track>
+			<track id='17Du3YyCtaLlGUbyhco4Thzbv-wFNdpvD'>
+				<songOrder>10</songOrder>
+				<songName>Time To Leggo</songName>
+				<songLength>304</songLength>
+				<trackName>10 Time To Leggo</trackName>
+			</track>
+			<track id='1zBdxB-B2KQfGRa1VPCa1lUuBnY7lZYq4'>
+				<songOrder>11</songOrder>
+				<songName>Ride De Ridim</songName>
+				<songLength>270</songLength>
+				<trackName>11 Ride De Ridim</trackName>
+			</track>
+			<track id='18oIhAnBHZW_kjQQGkKl-l3hkDbWhu2Aw'>
+				<songOrder>12</songOrder>
+				<songName>Party Jam</songName>
+				<songLength>549</songLength>
+				<trackName>12 Party Jam</trackName>
+			</track>
+		</tracks>
+	</album>
+	<album>
+		<albumName>Step Up</albumName>
+		<albumReleaseYear>2002-03</albumReleaseYear>
+		<tracksCount>11</tracksCount>
+		<tracks>
+			<track id='1zwd3SnQ_aOKMKI_mMdANAHIIs3h1qcKz'>
+				<songOrder>01</songOrder>
+				<songName>More Suga Intro</songName>
+				<songLength>33</songLength>
+				<trackName>01 More Suga Intro</trackName>
+			</track>
+			<track id='1nMKR1njRf68ygeTjYyjkGMp0v687bwGR'>
+				<songOrder>02</songOrder>
+				<songName>More Suga</songName>
+				<songLength>322</songLength>
+				<trackName>02 More Suga</trackName>
+			</track>
+			<track id='1NdytNO1KxsVFqy-h5lMmpXMtGGkuKksY'>
+				<songOrder>03</songOrder>
+				<songName>Bounce</songName>
+				<songLength>253</songLength>
+				<trackName>03 Bounce</trackName>
+			</track>
+			<track id='1-ah-qhqNaAp-TnNk1rX8KXem3akukBHr'>
+				<songOrder>04</songOrder>
+				<songName>Step Up</songName>
+				<songLength>355</songLength>
+				<trackName>04 Step Up</trackName>
+			</track>
+			<track id='1LFM2Mz-yVYRgyZx5MFjg3azjAGX9Se3m'>
+				<songOrder>05</songOrder>
+				<songName>Celebration</songName>
+				<songLength>217</songLength>
+				<trackName>05 Celebration</trackName>
+			</track>
+			<track id='1XjW8jsUomEaFpHC1fl3w3VyU46FaMGL3'>
+				<songOrder>06</songOrder>
+				<songName>Rey Rey</songName>
+				<songLength>343</songLength>
+				<trackName>06 Rey Rey</trackName>
+			</track>
+			<track id='1t9DGrIjajzxutGnAvD2Le50SnQvak61k'>
+				<songOrder>07</songOrder>
+				<songName>Moving Up</songName>
+				<songLength>292</songLength>
+				<trackName>07 Moving Up</trackName>
+			</track>
+			<track id='1g_yVk0eenw1B66_6B3V325xy5msI1Z7A'>
+				<songOrder>08</songOrder>
+				<songName>Feel the Vibes</songName>
+				<songLength>286</songLength>
+				<trackName>08 Feel the Vibes</trackName>
+			</track>
+			<track id='1PT9BEMmB45q6pW1odClT-vBKyoiPYxVS'>
+				<songOrder>09</songOrder>
+				<songName>Carnival Fever</songName>
+				<songLength>239</songLength>
+				<trackName>09 Carnival Fever</trackName>
+			</track>
+			<track id='1_9dJYRcbj5IL-s_5vlxphE-qxeElavJ8'>
+				<songOrder>10</songOrder>
+				<songName>Xplosion</songName>
+				<songLength>302</songLength>
+				<trackName>10 Xplosion</trackName>
+			</track>
+			<track id='1XOnjO1gZc4vDH_01RIVvFBJlmmKg_Qdv'>
+				<songOrder>11</songOrder>
+				<songName>Sugar Medley</songName>
+				<songLength>366</songLength>
+				<trackName>11 Sugar Medley</trackName>
+			</track>
+		</tracks>
+	</album>
+	<album>
+		<albumName>Sugar</albumName>
+		<albumReleaseYear>2001-02</albumReleaseYear>
+		<tracksCount>12</tracksCount>
+		<tracks>
+			<track id='1xyw_vYZ-15Cq9_OZ8zjxr-ArhIyimkGY'>
+				<songOrder>01</songOrder>
+				<songName>People's Sugar</songName>
+				<songLength>362</songLength>
+				<trackName>01 People's Sugar</trackName>
+			</track>
+			<track id='10LaSxAVKrt9ksfDour3BV3j7zBySAAzd'>
+				<songOrder>02</songOrder>
+				<songName>Hold Up</songName>
+				<songLength>286</songLength>
+				<trackName>02 Hold Up</trackName>
+			</track>
+			<track id='1OH-WHfr2SKxc5XUAAre3f00ljesg2_YS'>
+				<songOrder>03</songOrder>
+				<songName>Wake Up Call</songName>
+				<songLength>317</songLength>
+				<trackName>03 Wake Up Call</trackName>
+			</track>
+			<track id='15uZeiOizVU8kw0EWcjixXXqUpaINppo9'>
+				<songOrder>04</songOrder>
+				<songName>Back To Basic</songName>
+				<songLength>246</songLength>
+				<trackName>04 Back To Basic</trackName>
+			</track>
+			<track id='1kQwST-6k8QCi0wYPEl1z700tf6LUK3FT'>
+				<songOrder>05</songOrder>
+				<songName>Ain't Going Home</songName>
+				<songLength>323</songLength>
+				<trackName>05 Ain't Going Home</trackName>
+			</track>
+			<track id='111ljyyG-DODiXKlu-g0ve6OEWafulvz5'>
+				<songOrder>06</songOrder>
+				<songName>Carnival Lady</songName>
+				<songLength>263</songLength>
+				<trackName>06 Carnival Lady</trackName>
+			</track>
+			<track id='1Lt4Sej_nuvL7Sa9tuBfZ53kwxR1__rxN'>
+				<songOrder>07</songOrder>
+				<songName>I'll Be Jamming</songName>
+				<songLength>251</songLength>
+				<trackName>07 I'll Be Jamming</trackName>
+			</track>
+			<track id='1KbEd2Ghy0oGU4B8xsNuNFd6N0mXz7wI8'>
+				<songOrder>08</songOrder>
+				<songName>We Know Wha We Doing</songName>
+				<songLength>230</songLength>
+				<trackName>08 We Know Wha We Doing</trackName>
+			</track>
+			<track id='1PouPRo3pXaC6ambfgsKJWiTW3kUV44nO'>
+				<songOrder>09</songOrder>
+				<songName>Just For You</songName>
+				<songLength>259</songLength>
+				<trackName>09 Just For You</trackName>
+			</track>
+			<track id='1ODhh8CU1uorsFlDp1-WKBDD5l7rVdE2U'>
+				<songOrder>10</songOrder>
+				<songName>Log On</songName>
+				<songLength>275</songLength>
+				<trackName>10 Log On</trackName>
+			</track>
+			<track id='1Y_MonR4on4V6FWk7y97-zi3qQxl1uZOS'>
+				<songOrder>11</songOrder>
+				<songName>Hard For You</songName>
+				<songLength>186</songLength>
+				<trackName>11 Hard For You</trackName>
+			</track>
+			<track id='1gKTzEvT2auqj15d-Hrjw-IzZKpZHPXox'>
+				<songOrder>12</songOrder>
+				<songName>Matrix Riddims</songName>
+				<songLength>454</songLength>
+				<trackName>12 Matrix Riddims</trackName>
+			</track>
+		</tracks>
+	</album>
+	<album>
+		<albumName>De Extra Mile</albumName>
+		<albumReleaseYear>2000-01</albumReleaseYear>
+		<tracksCount>12</tracksCount>
+		<tracks>
+			<track id='1jeiGc-DwzEZDJAfvPM2p32lzcUXNHlvg'>
+				<songOrder>01</songOrder>
+				<songName>Champion Interlude</songName>
+				<songLength>19</songLength>
+				<trackName>01 Champion Interlude</trackName>
+			</track>
+			<track id='1LAvZPT0eDCg9j6GEgJpF56gJI8E5TRtA'>
+				<songOrder>02</songOrder>
+				<songName>Champion</songName>
+				<songLength>303</songLength>
+				<trackName>02 Champion</trackName>
+			</track>
+			<track id='1jgemiNKMyJwMieZbyRYEoWcL_vNDioGE'>
+				<songOrder>03</songOrder>
+				<songName>Clear De Way</songName>
+				<songLength>250</songLength>
+				<trackName>03 Clear De Way</trackName>
+			</track>
+			<track id='1WiQK86jwuWZCkS8ADnl3xIUnpZpAA_Yq'>
+				<songOrder>04</songOrder>
+				<songName>Crazy Love</songName>
+				<songLength>253</songLength>
+				<trackName>04 Crazy Love</trackName>
+			</track>
+			<track id='1tAXH5lfgRsJ1K4282LxTOHcx9i_3__VX'>
+				<songOrder>05</songOrder>
+				<songName>Dis'Is It</songName>
+				<songLength>249</songLength>
+				<trackName>05 Dis'Is It</trackName>
+			</track>
+			<track id='1vT4Tlo5tQA2Yeu-KpqeNshUr50XaeJbg'>
+				<songOrder>06</songOrder>
+				<songName>Imagine Dat</songName>
+				<songLength>290</songLength>
+				<trackName>06 Imagine Dat</trackName>
+			</track>
+			<track id='1XFFmFbc9Wg-NO-4-WsOC3sW46qucrqYh'>
+				<songOrder>07</songOrder>
+				<songName>Who Run It</songName>
+				<songLength>309</songLength>
+				<trackName>07 Who Run It</trackName>
+			</track>
+			<track id='1hsIEpXKMt0eixSbJzreh0_ye9dUIlT1Z'>
+				<songOrder>08</songOrder>
+				<songName>Gangster Life</songName>
+				<songLength>283</songLength>
+				<trackName>08 Gangster Life</trackName>
+			</track>
+			<track id='1p4eqfu6hsYlJ8zYCu6AuUkwgacIeDd-V'>
+				<songOrder>09</songOrder>
+				<songName>Dats How It Goes</songName>
+				<songLength>293</songLength>
+				<trackName>09 Dats How It Goes</trackName>
+			</track>
+			<track id='1WhS7FUSsg2V8ozzt-qQd8WXUc_AMWKBE'>
+				<songOrder>10</songOrder>
+				<songName>So Highly</songName>
+				<songLength>341</songLength>
+				<trackName>10 So Highly</trackName>
+			</track>
+			<track id='1xFkdapdcdrNRYKD3YRKjtFb9U12Tx2Qa'>
+				<songOrder>11</songOrder>
+				<songName>Baggage</songName>
+				<songLength>334</songLength>
+				<trackName>11 Baggage</trackName>
+			</track>
+			<track id='1Ezgmk_9hXu9qH6fsfUd9-5z9q0vIwYAM'>
+				<songOrder>12</songOrder>
+				<songName>Ozzie's Groove</songName>
+				<songLength>116</songLength>
+				<trackName>12 Ozzie's Groove</trackName>
+			</track>
+		</tracks>
+	</album>
+	<album>
+		<albumName>Catalogue of Music</albumName>
+		<albumReleaseYear>2018-19</albumReleaseYear>
+		<tracksCount>8</tracksCount>
+		<tracks>
+			<track id='14yIW9WUn0u8Wjw_4S0uIJZMhCgzQM-vy'>
+				<songOrder>01</songOrder>
+				<songName>Lucky Dip</songName>
+				<songLength>238</songLength>
+				<trackName>01 Lucky Dip</trackName>
+			</track>
+			<track id='1jE3Hgt3UGOWH-p5HRE3ptedjbtIeuMkX'>
+				<songOrder>02</songOrder>
+				<songName>How We Party</songName>
+				<songLength>198</songLength>
+				<trackName>02 How We Party</trackName>
+			</track>
+			<track id='1rc9hl7tdJsFLaKWbjnempxXo1IHP4M7g'>
+				<songOrder>03</songOrder>
+				<songName>Resume</songName>
+				<songLength>167</songLength>
+				<trackName>03 Resume</trackName>
+			</track>
+			<track id='1ABTonC1_cglkkqvXVdNwSj8BPEAdqvvt'>
+				<songOrder>04</songOrder>
+				<songName>Cream Soda</songName>
+				<songLength>240</songLength>
+				<trackName>04 Cream Soda</trackName>
+			</track>
+			<track id='1ZprOe_6lxTaQq1G5N9h9Xo0gXVW-8ZSJ'>
+				<songOrder>05</songOrder>
+				<songName>Nice Again</songName>
+				<songLength>174</songLength>
+				<trackName>05 Nice Again</trackName>
+			</track>
+			<track id='1DCxO4CiAdHPcdwb8faqQKhVtEOcOOfc3'>
+				<songOrder>06</songOrder>
+				<songName>Hurt Some Feeling</songName>
+				<songLength>213</songLength>
+				<trackName>06 Hurt Some Feeling</trackName>
+			</track>
+			<track id='1Vozpvi5_gxZSJ1AYafsUNoVeiBqRhZmv'>
+				<songOrder>07</songOrder>
+				<songName>The Decision</songName>
+				<songLength>212</songLength>
+				<trackName>07 The Decision</trackName>
+			</track>
+			<track id='1FNp1SVsEkoK3M54Hm9MMK119BzkhavVt'>
+				<songOrder>08</songOrder>
+				<songName>Lucky Dip (Remix)</songName>
+				<songLength>205</songLength>
+				<trackName>08 Lucky Dip (Remix)</trackName>
+			</track>
+		</tracks>
+	</album>
+	<album>
 		<albumName>iMusic</albumName>
 		<albumReleaseYear>2016-17</albumReleaseYear>
 		<tracksCount>8</tracksCount>
@@ -8,49 +1560,49 @@
 			<track id='1FL1qYiBtq540pIPMK5Q1VyJJrvX_8o8Q'>
 				<songOrder>01</songOrder>
 				<songName>Amazing</songName>
-				<songLength>N/A</songLength>
+				<songLength>199</songLength>
 				<trackName>01 Amazing</trackName>
 			</track>
 			<track id='1OJDQQJzQ9qucTzcaI-eJ9VRixvTrpWRO'>
 				<songOrder>02</songOrder>
 				<songName>Inside We Mass</songName>
-				<songLength>N/A</songLength>
+				<songLength>217</songLength>
 				<trackName>02 Inside We Mass</trackName>
 			</track>
 			<track id='1aTYQZWypa7LYwNPmI_RWq2MbZQU41Ong'>
 				<songOrder>03</songOrder>
 				<songName>Seductive</songName>
-				<songLength>N/A</songLength>
+				<songLength>487</songLength>
 				<trackName>03 Seductive</trackName>
 			</track>
 			<track id='1ZKuC5INNxxm_yj4Jb5kMVKCeW4UUClmU'>
 				<songOrder>04</songOrder>
 				<songName>What's My Name</songName>
-				<songLength>N/A</songLength>
+				<songLength>204</songLength>
 				<trackName>04 What's My Name</trackName>
 			</track>
 			<track id='1xUrnVSjCfyp2YPl-gbXWG4bdU9ls0IxL'>
 				<songOrder>05</songOrder>
 				<songName>Up Dey</songName>
-				<songLength>N/A</songLength>
+				<songLength>190</songLength>
 				<trackName>05 Up Dey</trackName>
 			</track>
 			<track id='1bOCCD05X3pF90A3BlnqCO5Y2X1IQK3To'>
 				<songOrder>06</songOrder>
 				<songName>Bruck Back</songName>
-				<songLength>N/A</songLength>
+				<songLength>192</songLength>
 				<trackName>06 Bruck Back</trackName>
 			</track>
 			<track id='1hVE65tSraxjtSjn7CedNPvwJ7nNOukON'>
 				<songOrder>07</songOrder>
 				<songName>Overdose</songName>
-				<songLength>N/A</songLength>
+				<songLength>195</songLength>
 				<trackName>07 Overdose</trackName>
 			</track>
 			<track id='1reREmbfV9tV4qgguvC8mEiSpJDFOJFSB'>
 				<songOrder>08</songOrder>
 				<songName>Like A Slave</songName>
-				<songLength>N/A</songLength>
+				<songLength>310</songLength>
 				<trackName>08 Like A Slave</trackName>
 			</track>
 		</tracks>

@@ -9,9 +9,11 @@ angular.module("sugarApp").service("musicPlayer", function($interval){
 			var trackName = row.dataset.trackName;
 			highlightSong = albumName+"-"+trackName;
 			var src = path + "music/" + albumName + "/" + trackName;
+			var src2 = "http://docs.google.com/uc?export=download&id=" + row.id;
+			// console.log(src2);
 			src = decodeURIComponent(src);
-			currentSong_mp3.src = src;
-			currentSong_mp4.src = src;
+			currentSong_mp3.src = src2;
+			currentSong_mp4.src = src2;
 			currentAudio.load();
 			currentAudio.currentTime = 0;
 			// playVsPause("play");
@@ -189,7 +191,8 @@ angular.module("sugarApp").service("musicPlayer", function($interval){
 	}
 	// This initializes the values for the range input that will correlate with the length of the song
 	var showCurrentSong = function(track){
-		document.getElementById("songName").innerHTML = cleanTrackName(track);
+		document.getElementById("songName").innerHTML = track;
+		 // cleanTrackName(track);
 		document.getElementById("sugarBandNameSection").style.display = "none";
 		document.getElementById("currentSongSubSection").style.display = "block";
 		document.getElementById("fixedSugarHeadSection").style.display = "block";

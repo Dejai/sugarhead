@@ -70,7 +70,8 @@ var highlightSong = '';
 
 		$scope.theSongs = [];
 
-		$scope.setSongsArray = function(xmlString){
+		$scope.setSongsArray = function(xmlString)
+		{
 			console.log("Album Info:");
 			var parser = new DOMParser();
 			xmlDoc = parser.parseFromString(xmlString, "text/xml");
@@ -98,7 +99,7 @@ var highlightSong = '';
 						"songID" : songID,
 						"highlighted" : false
 					}
-					console.log(obj);
+					// console.log(obj);
 					$scope.theSongs.push(obj);
 					// console.log(id+"~"+songName+"~"+songOrder+"~"+songLength);
 				}
@@ -108,8 +109,8 @@ var highlightSong = '';
 				// console.log(albumYear);
 				// console.log(tracks);
 			}
-
 		}
+		
 		$http.get("/sugarhead/config/albums.xml")
 				.then(function(response){
 					$scope.setSongsArray(response.data);
@@ -156,7 +157,7 @@ var highlightSong = '';
 		$scope.setSort = function(x){
 			$scope.sortReverse = ($scope.sortValue == x && !$scope.sortReverse) ? true : false;
 			$scope.sortValue = $scope.sortReverse ? ["-"+x] : [x];
-			console.log($scope.sortValue);
+			//console.log($scope.sortValue);
 		}
 
 		$scope.rowClick = function(event){
@@ -289,8 +290,8 @@ var highlightSong = '';
 		}
 	});
 
-	app.filter("songName", function(){
+	app.filter("presentableName", function(){
 		return function(value){
 			return value.replace("&amp;", "&");
 		}
-	})
+	});
