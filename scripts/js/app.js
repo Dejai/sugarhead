@@ -70,9 +70,55 @@ var highlightSong = '';
 
 		$scope.theSongs = [];
 
+		$scope.setSongsArray = function(xmlString)
+		{
+			console.log("Album Info:");
+			var parser = new DOMParser();
+			xmlDoc = parser.parseFromString(xmlString, "text/xml");
+			console.log(xmlDoc);
+			var albums = xmlDoc.getElementsByTagName("album");
+			console.log(albums);
+			for (var x = 0; x < albums.length; x++){
+				var albumName = albums[x].getElementsByTagName("albumName")[0].innerHTML;
+				var albumYear = albums[x].getElementsByTagName("albumReleaseYear")[0].innerHTML;
+				var tracks = albums[x].getElementsByTagName("track");
+				for (var y = 0; y < tracks.length; y++){
+					var songID = tracks[y].id;
+					var songName = tracks[y].getElementsByTagName("songName")[0].innerHTML;
+					var songOrder = tracks[y].getElementsByTagName("songOrder")[0].innerHTML;
+					var songLength = tracks[y].getElementsByTagName("songLength")[0].innerHTML;
+					var songName = tracks[y].getElementsByTagName("songName")[0].innerHTML;
+
+					var obj = {
+						"songName" : songName,
+						"trackName" : songName,
+						"songLength": songLength,
+						"songOrder" : songOrder,
+						"songAlbum" : albumName,
+						"songReleaseYear" : albumYear,
+						"songID" : songID,
+						"highlighted" : false
+					}
+					// console.log(obj);
+					$scope.theSongs.push(obj);
+					// console.log(id+"~"+songName+"~"+songOrder+"~"+songLength);
+				}
+				
+				
+				// console.log(albumName);
+				// console.log(albumYear);
+				// console.log(tracks);
+			}
+		}
+		
+		$http.get("/sugarhead/config/albums.xml")
+				.then(function(response){
+					$scope.setSongsArray(response.data);
+				})
+
 		$http.get("/sugarhead/scripts/js/data/songsJSON.json")
 				.then(function(response){
-					$scope.theSongs = response.data;
+					// $scope.theSongs = response.data;
 				});
 
 
@@ -111,7 +157,7 @@ var highlightSong = '';
 		$scope.setSort = function(x){
 			$scope.sortReverse = ($scope.sortValue == x && !$scope.sortReverse) ? true : false;
 			$scope.sortValue = $scope.sortReverse ? ["-"+x] : [x];
-			console.log($scope.sortValue);
+			//console.log($scope.sortValue);
 		}
 
 		$scope.rowClick = function(event){
@@ -241,5 +287,11 @@ var highlightSong = '';
 			} else {	
 				return playTime
 			}
+		}
+	});
+
+	app.filter("presentableName", function(){
+		return function(value){
+			return value.replace("&amp;", "&");
 		}
 	});
